@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Championship video content for football clubs. Match highlights, social media videos, and promotional content by Platinum Media."
+    />
+    <meta
+      name="keywords"
+      content="football videos, match highlights, social media videos, Belgrade, Serbia"
+    />
+    <meta name="author" content="Platinum Media" />
+
+    <title>Video Portfolio - Platinum Media</title>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font imports -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/base-styles.css" />
+    <link rel="stylesheet" href="/assets/css/videos-page.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__container container">
+        <a
+          href="/index.html"
+          class="nav__logo"
+          aria-label="Platinum Media Homepage"
+        >
+          PLATINUM MEDIA
+        </a>
+
+        <ul class="nav__menu" role="menubar">
+          <li role="none">
+            <a href="/index.html" class="nav__link" role="menuitem">Home</a>
+          </li>
+          <li role="none">
+            <a href="/graphics/index.html" class="nav__link" role="menuitem"
+              >Graphics</a
+            >
+          </li>
+          <li role="none">
+            <a
+              href="/videos/index.html"
+              class="nav__link nav__link--active"
+              role="menuitem"
+              aria-current="page"
+              >Videos</a
+            >
+          </li>
+          <li role="none">
+            <a href="index.html#about" class="nav__link" role="menuitem"
+              >About</a
+            >
+          </li>
+          <li role="none">
+            <a href="index.html#contact" class="nav__link" role="menuitem"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <button class="btn btn--primary" aria-label="Start your project">
+          Get Started
+        </button>
+      </div>
+    </nav>
+
+    <!-- Light beam effects -->
+    <div class="light-beam light-beam--1" aria-hidden="true"></div>
+    <div class="light-beam light-beam--2" aria-hidden="true"></div>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="videos" class="hero section section--hero">
+        <div class="container">
+          <div class="hero__content text-center">
+            <h1 class="text-display-1 mb-3 hero__title">
+              Championship<br />
+              <span class="hero__highlight">Videos</span><br />
+              That Move Fans
+            </h1>
+
+            <p class="text-body-lg mb-5 hero__subtitle">
+              From match highlights to behind-the-scenes content,<br />
+              we create videos that capture the heart of football.
+            </p>
+
+            <div class="hero__categories">
+              <button
+                class="category-filter category-filter--active"
+                data-category="all"
+              >
+                All Videos
+              </button>
+              <button class="category-filter" data-category="highlights">
+                Match Highlights
+              </button>
+              <button class="category-filter" data-category="social">
+                Social Content
+              </button>
+              <button class="category-filter" data-category="promotional">
+                Promotional
+              </button>
+              <button class="category-filter" data-category="training">
+                Training
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Portfolio -->
+      <section class="section portfolio-section">
+        <div class="container">
+          <div class="video-grid" id="videos-grid">
+            <!-- Match Highlights -->
+            <article
+              class="video-item"
+              data-category="highlights"
+              data-title="Derby Victory Highlights"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder">
+                    <div class="video-content">
+                      <div
+                        class="play-button"
+                        role="button"
+                        aria-label="Play Derby Victory Highlights"
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">DERBY VICTORY</div>
+                        <div class="video-subtitle">Match Highlights</div>
+                        <div class="video-duration">3:24</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Derby Victory Highlights</h3>
+                  <p class="text-body-sm mb-3">
+                    Epic 90-minute battle condensed into heart-pounding
+                    highlights that showcase every crucial moment.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Match Highlights</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">2.1M views</span>
+                      <span class="meta-engagement">95% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Social Content -->
+            <article
+              class="video-item"
+              data-category="social"
+              data-title="Goal Celebration Reels"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder vertical">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">CELEBRATION</div>
+                        <div class="video-subtitle">Social Reel</div>
+                        <div class="video-duration">0:15</div>
+                      </div>
+                      <div class="vertical-indicator">9:16</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Goal Celebration Reels</h3>
+                  <p class="text-body-sm mb-3">
+                    Short-form vertical content optimized for Instagram and
+                    TikTok that captures pure emotion.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Social Content</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">850K views</span>
+                      <span class="meta-engagement">88% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Promotional Video -->
+            <article
+              class="video-item"
+              data-category="promotional"
+              data-title="Season Launch Campaign"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder cinematic">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">NEW SEASON</div>
+                        <div class="video-subtitle">Launch Campaign</div>
+                        <div class="video-duration">1:45</div>
+                      </div>
+                      <div class="cinematic-bars"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Season Launch Campaign</h3>
+                  <p class="text-body-sm mb-3">
+                    Cinematic promotional video that builds anticipation for the
+                    new season with dramatic storytelling.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Promotional</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">1.5M views</span>
+                      <span class="meta-engagement">92% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Training Content -->
+            <article
+              class="video-item"
+              data-category="training"
+              data-title="Behind the Scenes Training"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder documentary">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">TRAINING DAY</div>
+                        <div class="video-subtitle">Behind the Scenes</div>
+                        <div class="video-duration">4:12</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Behind the Scenes Training</h3>
+                  <p class="text-body-sm mb-3">
+                    Exclusive access to training sessions showing the dedication
+                    and preparation behind every match.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Training</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">680K views</span>
+                      <span class="meta-engagement">91% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Player Interview -->
+            <article
+              class="video-item"
+              data-category="social promotional"
+              data-title="Captain's Interview"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder interview">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">CAPTAIN SPEAKS</div>
+                        <div class="video-subtitle">Exclusive Interview</div>
+                        <div class="video-duration">2:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Captain's Interview</h3>
+                  <p class="text-body-sm mb-3">
+                    Intimate conversation with team captain about leadership,
+                    goals, and what drives the team forward.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Interview</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">920K views</span>
+                      <span class="meta-engagement">89% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Match Day Vlog -->
+            <article
+              class="video-item"
+              data-category="highlights social"
+              data-title="Match Day Experience"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder vlog">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">MATCH DAY</div>
+                        <div class="video-subtitle">Full Experience</div>
+                        <div class="video-duration">6:45</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Match Day Experience</h3>
+                  <p class="text-body-sm mb-3">
+                    Complete match day journey from pre-game preparation to
+                    post-match celebrations.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Match Day</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">1.8M views</span>
+                      <span class="meta-engagement">94% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tactical Analysis -->
+            <article
+              class="video-item"
+              data-category="training promotional"
+              data-title="Tactical Breakdown"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder tactical">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">TACTICS</div>
+                        <div class="video-subtitle">Expert Analysis</div>
+                        <div class="video-duration">3:55</div>
+                      </div>
+                      <div class="tactical-overlay">
+                        <div class="tactical-line"></div>
+                        <div class="tactical-dot"></div>
+                        <div class="tactical-dot"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Tactical Breakdown</h3>
+                  <p class="text-body-sm mb-3">
+                    In-depth analysis of key plays and tactical decisions that
+                    shaped the match outcome.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Analysis</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">540K views</span>
+                      <span class="meta-engagement">87% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Fan Reactions -->
+            <article
+              class="video-item"
+              data-category="social"
+              data-title="Fan Reaction Compilation"
+            >
+              <div class="video-card card">
+                <div class="video-container">
+                  <div class="video-placeholder fan-reaction">
+                    <div class="video-content">
+                      <div class="play-button">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div class="video-overlay">
+                        <div class="video-title">FAN REACTIONS</div>
+                        <div class="video-subtitle">Pure Emotion</div>
+                        <div class="video-duration">2:15</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h3 class="text-title-2 mb-2">Fan Reaction Compilation</h3>
+                  <p class="text-body-sm mb-3">
+                    Authentic fan emotions and reactions that show the true
+                    power of football to unite and inspire.
+                  </p>
+                  <div class="video-meta">
+                    <span class="meta-tag">Fan Content</span>
+                    <span class="meta-stats">
+                      <span class="meta-views">1.2M views</span>
+                      <span class="meta-engagement">96% engagement</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Load More Button -->
+          <div class="text-center mt-5">
+            <button class="btn btn--secondary btn--large" id="load-more-videos">
+              Load More Videos
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Statistics -->
+      <section class="section stats-section">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="text-headline-1 section__title">
+              Video Performance That Scores
+            </h2>
+            <p class="text-body-lg section__subtitle">
+              Our video content consistently delivers championship-level
+              engagement.
+            </p>
+          </header>
+
+          <div class="stats-grid-large">
+            <div class="stat-card card">
+              <div class="card__body text-center">
+                <div class="stat-number text-mono">250M+</div>
+                <div class="stat-label">Total Video Views</div>
+                <div class="stat-description text-body-sm">
+                  Across all platforms and campaigns
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card card">
+              <div class="card__body text-center">
+                <div class="stat-number text-mono">94%</div>
+                <div class="stat-label">Average Engagement Rate</div>
+                <div class="stat-description text-body-sm">
+                  Industry-leading audience interaction
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card card">
+              <div class="card__body text-center">
+                <div class="stat-number text-mono">2.5M</div>
+                <div class="stat-label">Peak Single Video Views</div>
+                <div class="stat-description text-body-sm">
+                  Record-breaking Derby highlights
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card card">
+              <div class="card__body text-center">
+                <div class="stat-number text-mono">15+</div>
+                <div class="stat-label">Video Formats Mastered</div>
+                <div class="stat-description text-body-sm">
+                  From short reels to documentaries
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Production Process -->
+      <section class="section process-section">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="text-headline-1 section__title">
+              From Concept to Viral Content
+            </h2>
+            <p class="text-body-lg section__subtitle">
+              Our proven video production process delivers results every time.
+            </p>
+          </header>
+
+          <div class="production-timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 11H1v3h8v8h2v-8h8v-2h-8V3H9v8z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h3 class="text-title-2 mb-2">Pre-Production Planning</h3>
+                <p class="text-body mb-3">
+                  Strategic planning, storyboarding, and shot lists tailored to
+                  your club's narrative.
+                </p>
+                <ul class="process-features">
+                  <li>Content strategy development</li>
+                  <li>Storyboard creation</li>
+                  <li>Equipment preparation</li>
+                  <li>Location scouting</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M23 7l-7 5 7 5V7z" />
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                  </svg>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h3 class="text-title-2 mb-2">Professional Filming</h3>
+                <p class="text-body mb-3">
+                  Multi-camera setups, drone footage, and professional audio
+                  capture.
+                </p>
+                <ul class="process-features">
+                  <li>4K video production</li>
+                  <li>Drone cinematography</li>
+                  <li>Professional audio recording</li>
+                  <li>Multiple angle coverage</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 20h9" />
+                    <path
+                      d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h3 class="text-title-2 mb-2">Post-Production Magic</h3>
+                <p class="text-body mb-3">
+                  Advanced editing, color grading, and motion graphics that
+                  bring stories to life.
+                </p>
+                <ul class="process-features">
+                  <li>Professional video editing</li>
+                  <li>Color correction & grading</li>
+                  <li>Motion graphics integration</li>
+                  <li>Audio mixing & mastering</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                  </svg>
+                </div>
+              </div>
+              <div class="timeline-content">
+                <h3 class="text-title-2 mb-2">Distribution & Analytics</h3>
+                <p class="text-body mb-3">
+                  Platform optimization and performance tracking for maximum
+                  impact.
+                </p>
+                <ul class="process-features">
+                  <li>Multi-platform formatting</li>
+                  <li>SEO optimization</li>
+                  <li>Performance analytics</li>
+                  <li>Engagement monitoring</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Equipment & Technology -->
+      <section class="section tech-section">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="text-headline-1 section__title">
+              Championship-Level Equipment
+            </h2>
+            <p class="text-body-lg section__subtitle">
+              Professional-grade technology for broadcast-quality results.
+            </p>
+          </header>
+
+          <div class="tech-grid">
+            <div class="tech-category">
+              <h3 class="text-title-1 mb-3">Camera Systems</h3>
+              <div class="tech-list">
+                <div class="tech-item">
+                  <strong>Sony FX6 Cinema Line</strong>
+                  <span>Professional 4K recording</span>
+                </div>
+                <div class="tech-item">
+                  <strong>DJI Ronin 4D</strong>
+                  <span>Stabilized cinematic shots</span>
+                </div>
+                <div class="tech-item">
+                  <strong>DJI Air 2S Drone</strong>
+                  <span>Aerial cinematography</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-category">
+              <h3 class="text-title-1 mb-3">Audio Equipment</h3>
+              <div class="tech-list">
+                <div class="tech-item">
+                  <strong>Zoom F6 Recorder</strong>
+                  <span>Multi-track field recording</span>
+                </div>
+                <div class="tech-item">
+                  <strong>Sennheiser MKE 600</strong>
+                  <span>Broadcast-quality microphones</span>
+                </div>
+                <div class="tech-item">
+                  <strong>Rode Wireless Pro</strong>
+                  <span>Wireless audio systems</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-category">
+              <h3 class="text-title-1 mb-3">Post-Production</h3>
+              <div class="tech-list">
+                <div class="tech-item">
+                  <strong>DaVinci Resolve Studio</strong>
+                  <span>Professional editing & grading</span>
+                </div>
+                <div class="tech-item">
+                  <strong>After Effects</strong>
+                  <span>Motion graphics & VFX</span>
+                </div>
+                <div class="tech-item">
+                  <strong>Pro Tools</strong>
+                  <span>Audio post-production</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section cta-section">
+        <div class="container">
+          <div class="cta-content text-center">
+            <h2 class="text-headline-1 mb-3">
+              Ready to Create Viral Video Content?
+            </h2>
+            <p class="text-body-lg mb-5">
+              Let's tell your club's story through powerful video content that
+              engages and inspires.
+            </p>
+            <div class="cta-actions">
+              <a href="index.html#contact" class="btn btn--primary btn--large">
+                Start Your Video Project
+              </a>
+              <a href="graphics.html" class="btn btn--secondary btn--large">
+                Explore Graphics
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3 class="text-title-1 mb-2">PLATINUM MEDIA</h3>
+            <p class="text-body-sm">
+              Championship-level football content.<br />
+              Based in Belgrade, Serbia.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="text-subtitle mb-2">Services</h4>
+              <ul class="footer-menu">
+                <li>
+                  <a href="graphics.html" class="footer-link">Graphics</a>
+                </li>
+                <li><a href="#videos" class="footer-link">Videos</a></li>
+                <li>
+                  <a href="index.html#contact" class="footer-link">Strategy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4 class="text-subtitle mb-2">Company</h4>
+              <ul class="footer-menu">
+                <li>
+                  <a href="index.html#about" class="footer-link">About</a>
+                </li>
+                <li>
+                  <a href="index.html#contact" class="footer-link">Contact</a>
+                </li>
+                <li><a href="#" class="footer-link">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="text-caption">
+            © 2025 Platinum Media. All rights reserved.
+          </p>
+          <p class="text-caption">Belgrade, Serbia</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/videos-page.js" defer></script>
+  </body>
+</html>
