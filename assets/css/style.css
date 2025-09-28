@@ -462,13 +462,9 @@ a:hover {
   top: 0;
 }
 
-/* Navbar collapse animation */
-.navbar-collapse {
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/* Smooth Navbar collapse animation - Work with Bootstrap */
 .navbar-collapse.collapsing {
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height 0.3s ease-in-out;
   overflow: hidden;
 }
 

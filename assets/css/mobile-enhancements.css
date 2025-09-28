@@ -223,13 +223,16 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     overflow: hidden;
   }
 
+  /* Mobile navbar smooth animation */
   .navbar-collapse.collapsing {
-    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: height 0.3s ease-in-out;
   }
 
   .navbar-nav {
     gap: var(--space-md);
   }
+
+  /* Remove conflicting nav link animations */
 
   /* Mobile sections */
   .section-platinum {
