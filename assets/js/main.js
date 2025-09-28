@@ -155,6 +155,32 @@ function initializeWorkFilters() {
                         </div>
                     </article>
                 </div>
+                 <div class="col-12 col-md col-lg">
+                    <article class="work-item-platinum">
+                        <div class="work-item-image">
+                            <div class="sample-graphics" style="width: 100%; height: 100%;"></div>
+                            <div class="work-item-overlay">
+                                <div class="work-item-content">
+                                    <h4 class="work-item-title">Player Highlight</h4>
+                                    <p class="work-item-category">Social Media Graphics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                 <div class="col-12 col-md col-lg">
+                    <article class="work-item-platinum">
+                        <div class="work-item-image">
+                            <div class="sample-graphics" style="width: 100%; height: 100%;"></div>
+                            <div class="work-item-overlay">
+                                <div class="work-item-content">
+                                    <h4 class="work-item-title">Player Highlight</h4>
+                                    <p class="work-item-category">Social Media Graphics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
                 <div class="col-12 col-md col-lg">
                     <article class="work-item-platinum">
                         <div class="work-item-image">
@@ -224,6 +250,32 @@ function initializeWorkFilters() {
         `,
     videos: `
             <div class="row g-4">
+                <div class="col-12 col-md col-lg">
+                    <article class="work-item-platinum">
+                        <div class="work-item-image">
+                            <div class="sample-video" style="width: 100%; height: 100%;"></div>
+                            <div class="work-item-overlay">
+                                <div class="work-item-content">
+                                    <h4 class="work-item-title">Highlight Reel</h4>
+                                    <p class="work-item-category">Player Showcase</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md col-lg">
+                    <article class="work-item-platinum">
+                        <div class="work-item-image">
+                            <div class="sample-video" style="width: 100%; height: 100%;"></div>
+                            <div class="work-item-overlay">
+                                <div class="work-item-content">
+                                    <h4 class="work-item-title">Highlight Reel</h4>
+                                    <p class="work-item-category">Player Showcase</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
                 <div class="col-12 col-md col-lg">
                     <article class="work-item-platinum">
                         <div class="work-item-image">
