@@ -146,7 +146,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/showcase-1.webp"
+                                src="assets/img/showcase/showcase-1.webp"
                                 alt="Player Highlight Graphic Design"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -166,7 +166,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                               src="/assets/img/showcase/showcase-2.webp"
+                               src="assets/img/showcase/showcase-2.webp"
                                 alt="Match Day Graphics Design"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -186,7 +186,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/showcase-3.webp"
+                                src="assets/img/showcase/showcase-3.webp"
                                 alt="Team Branding Design"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -206,7 +206,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                               src="/assets/img/showcase/showcase-4.webp"
+                               src="assets/img/showcase/showcase-4.webp"
                                 alt="Player Statistics Infographic"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -226,7 +226,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                               src="/assets/img/showcase/showcase-5.webp"
+                               src="assets/img/showcase/showcase-5.webp"
                                 alt="Season Announcement Campaign"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -246,7 +246,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/showcase-6.webp"
+                                src="assets/img/showcase/showcase-6.webp"
                                 alt="Player Highlight Graphic Design"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -266,7 +266,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                               src="/assets/img/showcase/showcase-7.webp"
+                               src="assets/img/showcase/showcase-7.webp"
                                 alt="Match Day Graphics Design"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -286,7 +286,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                               src="/assets/img/showcase/showcase-8.webp"
+                               src="assets/img/showcase/showcase-8.webp"
                                 alt="Team Branding Design"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -306,7 +306,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                               src="/assets/img/showcase/showcase-9.webp"
+                               src="assets/img/showcase/showcase-9.webp"
                                 alt="Player Statistics Infographic"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -326,7 +326,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/showcase-10.webp"
+                                src="assets/img/showcase/showcase-10.webp"
                                 alt="Season Announcement Campaign"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -350,7 +350,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/highlight-reel.webp"
+                                src="assets/img/showcase/highlight-reel.webp"
                                 alt="Player Highlight Reel Video"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -370,7 +370,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/training-montage.webp"
+                                src="assets/img/showcase/training-montage.webp"
                                 alt="Training Montage Video"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
@@ -390,7 +390,7 @@ function initializeWorkFilters() {
                     <article class="work-item-platinum">
                         <div class="work-item-image">
                             <img
-                                src="/assets/img/showcase/match-recap.webp"
+                                src="assets/img/showcase/match-recap.webp"
                                 alt="Match Recap Video"
                                 class="lightbox-trigger work-image"
                                 data-lightbox="gallery"
