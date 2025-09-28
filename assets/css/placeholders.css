@@ -1,0 +1,322 @@
+/*
+==============================================
+PLATINUM MEDIA - PLACEHOLDER IMAGES & CONTENT
+==============================================
+*/
+
+/* PLACEHOLDER IMAGE SYSTEM */
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-glow);
+  opacity: 0.3;
+}
+
+.placeholder-image::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' opacity='0.3' viewBox='0 0 24 24'><path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/></svg>") center/cover;
+  z-index: 1;
+}
+
+/* Specific placeholder types */
+.placeholder-graphics {
+  background: linear-gradient(135deg, var(--deep-black) 0%, var(--pitch-green) 30%, var(--interface-black) 100%);
+}
+
+.placeholder-video {
+  background: linear-gradient(135deg, var(--interface-black) 0%, var(--deep-black) 50%, var(--charcoal) 100%);
+}
+
+.placeholder-video::after {
+  content: '';
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' opacity='0.4' viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg>") center/cover;
+}
+
+.placeholder-logo {
+  background: var(--gradient-primary);
+  color: var(--deep-black);
+  font-family: var(--header-font);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.placeholder-logo::before,
+.placeholder-logo::after {
+  display: none;
+}
+
+/* CONTENT PLACEHOLDERS */
+.placeholder-content {
+  background: var(--glass-light);
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  margin: var(--space-sm) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.placeholder-text {
+  height: 1em;
+  background: var(--steel-gray);
+  border-radius: 4px;
+  opacity: 0.3;
+}
+
+.placeholder-text-short {
+  width: 60%;
+}
+
+.placeholder-text-medium {
+  width: 80%;
+}
+
+.placeholder-text-long {
+  width: 100%;
+}
+
+/* SAMPLE CONTENT FOR DEVELOPMENT */
+.sample-graphics {
+  background: linear-gradient(135deg,
+    var(--pitch-green) 0%,
+    var(--interface-black) 30%,
+    var(--deep-black) 60%,
+    var(--charcoal) 100%);
+  position: relative;
+}
+
+.sample-graphics::before {
+  content: 'GRAPHICS';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  font-family: var(--header-font);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--bright-white);
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  text-shadow: var(--shadow-text);
+}
+
+.sample-video {
+  background: linear-gradient(135deg,
+    var(--charcoal) 0%,
+    var(--interface-black) 40%,
+    var(--deep-black) 100%);
+  position: relative;
+}
+
+.sample-video::before {
+  content: 'VIDEO';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  font-family: var(--header-font);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--bright-white);
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  text-shadow: var(--shadow-text);
+}
+
+.sample-video::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid rgba(255, 255, 255, 0.4);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+/* ABOUT IMAGE PLACEHOLDER */
+.sample-about {
+  background: linear-gradient(135deg,
+    var(--interface-black) 0%,
+    var(--pitch-green) 20%,
+    var(--deep-black) 40%,
+    var(--charcoal) 70%,
+    var(--interface-black) 100%);
+  position: relative;
+}
+
+.sample-about::before {
+  content: 'BELGRADE';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--header-font);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--bright-white);
+  opacity: 0.4;
+  letter-spacing: 0.1em;
+}
+
+.sample-about::after {
+  content: 'SERBIA 🇷🇸';
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--subheader-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--warm-white);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
+/* FAVICON PLACEHOLDER */
+.favicon-placeholder {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--header-font);
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--deep-black);
+}
+
+.favicon-placeholder::before {
+  content: 'PM';
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .sample-graphics::before,
+  .sample-video::before {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .sample-about::before {
+    font-size: 1rem;
+    top: 35%;
+  }
+
+  .sample-about::after {
+    font-size: 0.8rem;
+    top: 55%;
+  }
+
+  .placeholder-image::after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* LOADING STATES */
+.loading-placeholder {
+  background: var(--glass-light);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent);
+  animation: loading-shimmer 2s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* LAZY LOADING PLACEHOLDER */
+.lazy-placeholder {
+  background: var(--gradient-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--body-font);
+  color: var(--steel-gray);
+  font-size: 0.875rem;
+  transition: all var(--duration-fast) var(--easing);
+}
+
+.lazy-placeholder.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* HIGH CONTRAST MODE ADJUSTMENTS */
+@media (prefers-contrast: high) {
+  .placeholder-image::after {
+    opacity: 0.8;
+  }
+
+  .sample-graphics::before,
+  .sample-video::before,
+  .sample-about::before,
+  .sample-about::after {
+    opacity: 0.9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}

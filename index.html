@@ -1,548 +1,932 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Platinum Media - Digital Creative Agency | Belgrade, Serbia</title>
+    <meta
+      name="description"
+      content="Platinum Media - Premier creative agency from Belgrade, Serbia specializing in graphics and videos for football players. Professional digital content for football excellence."
+    />
+    <meta
+      name="keywords"
+      content="football graphics, video production, creative agency, Belgrade, Serbia, social media content, sports marketing"
+    />
+    <meta name="author" content="Platinum Media" />
 
-    <!-- Performance Optimization -->
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Platinum Media - Creative Agency for Football Excellence"
+    />
+    <meta
+      property="og:description"
+      content="Premium digital content for football players and brands. Graphics, videos, and brand identity from Belgrade, Serbia."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://platinum-media.com" />
+    <meta property="og:image" content="assets/img/og-image.webp" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Platinum Media - Creative Agency" />
+    <meta
+      name="twitter:description"
+      content="Premium digital content for football excellence"
+    />
+
+    <title>
+      Platinum Media - Creative Agency for Football Excellence | Belgrade,
+      Serbia
+    </title>
+
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-    <!-- Typography -->
+    <!-- Font imports -->
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@600&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Bootstrap 5.3 -->
+    <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/grid-system.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/placeholders.css" />
+    <link rel="stylesheet" href="assets/css/mobile-enhancements.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Meta Tags for SEO -->
-    <meta
-      name="description"
-      content="Platinum Media - Premier digital creative agency in Belgrade, Serbia. Specializing in cutting-edge digital experiences, brand identity, and creative campaigns."
-    />
-    <meta
-      name="keywords"
-      content="digital agency, creative agency, Belgrade, Serbia, branding, digital design"
-    />
-    <meta
-      property="og:title"
-      content="Platinum Media - Digital Creative Agency"
-    />
-    <meta
-      property="og:description"
-      content="Premier digital creative agency in Belgrade, Serbia"
-    />
-    <meta property="og:type" content="website" />
-
     <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFFFFF'/><rect x='10' y='10' width='80' height='80' fill='%230D0D0D'/></svg>"
-    />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-      <div class="container-fluid px-4">
-        <a class="navbar-brand" href="#home" data-scroll-target="home">
-          <div class="brand-container">
-            <span class="brand-text">PLATINUM</span>
-            <span class="brand-subtext">MEDIA</span>
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <div class="container-xxl">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#" aria-label="Platinum Media - Home">
+            <div
+              class="placeholder-logo"
+              style="
+                width: auto;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              PLATINUM MEDIA
+            </div>
+          </a>
+
+          <!-- Mobile menu toggle -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Menu -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html" aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="graphics/">Graphics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos/">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
           </div>
-        </a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home" data-scroll-target="home"
-                >HOME</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="graphics.html">GRAPHICS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="video.html">VIDEOS</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                OTHER
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#about"
-                    data-scroll-target="about"
-                    >ABOUT</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#services"
-                    data-scroll-target="services"
-                    >SERVICES</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#portfolio"
-                    data-scroll-target="portfolio"
-                    >WORK</a
-                  >
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#contact"
-                    data-scroll-target="contact"
-                    >CONTACT</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="field-grid" id="fieldGrid"></div>
-      <div class="hero-content">
-        <div class="container">
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-background" aria-hidden="true">
+          <div class="grid-overlay"></div>
+        </div>
+        <div class="container-xxl">
           <div class="row align-items-center min-vh-100">
-            <div class="col-lg-8">
-              <div class="hero-text" data-aos="fade-up">
-                <h1 class="hero-title">
-                  <span class="hero-line" data-delay="0">DIGITAL</span>
-                  <span class="hero-line" data-delay="200">CREATIVE</span>
-                  <span class="hero-line highlight" data-delay="400"
-                    >AGENCY</span
-                  >
+            <!-- Left Side - Content -->
+            <div class="col-12 col-lg-6">
+              <div class="hero-content">
+                <h1 id="hero-heading" class="hero-title">
+                  Premium digital content for football excellence
                 </h1>
-                <p class="hero-subtitle" data-delay="600">
-                  Crafting premium digital experiences that score big.<br />
-                  Based in Belgrade, competing globally.
+                <p class="hero-subtitle">
+                  Creative agency crafting stunning graphics and videos for
+                  players and brands
                 </p>
-                <div class="hero-cta" data-delay="800">
+                <div class="hero-cta">
                   <a
-                    href="#portfolio"
-                    class="btn-primary-custom"
-                    data-scroll-target="portfolio"
+                    href="graphics/"
+                    class="btn-platinum btn-platinum-primary btn-platinum-medium"
+                    role="button"
                   >
-                    <span>VIEW OUR WORK</span>
-                    <div class="btn-arrow">→</div>
+                    <span class="btn-text">View Graphics</span>
+                  </a>
+                  <a
+                    href="videos/"
+                    class="btn-platinum btn-platinum-ghost btn-platinum-medium"
+                    role="button"
+                  >
+                    <span class="btn-text">Watch Videos</span>
+                  </a>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="hero-socials">
+                  <a
+                    href="https://www.instagram.com/platinum.media_/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow us on Instagram"
+                    class="social-link"
+                  >
+                    <svg
+                      class="social-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="mailto:info@platinum-media.com"
+                    aria-label="Contact us via email"
+                    class="social-link"
+                  >
+                    <svg
+                      class="social-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+
+            <!-- Right Side - Graphics Showcase -->
+            <div class="col-12 col-lg-6">
+              <div class="hero-showcase">
+                <div class="showcase-container">
+                  <!-- Main Featured Graphic -->
+                  <div class="featured-graphic">
+                    <div class="graphic-frame">
+                      <div
+                        class="sample-graphics"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          border-radius: var(--border-radius-lg);
+                        "
+                      ></div>
+                      <div class="graphic-overlay">
+                        <span class="graphic-badge">Featured Work</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Floating Graphics -->
+                  <div class="floating-graphic floating-graphic-1">
+                    <div
+                      class="sample-graphics"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        border-radius: var(--border-radius);
+                      "
+                    ></div>
+                  </div>
+                  <div class="floating-graphic floating-graphic-2">
+                    <div
+                      class="sample-video"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        border-radius: var(--border-radius);
+                      "
+                    ></div>
+                  </div>
+                  <div class="floating-graphic floating-graphic-3">
+                    <div
+                      class="sample-graphics"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        border-radius: var(--border-radius);
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section
+        class="section-platinum section-platinum-dark pitch-grid"
+        aria-labelledby="services-heading"
+      >
+        <div class="section-platinum-content">
+          <div class="container-xxl">
+            <div class="section-header">
+              <h2 id="services-heading" class="section-title-platinum">
+                Our Services
+              </h2>
+              <p class="section-subtitle-platinum">
+                Comprehensive digital solutions for football professionals
+              </p>
+            </div>
+            <div class="row g-4">
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card-platinum">
+                  <div class="card-platinum-content">
+                    <div class="card-platinum-icon" aria-hidden="true">
+                      <svg
+                        class="icon"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="card-platinum-title">Graphics Design</h3>
+                    <p class="card-platinum-description">
+                      Premium visual content for social media that captures
+                      attention and drives engagement.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card-platinum">
+                  <div class="card-platinum-content">
+                    <div class="card-platinum-icon" aria-hidden="true">
+                      <svg
+                        class="icon"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="card-platinum-title">Video Production</h3>
+                    <p class="card-platinum-description">
+                      Professional highlight reels and promotional content that
+                      showcases athletic excellence.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card-platinum">
+                  <div class="card-platinum-content">
+                    <div class="card-platinum-icon" aria-hidden="true">
+                      <svg
+                        class="icon"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="card-platinum-title">
+                      Brand <br />
+                      Identity
+                    </h3>
+                    <p class="card-platinum-description">
+                      Complete visual identity packages that establish
+                      professional presence and recognition.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card-platinum">
+                  <div class="card-platinum-content">
+                    <div class="card-platinum-icon" aria-hidden="true">
+                      <svg
+                        class="icon"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M16 4l-4-4-4 4v2c0 4.42 3.58 8 8 8s8-3.58 8-8V4h-8zm0 10c-2.21 0-4-1.79-4-4V6h8v4c0 2.21-1.79 4-4 4z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="card-platinum-title">Social Media Management</h3>
+                    <p class="card-platinum-description">
+                      Strategic content planning and execution to maximize reach
+                      and fan engagement.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Work Section -->
+      <section class="featured-work" aria-labelledby="work-heading">
+        <div class="container-xxl">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 id="work-heading" class="section-title">Featured Work</h2>
+              <p class="section-subtitle">
+                Showcasing our latest projects and creative excellence
+              </p>
+            </div>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="row justify-content-center mb-4">
+            <div class="col-auto">
               <div
-                class="hero-visual"
-                data-aos="fade-left"
-                data-aos-delay="400"
+                class="filter-platinum"
+                role="tablist"
+                aria-label="Work categories"
               >
-                <div class="floating-elements">
-                  <div class="element element-1">◻️</div>
-                  <div class="element element-2">◼️</div>
-                  <div class="element element-3">◻️</div>
-                </div>
+                <button
+                  class="filter-btn-platinum active"
+                  data-filter="graphics"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="graphics-content"
+                  id="graphics-tab"
+                >
+                  <span>Graphics</span>
+                </button>
+                <button
+                  class="filter-btn-platinum"
+                  data-filter="videos"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="videos-content"
+                  id="videos-tab"
+                >
+                  <span>Videos</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Grid -->
+          <div
+            class="work-grid"
+            role="tabpanel"
+            aria-labelledby="graphics-tab"
+            id="graphics-content"
+          >
+            <div class="row g-4">
+              <div class="col-12 col-md-6 col-lg-4">
+                <article class="work-item">
+                  <div class="work-image">
+                    <img
+                      src="assets/img/showcase/graphic-1.webp"
+                      alt="Player highlight graphic design"
+                      loading="lazy"
+                    />
+                    <div class="work-overlay">
+                      <h4 class="work-title">Player Highlight</h4>
+                      <p class="work-category">Social Media Graphics</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <article class="work-item">
+                  <div class="work-image">
+                    <img
+                      src="assets/img/showcase/graphic-2.webp"
+                      alt="Match day graphics design"
+                      loading="lazy"
+                    />
+                    <div class="work-overlay">
+                      <h4 class="work-title">Match Day Graphics</h4>
+                      <p class="work-category">Event Promotion</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <article class="work-item">
+                  <div class="work-image">
+                    <img
+                      src="assets/img/showcase/graphic-3.webp"
+                      alt="Team branding design"
+                      loading="lazy"
+                    />
+                    <div class="work-overlay">
+                      <h4 class="work-title">Team Branding</h4>
+                      <p class="work-category">Brand Identity</p>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="scroll-line"></div>
-        <span class="scroll-text">SCROLL</span>
-      </div>
-    </section>
+      </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="section-header">
-              <h2 class="section-title">ABOUT THE GAME</h2>
-              <div class="title-line"></div>
-            </div>
-            <div class="about-content">
-              <p class="lead-text">
-                We are Platinum Media, a digital creative agency based in the
-                heart of Belgrade, Serbia. Like a championship team, we combine
-                strategy, creativity, and execution to deliver winning digital
-                experiences.
+      <!-- About Section -->
+      <section class="about" aria-labelledby="about-heading" id="about">
+        <div class="container-xxl">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+              <h2 id="about-heading" class="section-title">
+                About Platinum Media
+              </h2>
+              <p class="about-text">
+                Based in Belgrade, Serbia, Platinum Media is a premier creative
+                agency dedicated to elevating football players and brands
+                through stunning visual content. We combine artistic excellence
+                with deep understanding of sports culture to create graphics and
+                videos that resonate with fans worldwide.
               </p>
-              <p>
-                Our field of play spans brand identity, digital campaigns, web
-                experiences, and visual storytelling. Every project is
-                approached with the precision of a perfectly executed play and
-                the creativity of an unexpected game-changer.
+              <p class="about-text">
+                Our passion for football drives everything we do. From social
+                media graphics that capture the intensity of the game to
+                promotional videos that tell compelling stories, we help
+                athletes and brands connect with their audiences in meaningful
+                ways.
               </p>
-              <div class="stats-grid">
+              <div class="about-stats">
                 <div class="stat-item">
-                  <h3 class="stat-number" data-counter="150">0</h3>
-                  <p class="stat-label">Projects Completed</p>
+                  <div class="stat-icon" aria-hidden="true">
+                    <svg
+                      class="icon"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span class="stat-number">100+</span>
+                  <span class="stat-label">Projects Completed</span>
                 </div>
                 <div class="stat-item">
-                  <h3 class="stat-number" data-counter="50">0</h3>
-                  <p class="stat-label">Happy Clients</p>
-                </div>
-                <div class="stat-item">
-                  <h3 class="stat-number" data-counter="5">0</h3>
-                  <p class="stat-label">Years Experience</p>
+                  <div class="stat-icon" aria-hidden="true">
+                    <svg
+                      class="icon"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Athletes Served</span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="about-visual">
-              <div class="pitch-diagram">
-                <div class="pitch-container">
-                  <div class="pitch-field">
-                    <div class="field-line center-line"></div>
-                    <div class="field-line goal-line left"></div>
-                    <div class="field-line goal-line right"></div>
-                    <div class="center-circle"></div>
-                    <div class="goal-area left"></div>
-                    <div class="goal-area right"></div>
-                  </div>
-                  <div class="location-marker">
-                    <span>📍 BELGRADE, SERBIA 🇷🇸</span>
-                  </div>
-                </div>
+            <div class="col-12 col-lg-6">
+              <div class="about-image">
+                <div
+                  class="sample-about"
+                  style="
+                    width: 100%;
+                    height: 300px;
+                    border-radius: var(--border-radius-lg);
+                    overflow: hidden;
+                  "
+                ></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-interface-black">
-      <div class="container">
-        <div class="row">
-          <div class="col-12" data-aos="fade-up">
-            <div class="section-header text-center mb-5">
-              <h2 class="section-title">OUR PLAYBOOK</h2>
-              <div class="title-line mx-auto"></div>
+      <!-- Contact Section -->
+      <section class="contact" aria-labelledby="contact-heading" id="contact">
+        <div class="container-xxl">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 id="contact-heading" class="section-title">Get In Touch</h2>
               <p class="section-subtitle">
-                Strategic services that deliver championship results
+                Ready to elevate your digital presence? Let's create something
+                amazing together.
               </p>
             </div>
           </div>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-            <div class="service-card">
-              <div class="service-icon">
-                <div class="icon-shape">🎨</div>
-              </div>
-              <h3 class="service-title">BRAND IDENTITY</h3>
-              <p class="service-description">
-                Crafting distinctive visual identities that stand out in the
-                digital arena. From logos to complete brand systems.
-              </p>
-              <div class="service-features">
-                <span class="feature-tag">Logo Design</span>
-                <span class="feature-tag">Brand Guidelines</span>
-                <span class="feature-tag">Visual Systems</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="service-card">
-              <div class="service-icon">
-                <div class="icon-shape">💻</div>
-              </div>
-              <h3 class="service-title">WEB EXPERIENCES</h3>
-              <p class="service-description">
-                Responsive, high-performance websites that convert visitors into
-                champions. Every pixel optimized for impact.
-              </p>
-              <div class="service-features">
-                <span class="feature-tag">Web Design</span>
-                <span class="feature-tag">Development</span>
-                <span class="feature-tag">E-commerce</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div class="service-card">
-              <div class="service-icon">
-                <div class="icon-shape">📱</div>
-              </div>
-              <h3 class="service-title">DIGITAL CAMPAIGNS</h3>
-              <p class="service-description">
-                Strategic digital marketing campaigns that score goals. Social
-                media, content creation, and performance marketing.
-              </p>
-              <div class="service-features">
-                <span class="feature-tag">Social Media</span>
-                <span class="feature-tag">Content Strategy</span>
-                <span class="feature-tag">Performance Marketing</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12" data-aos="fade-up">
-            <div class="section-header text-center mb-5">
-              <h2 class="section-title">CHAMPIONSHIP PLAYS</h2>
-              <div class="title-line mx-auto"></div>
-              <p class="section-subtitle">
-                A showcase of our winning projects and creative victories
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-grid">
-          <div
-            class="portfolio-item large"
-            data-aos="fade-up"
-            data-aos-delay="0"
-          >
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <div class="image-placeholder">
-                  <span class="placeholder-text">FEATURED PROJECT</span>
-                </div>
-                <div class="portfolio-overlay">
-                  <h3 class="portfolio-title">LUXURY BRAND IDENTITY</h3>
-                  <p class="portfolio-category">Branding • Visual Identity</p>
-                  <div class="portfolio-cta">
-                    <span>VIEW PROJECT</span>
-                    <div class="cta-arrow">→</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <div class="image-placeholder">
-                  <span class="placeholder-text">WEB DESIGN</span>
-                </div>
-                <div class="portfolio-overlay">
-                  <h3 class="portfolio-title">E-COMMERCE PLATFORM</h3>
-                  <p class="portfolio-category">Web Design • Development</p>
-                  <div class="portfolio-cta">
-                    <span>VIEW PROJECT</span>
-                    <div class="cta-arrow">→</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <div class="image-placeholder">
-                  <span class="placeholder-text">CAMPAIGN</span>
-                </div>
-                <div class="portfolio-overlay">
-                  <h3 class="portfolio-title">SOCIAL MEDIA CAMPAIGN</h3>
-                  <p class="portfolio-category">Digital Marketing • Content</p>
-                  <div class="portfolio-cta">
-                    <span>VIEW PROJECT</span>
-                    <div class="cta-arrow">→</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
-            <div class="portfolio-card">
-              <div class="portfolio-image">
-                <div class="image-placeholder">
-                  <span class="placeholder-text">MOBILE APP</span>
-                </div>
-                <div class="portfolio-overlay">
-                  <h3 class="portfolio-title">MOBILE APPLICATION</h3>
-                  <p class="portfolio-category">UI/UX Design • Development</p>
-                  <div class="portfolio-cta">
-                    <span>VIEW PROJECT</span>
-                    <div class="cta-arrow">→</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-interface-black">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="section-header">
-              <h2 class="section-title">LET'S PLAY TOGETHER</h2>
-              <div class="title-line"></div>
-            </div>
-            <div class="contact-content">
-              <p class="lead-text">
-                Ready to create something extraordinary? Let's discuss your
-                project and score big in the digital arena.
-              </p>
-              <div class="contact-info">
-                <div class="contact-item">
-                  <div class="contact-label">LOCATION</div>
-                  <div class="contact-value">Belgrade, Serbia 🇷🇸</div>
-                </div>
-                <div class="contact-item">
-                  <div class="contact-label">EMAIL</div>
-                  <div class="contact-value">hello@platinummedia.rs</div>
-                </div>
-                <div class="contact-item">
-                  <div class="contact-label">INSTAGRAM</div>
-                  <div class="contact-value">@platinum.media</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <form class="contact-form" id="contactForm">
-              <div class="row g-4">
-                <div class="col-md-6">
-                  <div class="form-group">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+              <form class="contact-form" action="#" method="POST" novalidate>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="name" class="form-label">Name *</label>
                     <input
                       type="text"
                       class="form-control"
                       id="name"
                       name="name"
                       required
+                      aria-describedby="name-error"
                     />
-                    <label for="name" class="form-label">NAME</label>
+                    <div class="invalid-feedback" id="name-error">
+                      Please provide your name.
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
+                  <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">Email *</label>
                     <input
                       type="email"
                       class="form-control"
                       id="email"
                       name="email"
                       required
+                      aria-describedby="email-error"
                     />
-                    <label for="email" class="form-label">EMAIL</label>
+                    <div class="invalid-feedback" id="email-error">
+                      Please provide a valid email.
+                    </div>
                   </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="subject"
-                      name="subject"
-                      required
-                    />
-                    <label for="subject" class="form-label">PROJECT TYPE</label>
+                  <div class="col-12">
+                    <label for="project-type" class="form-label"
+                      >Project Type</label
+                    >
+                    <select
+                      class="form-select"
+                      id="project-type"
+                      name="project-type"
+                    >
+                      <option value="">Select a service...</option>
+                      <option value="graphics">Graphics Design</option>
+                      <option value="videos">Video Production</option>
+                      <option value="branding">Brand Identity</option>
+                      <option value="social-media">
+                        Social Media Management
+                      </option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group">
+                  <div class="col-12">
+                    <label for="message" class="form-label">Message *</label>
                     <textarea
                       class="form-control"
                       id="message"
                       name="message"
-                      rows="5"
+                      rows="4"
                       required
+                      aria-describedby="message-error"
                     ></textarea>
-                    <label for="message" class="form-label">MESSAGE</label>
+                    <div class="invalid-feedback" id="message-error">
+                      Please tell us about your project.
+                    </div>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button
+                      type="submit"
+                      class="btn-platinum btn-platinum-primary btn-platinum-large"
+                    >
+                      <span class="btn-text">Send Message</span>
+                    </button>
                   </div>
                 </div>
-                <div class="col-12">
-                  <button type="submit" class="btn-primary-custom w-100">
-                    <span>SEND MESSAGE</span>
-                    <div class="btn-arrow">→</div>
-                  </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="row mt-5">
+            <div class="col-12 col-md-4 text-center">
+              <div class="contact-info">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg
+                    class="icon"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                </div>
+                <h4>Location</h4>
+                <p>Belgrade, Serbia</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+              <div class="contact-info">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg
+                    class="icon"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </div>
+                <h4>Email</h4>
+                <p>
+                  <a href="mailto:info@platinum-media.com"
+                    >info@platinum-media.com</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+              <div class="contact-info">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg
+                    class="icon"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </div>
+                <h4>Social Media</h4>
+                <p>
+                  <a
+                    href="https://www.instagram.com/platinum.media_/"
+                    target="_blank"
+                    rel="noopener"
+                    >@platinum.media_</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-platinum" role="contentinfo">
+      <div class="footer-main">
+        <div class="container-xxl">
+          <div class="row g-4">
+            <!-- Brand Section -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="footer-brand">
+                <div class="footer-logo">
+                  <div
+                    class="placeholder-logo"
+                    style="
+                      width: auto;
+                      height: 40px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      font-size: 1.25rem;
+                      font-weight: 900;
+                      color: var(--deep-black);
+                      background: var(--gradient-primary);
+                      padding: var(--space-sm) var(--space-md);
+                      border-radius: var(--border-radius);
+                    "
+                  >
+                    PLATINUM MEDIA
+                  </div>
+                </div>
+                <p class="footer-tagline">
+                  Premium digital content for football excellence. Creative
+                  agency crafting stunning graphics and videos for players and
+                  brands.
+                </p>
+              </div>
+            </div>
+
+            <!-- Services Links -->
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <nav class="footer-nav" aria-label="Services navigation">
+                  <ul class="footer-links">
+                    <li><a href="graphics/">Graphics Design</a></li>
+                    <li><a href="videos/">Video Production</a></li>
+                    <li><a href="#services">Brand Identity</a></li>
+                    <li><a href="#services">Social Media</a></li>
+                    <li><a href="#contact">Custom Projects</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+            <!-- Portfolio Links -->
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="footer-section">
+                <h4 class="footer-title">Portfolio</h4>
+                <nav class="footer-nav" aria-label="Portfolio navigation">
+                  <ul class="footer-links">
+                    <li><a href="graphics/">Player Graphics</a></li>
+                    <li><a href="graphics/">Team Branding</a></li>
+                    <li><a href="videos/">Highlight Reels</a></li>
+                    <li><a href="videos/">Promotional Videos</a></li>
+                    <li><a href="#work">Featured Work</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+            <!-- Social & Connect -->
+            <div class="col-12 col-md-6 col-lg-2">
+              <div class="footer-section">
+                <h4 class="footer-title">Connect</h4>
+                <div class="footer-social">
+                  <a
+                    href="https://www.instagram.com/platinum.media_/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow us on Instagram"
+                    class="footer-social-link"
+                  >
+                    <svg
+                      class="footer-social-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      />
+                    </svg>
+                    <span>Instagram</span>
+                  </a>
+                  <a
+                    href="mailto:info@platinum-media.com"
+                    aria-label="Contact us via email"
+                    class="footer-social-link"
+                  >
+                    <svg
+                      class="footer-social-icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      />
+                    </svg>
+                    <span>Email</span>
+                  </a>
+                </div>
+                <div class="footer-cta">
+                  <a href="#contact" class="footer-cta-link">
+                    Get Started
+                    <svg
+                      class="footer-cta-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M5 12h14m-7-7l7 7-7 7"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <div class="brand-container">
-              <span class="brand-text">PLATINUM</span>
-              <span class="brand-subtext">MEDIA</span>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container-xxl">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+              <p class="footer-copyright">
+                &copy; 2024 Platinum Media. All rights reserved.
+              </p>
             </div>
-            <p class="footer-tagline">Digital creator ◻️◼️</p>
+            <div class="col-12 col-md-6">
+              <div class="footer-bottom-links">
+                <a href="#" class="footer-legal-link">Privacy Policy</a>
+                <a href="#" class="footer-legal-link">Terms of Service</a>
+                <button
+                  class="back-to-top-platinum"
+                  onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                  aria-label="Back to top"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M7 14l5-5 5 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>Back to Top</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="footer-links">
-            <a href="#home" data-scroll-target="home">HOME</a>
-            <a href="#about" data-scroll-target="about">ABOUT</a>
-            <a href="#services" data-scroll-target="services">SERVICES</a>
-            <a href="#portfolio" data-scroll-target="portfolio">WORK</a>
-            <a href="#contact" data-scroll-target="contact">CONTACT</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2024 Platinum Media. All rights reserved. Made in Belgrade,
-            Serbia 🇷🇸
-          </p>
         </div>
       </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- Bootstrap 5 JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
