@@ -1042,6 +1042,10 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 @media (min-width: 768px) and (max-width: 834px) {
   /* Simplified footer - no complex layout needed */
 
+  .btn-platinum {
+    margin: 15px 15px;
+  }
+
   .footer-platinum .footer-section {
     text-align: center;
     margin-bottom: var(--space-lg);

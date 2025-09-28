@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeContactForm();
   initializeScrollAnimations();
   initializePerformanceOptimizations();
+  initializeBackToTop();
+  initializeStatsCounters();
 
   console.log("Platinum Media website initialized");
 });
@@ -23,10 +25,10 @@ NAVIGATION FUNCTIONALITY
 */
 function initializeNavigation() {
   const navbar = document.querySelector(".navbar");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const allInternalLinks = document.querySelectorAll('a[href^="#"]');
 
-  // Smooth scrolling for internal links
-  navLinks.forEach((link) => {
+  // Smooth scrolling for all internal links (navbar + footer)
+  allInternalLinks.forEach((link) => {
     if (link.getAttribute("href").startsWith("#")) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
@@ -34,23 +36,50 @@ function initializeNavigation() {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          const headerHeight = navbar.offsetHeight;
-          const targetPosition = targetElement.offsetTop - headerHeight - 20;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth",
-          });
-
-          // Close mobile menu if open
+          // Close mobile menu if open first
           const navbarCollapse = document.querySelector(".navbar-collapse");
           const navbarToggler = document.querySelector(".navbar-toggler");
+          const isMobileMenuOpen = navbarCollapse.classList.contains("show");
 
-          if (navbarCollapse.classList.contains("show")) {
+          if (isMobileMenuOpen) {
             navbarToggler.click();
           }
+
+          // Calculate proper offset after menu is closed
+          setTimeout(
+            () => {
+              // Get the actual navbar height (without collapsed menu)
+              const headerHeight = navbar.offsetHeight;
+              // Add extra offset for mobile devices
+              const isMobile = window.innerWidth <= 991;
+              const extraOffset = isMobile ? -100 : 0;
+              const targetPosition =
+                targetElement.offsetTop - headerHeight - extraOffset;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            },
+            isMobileMenuOpen ? 300 : 0
+          ); // Wait for menu close animation if needed
         }
       });
+    }
+  });
+
+  // Close navbar when clicking outside
+  document.addEventListener("click", function (e) {
+    const navbar = document.querySelector(".navbar");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    const navbarToggler = document.querySelector(".navbar-toggler");
+
+    // Check if navbar is open and click is outside navbar
+    if (
+      navbarCollapse.classList.contains("show") &&
+      !navbar.contains(e.target)
+    ) {
+      navbarToggler.click();
     }
   });
 
@@ -78,55 +107,9 @@ function initializeNavigation() {
     { passive: true }
   );
 
-  // Active nav link highlighting (exclude about and contact)
-  const sections = document.querySelectorAll("section[id]");
-
-  window.addEventListener(
-    "scroll",
-    function () {
-      const scrollPosition = window.pageYOffset + navbar.offsetHeight + 100;
-      let activeFound = false;
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute("id");
-        const correspondingLink = document.querySelector(
-          `a[href="#${sectionId}"]`
-        );
-
-        // Skip about and contact sections for active highlighting
-        if (sectionId === "about" || sectionId === "contact") {
-          return;
-        }
-
-        if (
-          correspondingLink &&
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          // Remove active class from all links
-          navLinks.forEach((link) => link.classList.remove("active"));
-
-          // Add active class to current link
-          correspondingLink.classList.add("active");
-          activeFound = true;
-        }
-      });
-
-      // If no section is active and we're near the top, activate Home
-      if (!activeFound && window.pageYOffset < 200) {
-        navLinks.forEach((link) => link.classList.remove("active"));
-        const homeLink = document.querySelector(
-          'a[href="index.html"], a[href="#"]'
-        );
-        if (homeLink) {
-          homeLink.classList.add("active");
-        }
-      }
-    },
-    { passive: true }
-  );
+  // Remove any existing active classes from nav links
+  const allNavLinks = document.querySelectorAll(".nav-link");
+  allNavLinks.forEach((link) => link.classList.remove("active"));
 }
 
 /*
@@ -793,6 +776,31 @@ function initializeLazyLoading() {
 
 /*
 ==============================================
+BACK TO TOP FUNCTIONALITY
+==============================================
+*/
+function initializeBackToTop() {
+  const backToTopButton = document.getElementById("backToTop");
+
+  if (!backToTopButton) return;
+
+  // Show/hide button based on scroll position
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add("show");
+    } else {
+      backToTopButton.classList.remove("show");
+    }
+  }, { passive: true });
+
+  // Click event to scroll to top
+  backToTopButton.addEventListener("click", function() {
+    scrollToTop();
+  });
+}
+
+/*
+==============================================
 UTILITY FUNCTIONS
 ==============================================
 */
@@ -985,6 +993,71 @@ document.addEventListener("DOMContentLoaded", () => {
   window.lightbox = new Lightbox();
 });
 
+/*
+==============================================
+STATS COUNTER ANIMATIONS
+==============================================
+*/
+function initializeStatsCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        entry.target.classList.add('counted');
+        animateCounter(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  statNumbers.forEach(stat => {
+    counterObserver.observe(stat);
+  });
+}
+
+function animateCounter(element) {
+  const target = parseInt(element.getAttribute('data-count'));
+  const duration = 2000; // 2 seconds
+  const increment = target / (duration / 16); // 60fps
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    element.textContent = Math.floor(current);
+  }, 16);
+
+  // Add a smooth ease-out effect
+  const startTime = performance.now();
+  const animateSmooth = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // Ease-out cubic function for smooth deceleration
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    const currentValue = Math.floor(easedProgress * target);
+
+    element.textContent = currentValue;
+
+    if (progress < 1) {
+      requestAnimationFrame(animateSmooth);
+    } else {
+      element.textContent = target;
+    }
+  };
+
+  // Use the smooth animation instead of the linear one
+  clearInterval(timer);
+  requestAnimationFrame(animateSmooth);
+}
+
 // Export functions for external use if needed
 window.PlatinumMedia = {
   scrollToTop,
@@ -992,4 +1065,5 @@ window.PlatinumMedia = {
   isInViewport,
   throttle,
   debounce,
+  animateCounter,
 };
