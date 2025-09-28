@@ -480,6 +480,7 @@ a:hover {
   position: relative;
   overflow: hidden;
   background: var(--gradient-hero);
+  padding: var(--space-xl) 0;
 }
 
 .hero::before {
@@ -695,16 +696,20 @@ a:hover {
 .showcase-container {
   position: relative;
   width: 100%;
-  height: 400px;
-  max-width: 500px;
+  height: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .featured-graphic {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: relative;
   width: 300px;
-  height: 200px;
+  max-width: 90%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  max-height: 70vh;
   z-index: 5;
   animation: fadeInUp var(--duration) var(--easing) 0.6s both;
 }
@@ -721,6 +726,32 @@ a:hover {
 
 .graphic-frame:hover {
   transform: translateY(-5px) scale(1.02);
+}
+
+.showcase-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius-lg);
+  transition: transform var(--duration) var(--easing);
+}
+
+.graphic-frame:hover .showcase-image {
+  transform: scale(1.05);
+}
+
+.floating-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius);
+  transition: transform var(--duration) var(--easing);
+}
+
+.floating-graphic:hover .floating-image {
+  transform: scale(1.03);
 }
 
 .graphic-overlay {
@@ -759,28 +790,31 @@ a:hover {
 }
 
 .floating-graphic-1 {
-  top: 60px;
-  right: 40px;
-  width: 120px;
-  height: 80px;
+  top: 80px;
+  right: 60px;
+  width: 180px;
+  height: 320px;
+  aspect-ratio: 9 / 16;
   z-index: 3;
   animation: fadeInUp var(--duration) var(--easing) 0.9s both, floatSlow 6s ease-in-out infinite;
 }
 
 .floating-graphic-2 {
-  bottom: 120px;
-  left: 60px;
-  width: 100px;
-  height: 100px;
+  bottom: 140px;
+  left: 80px;
+  width: 160px;
+  height: 284px;
+  aspect-ratio: 9 / 16;
   z-index: 4;
   animation: fadeInUp var(--duration) var(--easing) 1.2s both, floatMedium 8s ease-in-out infinite;
 }
 
 .floating-graphic-3 {
-  bottom: 40px;
-  right: 20px;
-  width: 140px;
-  height: 90px;
+  bottom: 60px;
+  right: 40px;
+  width: 200px;
+  height: 356px;
+  aspect-ratio: 9 / 16;
   z-index: 2;
   animation: fadeInUp var(--duration) var(--easing) 1.5s both, floatFast 5s ease-in-out infinite;
 }
@@ -990,6 +1024,14 @@ section {
   position: relative;
 }
 
+.services .row {
+  align-items: stretch;
+}
+
+.services [class*="col-"] {
+  display: flex;
+}
+
 .services::before {
   content: '';
   position: absolute;
@@ -1099,12 +1141,74 @@ section {
   margin-top: var(--space-xl);
 }
 
+/* Row gap no longer needed - using single row layout */
+
+/* Ensure lightbox triggers are clickable */
+.lightbox-trigger {
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+/* Hide work item overlay on hover - keep info only in lightbox */
+.work-item-overlay {
+  display: none !important;
+}
+
+/* Footer column sizing no longer needed - simplified layout */
+
+/* Footer Services Styling */
+.footer-service {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Developer Tag with Shine Effect */
+.jevta-link {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.jevta-shine {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, #cc005f 25%, #ff0066 50%, #cc005f 75%, rgba(255, 255, 255, 0.7) 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-style: italic;
+  animation: shine 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.jevta-link:hover .jevta-shine {
+  animation-duration: 1s;
+  transform: scale(1.05);
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .work-item {
   height: 100%;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 9 / 16;
   transition: transform var(--duration) var(--easing);
 }
 
@@ -1117,6 +1221,8 @@ section {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .work-image img {
@@ -1155,6 +1261,146 @@ section {
   color: var(--warm-white);
   font-size: var(--body-size);
   margin-bottom: 0;
+}
+
+/* LIGHTBOX STYLES */
+.lightbox-trigger {
+  cursor: pointer;
+  transition: opacity var(--duration) var(--easing);
+}
+
+.lightbox-trigger:hover {
+  opacity: 0.9;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration) var(--easing), visibility var(--duration) var(--easing);
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-hard);
+}
+
+.lightbox-title {
+  color: var(--bright-white);
+  font-size: var(--h4-size);
+  font-weight: 600;
+  text-align: center;
+  margin-top: var(--space-md);
+  margin-bottom: 0;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--bright-white);
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color var(--duration) var(--easing);
+}
+
+.lightbox-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--bright-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--duration) var(--easing);
+}
+
+.lightbox-nav:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev {
+  left: -70px;
+}
+
+.lightbox-next {
+  right: -70px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+  .lightbox-nav:hover {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-color: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+  }
 }
 
 /* ABOUT SECTION */

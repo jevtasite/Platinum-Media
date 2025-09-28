@@ -421,6 +421,10 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
   aspect-ratio: 4 / 3;
 }
 
+.aspect-ratio-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
 .aspect-ratio-3-2 {
   aspect-ratio: 3 / 2;
 }

@@ -117,6 +117,9 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
   overflow: hidden;
   transition: all var(--duration) var(--easing);
   will-change: transform;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-platinum::before {
@@ -145,6 +148,9 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
 .card-platinum-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card-platinum-icon {
@@ -173,6 +179,9 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
   color: var(--warm-white);
   line-height: 1.6;
   margin-bottom: 0;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
 }
 
 /* SECTION COMPONENTS */
@@ -246,7 +255,7 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
   position: relative;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 9 / 16;
   background: var(--gradient-dark);
   transition: all var(--duration) var(--easing);
   will-change: transform;

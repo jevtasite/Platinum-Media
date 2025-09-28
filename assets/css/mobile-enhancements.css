@@ -98,36 +98,40 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   .hero {
     min-height: 100vh;
     min-height: 100dvh; /* Modern dynamic viewport */
-    padding-top: 80px;
-    padding-bottom: var(--space-lg);
+    padding-top: 120px;
+    padding-bottom: var(--space-sm);
   }
 
   .hero .row {
+    min-height: calc(100vh - 120px);
+    display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 80px);
-    min-height: calc(100dvh - 80px);
   }
 
   .hero-content {
     text-align: center;
-    padding: var(--space-lg) 0;
-    order: 2;
+    padding: var(--space-md) 0 var(--space-sm) 0;
+    order: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 1;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: var(--space-sm);
   }
 
   .hero-title {
     font-size: clamp(1.75rem, 7vw, 2.75rem);
     line-height: 1.1;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    margin-top: var(--space-md);
     text-align: center;
+    padding-top: var(--space-sm);
   }
 
   .hero-subtitle {
     font-size: clamp(0.95rem, 3.5vw, 1.2rem);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
     text-align: center;
     line-height: 1.4;
   }
@@ -149,42 +153,44 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
   /* Mobile showcase */
   .hero-showcase {
-    order: 1;
-    min-height: 300px;
-    padding: var(--space-lg) 0;
+    order: 2;
+    min-height: 200px;
+    padding: var(--space-xs) 0;
+    flex: 0 0 auto;
   }
 
   .showcase-container {
-    height: 280px;
-    max-width: 320px;
+    height: 100%;
+    max-width: 300px;
   }
 
   .featured-graphic {
-    top: 10px;
-    left: 10px;
-    width: 200px;
-    height: 130px;
+    width: 250px;
+    max-height: 55vh;
   }
 
   .floating-graphic-1 {
     top: 40px;
     right: 20px;
-    width: 80px;
-    height: 60px;
+    width: 120px;
+    height: 214px;
+    aspect-ratio: 9 / 16;
   }
 
   .floating-graphic-2 {
     bottom: 80px;
     left: 30px;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 178px;
+    aspect-ratio: 9 / 16;
   }
 
   .floating-graphic-3 {
     bottom: 20px;
     right: 15px;
-    width: 90px;
-    height: 60px;
+    width: 130px;
+    height: 231px;
+    aspect-ratio: 9 / 16;
   }
 
   .showcase-stats {
@@ -454,7 +460,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   .hero {
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height */
-    padding-top: 70px;
+    padding-top: 110px;
   }
 
   .hero-title {
@@ -552,6 +558,10 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* CRITICAL 320px FIXES */
 @media (max-width: 320px) {
+  .hero {
+    padding-top: 105px;
+  }
+
   .container-xxl {
     padding-left: var(--space-sm);
     padding-right: var(--space-sm);
@@ -785,6 +795,23 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 }
 
+/* SHOWCASE PORTRAIT TABLET OPTIMIZATIONS */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-showcase {
+    min-height: 450px;
+  }
+
+  .showcase-container {
+    max-width: 450px;
+  }
+
+  .featured-graphic {
+    width: 320px;
+    max-height: 60vh;
+    aspect-ratio: 9 / 16;
+  }
+}
+
 /* TABLET PORTRAIT OPTIMIZATIONS (768px-1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero {
@@ -844,13 +871,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     justify-content: center;
   }
 
-  /* Footer tablet layout fixes */
-  .footer-main .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    text-align: center;
-  }
+  /* Simplified footer - no complex layout needed */
 
   .footer-platinum .footer-section {
     text-align: center;
@@ -952,13 +973,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     gap: var(--space-lg);
   }
 
-  /* Enhanced footer for large tablets */
-  .footer-main .row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--space-lg);
-    text-align: center;
-  }
+  /* Simplified footer - no complex layout needed */
 
   .footer-platinum .footer-section {
     text-align: center;
@@ -1022,12 +1037,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* IPAD MINI & SMALL TABLETS (768px-834px) */
 @media (min-width: 768px) and (max-width: 834px) {
-  .footer-main .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    text-align: center;
-  }
+  /* Simplified footer - no complex layout needed */
 
   .footer-platinum .footer-section {
     text-align: center;
@@ -1259,12 +1269,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     gap: var(--space-xl);
   }
 
-  /* Desktop footer optimization */
-  .footer-main .row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: var(--space-xxl);
-  }
+  /* Simplified footer - no complex layout needed */
 
   .container-xxl {
     max-width: 1320px;
@@ -1273,8 +1278,43 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 }
 
+/* TABLET LANDSCAPE SHOWCASE ENHANCEMENTS */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-showcase {
+    min-height: 500px;
+  }
+
+  .showcase-container {
+    max-width: 500px;
+  }
+
+  .featured-graphic {
+    width: 350px;
+    max-height: 65vh;
+    aspect-ratio: 9 / 16;
+  }
+}
+
 /* ULTRA-WIDE & 4K DISPLAYS (1400px+) */
 @media (min-width: 1400px) {
+  .hero-showcase {
+    min-height: 550px;
+  }
+
+  .showcase-container {
+    max-width: 650px;
+  }
+
+  .featured-graphic {
+    width: 400px;
+    max-height: 75vh;
+    aspect-ratio: 9 / 16;
+  }
+
+  .hero-showcase .graphic-frame {
+    max-height: 75vh;
+    max-width: 400px;
+  }
   .hero {
     min-height: 100vh;
     padding-top: 140px;
@@ -1356,5 +1396,102 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   .btn-platinum {
     padding: var(--space-lg) var(--space-xxl);
     font-size: 1.1rem;
+  }
+}
+
+/* VERTICAL ASPECT RATIO OPTIMIZATIONS (9:16) */
+/* Specific enhancements for portfolio items with vertical photos */
+
+/* Mobile optimizations for vertical content */
+@media (max-width: 576px) {
+  .work-grid .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .work-item-platinum {
+    max-height: 60vh; /* Prevent extremely tall items on mobile */
+  }
+}
+
+/* Tablet optimizations for vertical content */
+@media (min-width: 577px) and (max-width: 991px) {
+  .work-grid .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .work-item-platinum {
+    max-height: 50vh;
+  }
+}
+
+/* Desktop optimizations for vertical content */
+@media (min-width: 992px) {
+  .work-grid .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .work-item-platinum {
+    max-height: 50vh;
+  }
+}
+
+/* Large desktop and 4K optimizations */
+@media (min-width: 1400px) {
+  .work-grid .row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .work-item-platinum {
+    max-height: 50vh;
+  }
+}
+
+/* Hero showcase specific optimizations for vertical content */
+.hero-showcase .graphic-frame,
+.hero-showcase .sample-graphics {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Featured graphic container adjustments */
+.featured-graphic {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .featured-graphic {
+    width: 220px;
+    max-height: 45vh;
+    aspect-ratio: 9 / 16;
+  }
+
+  .hero-showcase {
+    min-height: 180px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .featured-graphic {
+    width: 320px;
+    max-height: 60vh;
+    aspect-ratio: 9 / 16;
+  }
+}
+
+@media (min-width: 1200px) {
+  .featured-graphic {
+    width: 380px;
+    max-height: 70vh;
+    aspect-ratio: 9 / 16;
   }
 }
