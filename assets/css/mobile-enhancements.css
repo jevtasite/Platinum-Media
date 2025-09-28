@@ -225,7 +225,6 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     gap: var(--space-md);
   }
 
-
   /* Mobile sections */
   .section-platinum {
     padding: var(--space-3xl) 0;
@@ -735,11 +734,6 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* MOBILE PERFORMANCE OPTIMIZATIONS */
 @media (max-width: 767px) {
-  /* Reduce animation complexity on mobile */
-  * {
-    animation-duration: 0.3s !important;
-  }
-
   /* Optimize transforms for mobile */
   .card-platinum,
   .work-item-platinum,
@@ -1169,7 +1163,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 }
 
 /* ANDROID SPECIFIC OPTIMIZATIONS */
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   /* Android Chrome optimizations */
   .work-item-platinum,
   .card-platinum {
