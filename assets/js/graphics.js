@@ -6,182 +6,182 @@ PLATINUM MEDIA - GRAPHICS PAGE JAVASCRIPT
 
 // Sample graphics data - replace with actual CMS/API data
 const graphicsData = {
-  'social-media': [
+  "social-media": [
     {
       id: 1,
-      title: 'Instagram Story - Game Announcement',
-      category: 'Social Media',
-      type: 'Story',
-      date: '2024-12-15',
-      image: '../assets/img/showcase/showcase-1.webp',
-      ratio: 'story'
+      title: "Instagram Story - Game Announcement",
+      category: "Social Media",
+      type: "Story",
+      date: "2024-12-15",
+      image: "../assets/img/showcase/showcase-1.webp",
+      ratio: "story",
     },
     {
       id: 2,
-      title: 'Facebook Cover - Season Campaign',
-      category: 'Social Media',
-      type: 'Cover',
-      date: '2024-12-10',
-      image: '../assets/img/showcase/showcase-2.webp',
-      ratio: 'landscape'
+      title: "Facebook Cover - Season Campaign",
+      category: "Social Media",
+      type: "Cover",
+      date: "2024-12-10",
+      image: "../assets/img/showcase/showcase-2.webp",
+      ratio: "landscape",
     },
     {
       id: 3,
-      title: 'Twitter Post - Athlete Stats',
-      category: 'Social Media',
-      type: 'Post',
-      date: '2024-12-08',
-      image: '../assets/img/showcase/showcase-3.webp',
-      ratio: 'square'
+      title: "Twitter Post - Athlete Stats",
+      category: "Social Media",
+      type: "Post",
+      date: "2024-12-08",
+      image: "../assets/img/showcase/showcase-3.webp",
+      ratio: "square",
     },
     {
       id: 4,
-      title: 'Instagram Feed Post - Training',
-      category: 'Social Media',
-      type: 'Post',
-      date: '2024-12-05',
-      image: '../assets/img/showcase/showcase-4.webp',
-      ratio: 'square'
-    }
+      title: "Instagram Feed Post - Training",
+      category: "Social Media",
+      type: "Post",
+      date: "2024-12-05",
+      image: "../assets/img/showcase/showcase-4.webp",
+      ratio: "square",
+    },
   ],
-  'athlete-highlights': [
+  "athlete-highlights": [
     {
       id: 5,
-      title: 'Athlete Performance Analysis',
-      category: 'Athlete Highlights',
-      type: 'Infographic',
-      date: '2024-12-12',
-      image: '../assets/img/showcase/showcase-5.webp',
-      ratio: 'portrait'
+      title: "Athlete Performance Analysis",
+      category: "Athlete Highlights",
+      type: "Infographic",
+      date: "2024-12-12",
+      image: "../assets/img/showcase/showcase-5.webp",
+      ratio: "portrait",
     },
     {
       id: 6,
-      title: 'Season Goals Compilation',
-      category: 'Athlete Highlights',
-      type: 'Stats',
-      date: '2024-12-09',
-      image: '../assets/img/showcase/showcase-6.webp',
-      ratio: 'landscape'
+      title: "Season Goals Compilation",
+      category: "Athlete Highlights",
+      type: "Stats",
+      date: "2024-12-09",
+      image: "../assets/img/showcase/showcase-6.webp",
+      ratio: "landscape",
     },
     {
       id: 7,
-      title: 'Athlete Achievement Badge',
-      category: 'Athlete Highlights',
-      type: 'Badge',
-      date: '2024-12-06',
-      image: '../assets/img/showcase/showcase-7.webp',
-      ratio: 'square'
+      title: "Athlete Achievement Badge",
+      category: "Athlete Highlights",
+      type: "Badge",
+      date: "2024-12-06",
+      image: "../assets/img/showcase/showcase-7.webp",
+      ratio: "square",
     },
     {
       id: 8,
-      title: 'Career Milestone Graphic',
-      category: 'Athlete Highlights',
-      type: 'Milestone',
-      date: '2024-12-03',
-      image: '../assets/img/showcase/showcase-8.webp',
-      ratio: 'portrait'
-    }
+      title: "Career Milestone Graphic",
+      category: "Athlete Highlights",
+      type: "Milestone",
+      date: "2024-12-03",
+      image: "../assets/img/showcase/showcase-8.webp",
+      ratio: "portrait",
+    },
   ],
-  'game-day': [
+  "game-day": [
     {
       id: 9,
-      title: 'Starting Lineup',
-      category: 'Game Day',
-      type: 'Lineup',
-      date: '2024-12-14',
-      image: '../assets/img/showcase/showcase-9.webp',
-      ratio: 'square'
+      title: "Starting Lineup",
+      category: "Game Day",
+      type: "Lineup",
+      date: "2024-12-14",
+      image: "../assets/img/showcase/showcase-9.webp",
+      ratio: "square",
     },
     {
       id: 10,
-      title: 'Live Score Update',
-      category: 'Game Day',
-      type: 'Score',
-      date: '2024-12-14',
-      image: '../assets/img/showcase/showcase-10.webp',
-      ratio: 'landscape'
+      title: "Live Score Update",
+      category: "Game Day",
+      type: "Score",
+      date: "2024-12-14",
+      image: "../assets/img/showcase/showcase-10.webp",
+      ratio: "landscape",
     },
     {
       id: 11,
-      title: 'Pre-Game Hype Graphic',
-      category: 'Game Day',
-      type: 'Promo',
-      date: '2024-12-13',
-      image: '../assets/img/showcase/showcase-1.webp',
-      ratio: 'story'
+      title: "Pre-Game Hype Graphic",
+      category: "Game Day",
+      type: "Promo",
+      date: "2024-12-13",
+      image: "../assets/img/showcase/showcase-1.webp",
+      ratio: "story",
     },
     {
       id: 12,
-      title: 'Post-Game Results',
-      category: 'Game Day',
-      type: 'Results',
-      date: '2024-12-14',
-      image: '../assets/img/showcase/showcase-2.webp',
-      ratio: 'square'
-    }
+      title: "Post-Game Results",
+      category: "Game Day",
+      type: "Results",
+      date: "2024-12-14",
+      image: "../assets/img/showcase/showcase-2.webp",
+      ratio: "square",
+    },
   ],
-  'brand-identity': [
+  "brand-identity": [
     {
       id: 13,
-      title: 'Team Logo Design',
-      category: 'Brand Identity',
-      type: 'Logo',
-      date: '2024-11-25',
-      image: '../assets/img/showcase/showcase-3.webp',
-      ratio: 'square'
+      title: "Team Logo Design",
+      category: "Brand Identity",
+      type: "Logo",
+      date: "2024-11-25",
+      image: "../assets/img/showcase/showcase-3.webp",
+      ratio: "square",
     },
     {
       id: 14,
-      title: 'Brand Guidelines Document',
-      category: 'Brand Identity',
-      type: 'Guidelines',
-      date: '2024-11-20',
-      image: '../assets/img/showcase/showcase-4.webp',
-      ratio: 'portrait'
+      title: "Brand Guidelines Document",
+      category: "Brand Identity",
+      type: "Guidelines",
+      date: "2024-11-20",
+      image: "../assets/img/showcase/showcase-4.webp",
+      ratio: "portrait",
     },
     {
       id: 15,
-      title: 'Jersey Design Concept',
-      category: 'Brand Identity',
-      type: 'Jersey',
-      date: '2024-11-15',
-      image: '../assets/img/showcase/showcase-5.webp',
-      ratio: 'landscape'
-    }
+      title: "Jersey Design Concept",
+      category: "Brand Identity",
+      type: "Jersey",
+      date: "2024-11-15",
+      image: "../assets/img/showcase/showcase-5.webp",
+      ratio: "landscape",
+    },
   ],
-  'infographics': [
+  infographics: [
     {
       id: 16,
-      title: 'Transfer Market Analysis',
-      category: 'Infographics',
-      type: 'Analysis',
-      date: '2024-12-01',
-      image: '../assets/img/showcase/showcase-6.webp',
-      ratio: 'portrait'
+      title: "Transfer Market Analysis",
+      category: "Infographics",
+      type: "Analysis",
+      date: "2024-12-01",
+      image: "../assets/img/showcase/showcase-6.webp",
+      ratio: "portrait",
     },
     {
       id: 17,
-      title: 'League Statistics Overview',
-      category: 'Infographics',
-      type: 'Stats',
-      date: '2024-11-28',
-      image: '../assets/img/showcase/showcase-7.webp',
-      ratio: 'landscape'
+      title: "League Statistics Overview",
+      category: "Infographics",
+      type: "Stats",
+      date: "2024-11-28",
+      image: "../assets/img/showcase/showcase-7.webp",
+      ratio: "landscape",
     },
     {
       id: 18,
-      title: 'Team Formation Breakdown',
-      category: 'Infographics',
-      type: 'Tactical',
-      date: '2024-11-25',
-      image: '../assets/img/showcase/showcase-8.webp',
-      ratio: 'square'
-    }
-  ]
+      title: "Team Formation Breakdown",
+      category: "Infographics",
+      type: "Tactical",
+      date: "2024-11-25",
+      image: "../assets/img/showcase/showcase-8.webp",
+      ratio: "square",
+    },
+  ],
 };
 
 // Ensure DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functionality
   initializeGraphicsLightbox();
   initializeStatsCounters();
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize hero 3D flip card
   initializeHero3DFlipCard();
 
-  console.log('Graphics page initialized with lightbox and static gallery');
+  console.log("Graphics page initialized with lightbox and static gallery");
 });
 
 /*
@@ -201,7 +201,7 @@ GRAPHICS PAGE INITIALIZATION
 */
 function initializeGraphicsPage() {
   // Load all graphics by default
-  loadGraphics('all');
+  loadGraphics("all");
 
   // Add loading animation
   showLoadingState();
@@ -218,20 +218,22 @@ GRAPHICS FILTERING SYSTEM
 ==============================================
 */
 function initializeGraphicsFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn-platinum');
+  const filterButtons = document.querySelectorAll(".filter-btn-platinum");
 
   if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const filter = this.getAttribute('data-filter');
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const filter = this.getAttribute("data-filter");
 
         // Update active button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        this.classList.add("active");
 
         // Update ARIA attributes
-        filterButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
-        this.setAttribute('aria-selected', 'true');
+        filterButtons.forEach((btn) =>
+          btn.setAttribute("aria-selected", "false")
+        );
+        this.setAttribute("aria-selected", "true");
 
         // Filter graphics with smooth animation
         filterGraphics(filter);
@@ -241,18 +243,18 @@ function initializeGraphicsFilters() {
 }
 
 function filterGraphics(category) {
-  const graphicsGrid = document.querySelector('.graphics-grid');
+  const graphicsGrid = document.querySelector(".graphics-grid");
   if (!graphicsGrid) return;
 
   // Show loading state
   showLoadingState();
 
   // Animate out current items
-  const currentItems = graphicsGrid.querySelectorAll('.graphics-item');
+  const currentItems = graphicsGrid.querySelectorAll(".graphics-item");
   currentItems.forEach((item, index) => {
     setTimeout(() => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(-20px) scale(0.9)';
+      item.style.opacity = "0";
+      item.style.transform = "translateY(-20px) scale(0.9)";
     }, index * 30);
   });
 
@@ -264,14 +266,14 @@ function filterGraphics(category) {
 }
 
 function loadGraphics(category) {
-  const graphicsGrid = document.querySelector('.graphics-grid');
+  const graphicsGrid = document.querySelector(".graphics-grid");
   if (!graphicsGrid) return;
 
   let graphicsToShow = [];
 
-  if (category === 'all') {
+  if (category === "all") {
     // Combine all graphics
-    Object.values(graphicsData).forEach(categoryGraphics => {
+    Object.values(graphicsData).forEach((categoryGraphics) => {
       graphicsToShow = graphicsToShow.concat(categoryGraphics);
     });
     // Sort by date (newest first)
@@ -290,15 +292,15 @@ function loadGraphics(category) {
   graphicsGrid.innerHTML = graphicsHTML;
 
   // Animate in new items
-  const newItems = graphicsGrid.querySelectorAll('.graphics-item');
+  const newItems = graphicsGrid.querySelectorAll(".graphics-item");
   newItems.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px) scale(0.9)';
+    item.style.opacity = "0";
+    item.style.transform = "translateY(30px) scale(0.9)";
 
     setTimeout(() => {
-      item.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-      item.style.opacity = '1';
-      item.style.transform = 'translateY(0) scale(1)';
+      item.style.transition = "all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+      item.style.opacity = "1";
+      item.style.transform = "translateY(0) scale(1)";
     }, index * 60 + 100);
   });
 
@@ -318,7 +320,9 @@ function generateGraphicsHTML(graphics) {
 
     html += `
       <div class="${colClass}">
-        <article class="graphics-item ${graphic.ratio ? `ratio-${graphic.ratio}` : 'ratio-square'}" data-category="${graphic.category.toLowerCase().replace(' ', '-')}">
+        <article class="graphics-item ${
+          graphic.ratio ? `ratio-${graphic.ratio}` : "ratio-square"
+        }" data-category="${graphic.category.toLowerCase().replace(" ", "-")}">
           <div class="graphics-item-image">
             <img
               src="${graphic.image}"
@@ -333,7 +337,9 @@ function generateGraphicsHTML(graphics) {
                 <h3 class="graphics-item-title">${graphic.title}</h3>
                 <p class="graphics-item-category">${graphic.category}</p>
                 <div class="graphics-item-meta">
-                  <span class="graphics-item-date">${formatDate(graphic.date)}</span>
+                  <span class="graphics-item-date">${formatDate(
+                    graphic.date
+                  )}</span>
                   <span class="graphics-item-type">${graphic.type}</span>
                 </div>
               </div>
@@ -344,27 +350,27 @@ function generateGraphicsHTML(graphics) {
     `;
   });
 
-  html += '</div>';
+  html += "</div>";
   return html;
 }
 
 function getColumnClass(index, ratio) {
   // Responsive column classes for varied layout
   const patterns = [
-    'col-12 col-md-6 col-lg-4',  // Regular
-    'col-12 col-md-6 col-lg-3',  // Smaller
-    'col-12 col-md-8 col-lg-6',  // Wider
-    'col-12 col-md-4 col-lg-3',  // Smaller
+    "col-12 col-md-6 col-lg-4", // Regular
+    "col-12 col-md-6 col-lg-3", // Smaller
+    "col-12 col-md-8 col-lg-6", // Wider
+    "col-12 col-md-4 col-lg-3", // Smaller
   ];
 
   // Special handling for story ratio (always smaller)
-  if (ratio === 'story') {
-    return 'col-12 col-md-4 col-lg-3';
+  if (ratio === "story") {
+    return "col-12 col-md-4 col-lg-3";
   }
 
   // Special handling for landscape (sometimes wider)
-  if (ratio === 'landscape' && index % 3 === 0) {
-    return 'col-12 col-md-8 col-lg-6';
+  if (ratio === "landscape" && index % 3 === 0) {
+    return "col-12 col-md-8 col-lg-6";
   }
 
   return patterns[index % patterns.length];
@@ -372,10 +378,10 @@ function getColumnClass(index, ratio) {
 
 function formatDate(dateString) {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
 }
 
@@ -385,7 +391,7 @@ LOADING AND EMPTY STATES
 ==============================================
 */
 function showLoadingState() {
-  const graphicsGrid = document.querySelector('.graphics-grid');
+  const graphicsGrid = document.querySelector(".graphics-grid");
   if (!graphicsGrid) return;
 
   graphicsGrid.innerHTML = `
@@ -401,10 +407,12 @@ function hideLoadingState() {
 }
 
 function showEmptyState(category) {
-  const graphicsGrid = document.querySelector('.graphics-grid');
+  const graphicsGrid = document.querySelector(".graphics-grid");
   if (!graphicsGrid) return;
 
-  const categoryName = category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const categoryName = category
+    .replace("-", " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase());
 
   graphicsGrid.innerHTML = `
     <div class="graphics-empty">
@@ -435,12 +443,12 @@ function initializeGraphicsLightbox() {
 
 class GraphicsLightbox {
   constructor() {
-    this.overlay = document.getElementById('lightbox');
-    this.image = document.getElementById('lightbox-image');
-    this.title = document.getElementById('lightbox-title');
-    this.closeBtn = document.getElementById('lightbox-close');
-    this.prevBtn = document.getElementById('lightbox-prev');
-    this.nextBtn = document.getElementById('lightbox-next');
+    this.overlay = document.getElementById("lightbox");
+    this.image = document.getElementById("lightbox-image");
+    this.title = document.getElementById("lightbox-title");
+    this.closeBtn = document.getElementById("lightbox-close");
+    this.prevBtn = document.getElementById("lightbox-prev");
+    this.nextBtn = document.getElementById("lightbox-next");
     this.triggers = [];
     this.currentIndex = 0;
 
@@ -451,27 +459,27 @@ class GraphicsLightbox {
     this.updateTriggers();
 
     // Event listeners
-    this.closeBtn.addEventListener('click', () => this.close());
-    this.prevBtn.addEventListener('click', () => this.prev());
-    this.nextBtn.addEventListener('click', () => this.next());
+    this.closeBtn.addEventListener("click", () => this.close());
+    this.prevBtn.addEventListener("click", () => this.prev());
+    this.nextBtn.addEventListener("click", () => this.next());
 
     // Close on overlay click
-    this.overlay.addEventListener('click', (e) => {
+    this.overlay.addEventListener("click", (e) => {
       if (e.target === this.overlay) this.close();
     });
 
     // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (!this.overlay.classList.contains('active')) return;
+    document.addEventListener("keydown", (e) => {
+      if (!this.overlay.classList.contains("active")) return;
 
       switch (e.key) {
-        case 'Escape':
+        case "Escape":
           this.close();
           break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
           this.prev();
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           this.next();
           break;
       }
@@ -479,16 +487,16 @@ class GraphicsLightbox {
   }
 
   updateTriggers() {
-    this.triggers = Array.from(document.querySelectorAll('.lightbox-trigger'));
+    this.triggers = Array.from(document.querySelectorAll(".lightbox-trigger"));
 
     // Remove any existing delegation handler
     if (this.delegationHandler) {
-      document.removeEventListener('click', this.delegationHandler);
+      document.removeEventListener("click", this.delegationHandler);
     }
 
     // Use event delegation
     this.delegationHandler = (e) => {
-      const trigger = e.target.closest('.lightbox-trigger');
+      const trigger = e.target.closest(".lightbox-trigger");
       if (trigger) {
         e.preventDefault();
         e.stopPropagation();
@@ -499,7 +507,7 @@ class GraphicsLightbox {
       }
     };
 
-    document.addEventListener('click', this.delegationHandler);
+    document.addEventListener("click", this.delegationHandler);
   }
 
   open(index) {
@@ -514,26 +522,32 @@ class GraphicsLightbox {
     this.title.textContent = trigger.dataset.title || trigger.alt;
 
     // Show/hide navigation buttons
-    this.prevBtn.style.display = this.triggers.length > 1 ? 'flex' : 'none';
-    this.nextBtn.style.display = this.triggers.length > 1 ? 'flex' : 'none';
+    this.prevBtn.style.display = this.triggers.length > 1 ? "flex" : "none";
+    this.nextBtn.style.display = this.triggers.length > 1 ? "flex" : "none";
 
     // Show lightbox
-    this.overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    this.overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
   }
 
   close() {
-    this.overlay.classList.remove('active');
-    document.body.style.overflow = '';
+    this.overlay.classList.remove("active");
+    document.body.style.overflow = "";
   }
 
   prev() {
-    this.currentIndex = this.currentIndex === 0 ? this.triggers.length - 1 : this.currentIndex - 1;
+    this.currentIndex =
+      this.currentIndex === 0
+        ? this.triggers.length - 1
+        : this.currentIndex - 1;
     this.updateImage();
   }
 
   next() {
-    this.currentIndex = this.currentIndex === this.triggers.length - 1 ? 0 : this.currentIndex + 1;
+    this.currentIndex =
+      this.currentIndex === this.triggers.length - 1
+        ? 0
+        : this.currentIndex + 1;
     this.updateImage();
   }
 
@@ -551,28 +565,28 @@ STATS COUNTER ANIMATIONS
 ==============================================
 */
 function initializeStatsCounters() {
-  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+  const statNumbers = document.querySelectorAll(".stat-number[data-count]");
   const observerOptions = {
     threshold: 0.5,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-        entry.target.classList.add('counted');
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains("counted")) {
+        entry.target.classList.add("counted");
         animateCounter(entry.target);
       }
     });
   }, observerOptions);
 
-  statNumbers.forEach(stat => {
+  statNumbers.forEach((stat) => {
     counterObserver.observe(stat);
   });
 }
 
 function animateCounter(element) {
-  const target = parseInt(element.getAttribute('data-count'));
+  const target = parseInt(element.getAttribute("data-count"));
   const duration = 2000;
   const startTime = performance.now();
 
@@ -602,24 +616,28 @@ BACK TO TOP FUNCTIONALITY
 ==============================================
 */
 function initializeBackToTop() {
-  const backToTopButton = document.getElementById('backToTop');
+  const backToTopButton = document.getElementById("backToTop");
 
   if (!backToTopButton) return;
 
   // Show/hide button based on scroll position
-  window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.add('show');
-    } else {
-      backToTopButton.classList.remove('show');
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("show");
+      } else {
+        backToTopButton.classList.remove("show");
+      }
+    },
+    { passive: true }
+  );
 
   // Click event to scroll to top
-  backToTopButton.addEventListener('click', function() {
+  backToTopButton.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 }
@@ -633,34 +651,37 @@ function initializePerformanceOptimizations() {
   // Lazy loading for images
   const images = document.querySelectorAll('img[loading="lazy"]');
 
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.src || img.dataset.src;
-          img.classList.remove('lazy');
-          imageObserver.unobserve(img);
-        }
-      });
-    }, {
-      rootMargin: '50px 0px'
-    });
+  if ("IntersectionObserver" in window) {
+    const imageObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.src || img.dataset.src;
+            img.classList.remove("lazy");
+            imageObserver.unobserve(img);
+          }
+        });
+      },
+      {
+        rootMargin: "50px 0px",
+      }
+    );
 
-    images.forEach(img => imageObserver.observe(img));
+    images.forEach((img) => imageObserver.observe(img));
   }
 
   // Preload critical images
   const criticalImages = [
-    '../assets/img/showcase/showcase-1.webp',
-    '../assets/img/showcase/showcase-2.webp',
-    '../assets/img/showcase/showcase-3.webp'
+    "../assets/img/showcase/showcase-1.webp",
+    "../assets/img/showcase/showcase-2.webp",
+    "../assets/img/showcase/showcase-3.webp",
   ];
 
-  criticalImages.forEach(src => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
+  criticalImages.forEach((src) => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
     link.href = src;
     document.head.appendChild(link);
   });
@@ -672,22 +693,21 @@ HERO 3D FLIP CARD SYSTEM
 ==============================================
 */
 function initializeHero3DFlipCard() {
-  const heroCard = document.getElementById('heroFlipCard');
+  const heroCard = document.getElementById("heroFlipCard");
 
   if (!heroCard) return;
 
   // Array of all showcase images
   const showcaseImages = [
-    '../assets/img/showcase/showcase-1.webp',
-    '../assets/img/showcase/showcase-2.webp',
-    '../assets/img/showcase/showcase-3.webp',
-    '../assets/img/showcase/showcase-4.webp',
-    '../assets/img/showcase/showcase-5.webp',
-    '../assets/img/showcase/showcase-6.webp',
-    '../assets/img/showcase/showcase-7.webp',
-    '../assets/img/showcase/showcase-8.webp',
-    '../assets/img/showcase/showcase-9.webp',
-    '../assets/img/showcase/showcase-10.webp'
+    "../assets/img/showcase/showcase-2.webp",
+    "../assets/img/showcase/showcase-3.webp",
+    "../assets/img/showcase/showcase-4.webp",
+    "../assets/img/showcase/showcase-5.webp",
+    "../assets/img/showcase/showcase-6.webp",
+    "../assets/img/showcase/showcase-7.webp",
+    "../assets/img/showcase/showcase-8.webp",
+    "../assets/img/showcase/showcase-9.webp",
+    "../assets/img/showcase/showcase-10.webp",
   ];
 
   let currentImageIndex = 0;
@@ -704,11 +724,11 @@ function initializeHero3DFlipCard() {
 }
 
 function cycleHeroCardImage(card, images, nextIndex) {
-  const frontImg = card.querySelector('.hero-flip-card-front img');
-  const backImg = card.querySelector('.hero-flip-card-back img');
+  const frontImg = card.querySelector(".hero-flip-card-front img");
+  const backImg = card.querySelector(".hero-flip-card-back img");
 
   // Determine which side is currently visible
-  const isCurrentlyFlipped = card.classList.contains('flipped');
+  const isCurrentlyFlipped = card.classList.contains("flipped");
 
   // Update the hidden side with the next image
   if (isCurrentlyFlipped) {
@@ -727,12 +747,12 @@ function cycleHeroCardImage(card, images, nextIndex) {
 
 function flipHeroCard(card) {
   // Toggle the flipped class to trigger the 3D flip animation
-  card.classList.toggle('flipped');
+  card.classList.toggle("flipped");
 }
 
 // Add subtle mouse parallax effect for hero card
 function addHeroCardParallaxEffect(heroCard) {
-  const cardContainer = heroCard.closest('.hero-flip-card-container');
+  const cardContainer = heroCard.closest(".hero-flip-card-container");
 
   if (!cardContainer) return;
 
@@ -755,11 +775,11 @@ function addHeroCardParallaxEffect(heroCard) {
   }, 16); // ~60fps
 
   // Add mouse move listener to the container
-  cardContainer.addEventListener('mousemove', handleMouseMove);
+  cardContainer.addEventListener("mousemove", handleMouseMove);
 
   // Reset position when mouse leaves
-  cardContainer.addEventListener('mouseleave', () => {
-    heroCard.style.transform = '';
+  cardContainer.addEventListener("mouseleave", () => {
+    heroCard.style.transform = "";
   });
 }
 
@@ -772,13 +792,13 @@ UTILITY FUNCTIONS
 // Throttle function for performance
 function throttle(func, limit) {
   let inThrottle;
-  return function() {
+  return function () {
     const args = arguments;
     const context = this;
     if (!inThrottle) {
       func.apply(context, args);
       inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
+      setTimeout(() => (inThrottle = false), limit);
     }
   };
 }
@@ -786,9 +806,10 @@ function throttle(func, limit) {
 // Debounce function for performance
 function debounce(func, wait, immediate) {
   let timeout;
-  return function() {
-    const context = this, args = arguments;
-    const later = function() {
+  return function () {
+    const context = this,
+      args = arguments;
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -803,5 +824,5 @@ function debounce(func, wait, immediate) {
 window.GraphicsPortfolio = {
   animateCounter,
   initializeHero3DFlipCard,
-  flipHeroCard
+  flipHeroCard,
 };
