@@ -18,6 +18,14 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   position: relative;
   z-index: 2;
   animation: fadeInUp var(--duration) var(--easing) 0.3s both;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .graphics-hero-content {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
 }
 
 .graphics-hero-title {
@@ -26,11 +34,42 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: var(--space-lg);
-  background: var(--gradient-text);
+  color: var(--bright-white);
+  position: relative;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    135deg,
+    var(--bright-white) 0%,
+    var(--warm-white) 30%,
+    var(--bright-white) 60%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: slideInFromTop var(--duration) var(--easing) 0.1s both;
+}
+
+.graphics-hero-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  right: -2px;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 70%,
+    transparent 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .graphics-hero-subtitle {
@@ -38,282 +77,327 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   color: var(--warm-white);
   margin-bottom: var(--space-xxl);
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   animation: slideInFromBottom var(--duration) var(--easing) 0.2s both;
+}
+
+@media (max-width: 991px) {
+  .graphics-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .graphics-hero-stats {
   display: flex;
-  justify-content: center;
-  gap: var(--space-xl);
-  margin-top: var(--space-xl);
+  justify-content: flex-start;
+  gap: var(--space-lg);
+  margin-top: var(--space-xxl);
   animation: fadeInUp var(--duration) var(--easing) 0.4s both;
 }
 
+@media (max-width: 991px) {
+  .graphics-hero-stats {
+    justify-content: center;
+  }
+}
+
 .graphics-hero-stats .stat-item {
+  position: relative;
   text-align: center;
-  background: var(--glass-light);
-  border: var(--glass-border);
-  border-radius: var(--border-radius-lg);
-  padding: var(--space-lg) var(--space-xl);
-  min-width: 120px;
-  transition: transform var(--duration) var(--easing);
-}
-
-.graphics-hero-stats .stat-item:hover {
-  transform: translateY(-4px) scale(1.02);
-}
-
-.graphics-hero-stats .stat-number {
-  display: block;
-  font-family: var(--font-primary);
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--bright-white);
-  line-height: 1;
-}
-
-.graphics-hero-stats .stat-label {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--warm-white);
-  margin-top: var(--space-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* SPINNING GRAPHICS CIRCLE - POSITIONED TO SHOW TOP HALF ONLY */
-.spinning-graphics-circle {
-  position: absolute;
-  top: 120vh; /* Position at bottom of viewport */
-  left: 50%;
-  width: 0;
-  height: 0;
-  z-index: 1;
-  opacity: 0.3;
-  pointer-events: none;
-  animation: spinCircle 60s linear infinite;
-}
-
-.graphics-card {
-  position: absolute;
-  width: 160px;
-  height: 284px; /* 9:16 aspect ratio */
-  top: -400px; /* Radius distance above center point */
-  left: -80px; /* Negative half width for centering */
-  transform: rotate(var(--rotation));
-  transform-origin: 80px 400px; /* Half width, radius distance to center */
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(3px);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-}
-
-.graphics-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--border-radius);
-  filter: brightness(0.8) contrast(1.1);
-}
-
-/* Remove individual card animations that cause drift */
-.graphics-card:nth-child(1),
-.graphics-card:nth-child(2),
-.graphics-card:nth-child(3),
-.graphics-card:nth-child(4),
-.graphics-card:nth-child(5),
-.graphics-card:nth-child(6),
-.graphics-card:nth-child(7),
-.graphics-card:nth-child(8),
-.graphics-card:nth-child(9) {
-  /* No individual animations - only the parent circle spins */
-}
-
-/* Spinning animation */
-@keyframes spinCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Card floating animations removed to prevent circle drift */
-
-/* GRAPHICS FILTER SECTION */
-.graphics-filter {
-  padding: var(--space-4xl) 0 var(--space-xl) 0;
-  background: var(--deep-black);
-  position: relative;
-}
-
-.graphics-filter .filter-platinum {
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.graphics-filter .filter-btn-platinum {
-  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-xl) var(--space-lg);
   min-width: 140px;
-  white-space: nowrap;
-}
-
-/* GRAPHICS GALLERY */
-.graphics-gallery {
-  padding: var(--space-xl) 0 var(--space-4xl) 0;
-  background: var(--deep-black);
-  min-height: 60vh;
-}
-
-.graphics-grid {
-  position: relative;
-}
-
-.graphics-grid .row {
-  gap: var(--space-lg);
-}
-
-/* GRAPHICS ITEM STYLING */
-.graphics-item {
-  position: relative;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  background: var(--gradient-dark);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: all var(--duration) var(--easing);
-  will-change: transform;
-  cursor: pointer;
-  aspect-ratio: 1 / 1;
-  margin-bottom: var(--space-lg);
-}
-
-.graphics-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-hard);
-}
-
-.graphics-item-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
 }
 
-.graphics-item-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--duration) var(--easing);
-}
-
-.graphics-item:hover .graphics-item-image img {
-  transform: scale(1.05);
-}
-
-.graphics-item-overlay {
+.graphics-hero-stats .stat-item::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--gradient-overlay);
+  background: linear-gradient(45deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 100%);
+  border-radius: var(--border-radius-xl);
   opacity: 0;
   transition: opacity var(--duration) var(--easing);
-  display: flex;
-  align-items: flex-end;
-  padding: var(--space-lg);
+  pointer-events: none;
 }
 
-.graphics-item:hover .graphics-item-overlay {
+.graphics-hero-stats .stat-item::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3));
+  border-radius: var(--border-radius-xl);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--duration) var(--easing);
+}
+
+.graphics-hero-stats .stat-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.graphics-hero-stats .stat-item:hover::before {
   opacity: 1;
 }
 
-.graphics-item-content {
-  transform: translateY(20px);
-  transition: transform var(--duration) var(--easing);
+.graphics-hero-stats .stat-item:hover::after {
+  opacity: 1;
 }
 
-.graphics-item:hover .graphics-item-content {
-  transform: translateY(0);
-}
-
-.graphics-item-title {
+.graphics-hero-stats .stat-number {
+  display: block;
   font-family: var(--font-primary);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--bright-white);
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg,
+    var(--bright-white) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    var(--bright-white) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
   margin-bottom: var(--space-xs);
-  line-height: 1.2;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.graphics-item-category {
+.graphics-hero-stats .stat-number::after {
+  content: '+';
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.graphics-hero-stats .stat-label {
+  display: block;
   font-size: 0.875rem;
-  color: var(--warm-white);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
+  letter-spacing: 0.1em;
+  position: relative;
 }
 
-.graphics-item-meta {
+.graphics-hero-stats .stat-label::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  border-radius: 1px;
+}
+
+/* Pulse animation for + symbol */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* HERO 3D FLIP CARD */
+.hero-flip-card-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-top: var(--space-sm);
+  height: 100%;
+  perspective: 1200px;
+  animation: slideInFromRight var(--duration) var(--easing) 0.4s both;
 }
 
-.graphics-item-date {
-  font-size: 0.75rem;
-  color: var(--warm-white);
-  opacity: 0.6;
+.hero-flip-card {
+  width: 320px;
+  height: 568px; /* 9:16 aspect ratio */
+  transition: transform 0.3s ease-out;
+  will-change: transform;
 }
 
-.graphics-item-type {
-  background: var(--glass-light);
-  border: var(--glass-border);
-  border-radius: var(--border-radius);
-  padding: var(--space-xs) var(--space-sm);
-  font-size: 0.75rem;
-  color: var(--bright-white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* MASONRY GRID LAYOUT */
-.graphics-masonry {
-  column-count: 4;
-  column-gap: var(--space-lg);
-  column-fill: balance;
-}
-
-.graphics-masonry .graphics-item {
-  break-inside: avoid;
-  margin-bottom: var(--space-lg);
-  display: inline-block;
+.hero-flip-card-inner {
+  position: relative;
   width: 100%;
-  aspect-ratio: auto;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: var(--border-radius-lg);
 }
 
-/* Different aspect ratios for variety */
-.graphics-item.ratio-square {
-  aspect-ratio: 1 / 1;
+.hero-flip-card.flipped .hero-flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-.graphics-item.ratio-portrait {
-  aspect-ratio: 4 / 5;
+.hero-flip-card-front,
+.hero-flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.graphics-item.ratio-landscape {
-  aspect-ratio: 16 / 9;
+.hero-flip-card-back {
+  transform: rotateY(180deg);
 }
 
-.graphics-item.ratio-story {
+.hero-flip-card-front img,
+.hero-flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effects for enhanced 3D feeling */
+.hero-flip-card:hover {
+  transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
+}
+
+.hero-flip-card:hover .hero-flip-card-front img,
+.hero-flip-card:hover .hero-flip-card-back img {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.2);
+}
+
+/* Subtle floating animation */
+@keyframes heroCardFloat {
+  0%, 100% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateY(2deg);
+  }
+}
+
+.hero-flip-card {
+  animation: heroCardFloat 6s ease-in-out infinite;
+}
+
+/* Slide in animation */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* GRAPHICS GALLERY SECTION */
+.featured-work {
+  padding: var(--space-4xl) 0;
+  background: var(--deep-black);
+  position: relative;
+}
+
+.graphics-gallery-grid {
+  margin-top: var(--space-xl);
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: var(--gradient-dark);
+  transition: all var(--duration) var(--easing);
+  cursor: pointer;
   aspect-ratio: 9 / 16;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration) var(--easing);
+  border-radius: var(--border-radius-lg);
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+/* Gallery Responsive Design */
+@media (max-width: 991px) {
+  .graphics-gallery-grid .row {
+    gap: var(--space-md);
+  }
+
+  .gallery-item {
+    margin-bottom: var(--space-md);
+  }
+}
+
+@media (max-width: 767px) {
+  .featured-work {
+    padding: var(--space-xxl) 0;
+  }
+
+  .graphics-gallery-grid {
+    margin-top: var(--space-lg);
+  }
+
+  .graphics-gallery-grid .row {
+    gap: var(--space-sm);
+  }
+
+  .gallery-item {
+    margin-bottom: var(--space-sm);
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.02);
+  }
 }
 
 /* GRAPHICS SERVICES SECTION */
@@ -433,38 +517,39 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
 
 /* TABLET LANDSCAPE */
 @media (max-width: 1199px) {
-  .graphics-masonry {
-    column-count: 3;
-  }
 
   .graphics-hero-stats {
-    gap: var(--space-lg);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
   }
 
   .graphics-hero-stats .stat-item {
-    padding: var(--space-md) var(--space-lg);
-    min-width: 100px;
+    padding: var(--space-lg) var(--space-md);
+    min-width: 120px;
+    min-height: 120px;
+  }
+
+  .graphics-hero-stats .stat-number {
+    font-size: 2.8rem;
   }
 
   .graphics-filter .filter-btn-platinum {
     min-width: 120px;
   }
 
-  /* Adjust spinning circle for tablets */
-  .graphics-card {
-    width: 140px;
-    height: 249px;
-    top: -350px; /* Radius distance above center */
-    left: -70px; /* Half width */
-    transform-origin: 70px 350px;
+  /* Adjust hero flip card for tablets */
+  .hero-flip-card {
+    width: 280px;
+    height: 497px;
+  }
+
+  .hero-flip-card-container {
+    perspective: 800px;
   }
 }
 
 /* TABLET PORTRAIT */
 @media (max-width: 991px) {
-  .graphics-masonry {
-    column-count: 2;
-  }
 
   .graphics-hero-stats {
     gap: var(--space-md);
@@ -485,33 +570,110 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
 @media (max-width: 767px) {
   .graphics-hero {
     min-height: 100vh;
-    padding: var(--space-xl) 0;
+    padding: 100px 0 var(--space-xl) 0; /* Extra top padding for navbar */
   }
 
-  /* Adjust spinning circle for mobile */
-  .spinning-graphics-circle {
-    opacity: 0.2;
+  /* Fix hero content visibility on mobile */
+  .graphics-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    margin-top: var(--space-lg); /* Additional top margin for safety */
   }
 
-  .graphics-card {
-    width: 100px;
-    height: 178px; /* Maintain 9:16 ratio */
-    top: -250px; /* Radius distance above center */
-    left: -50px; /* Half width */
-    transform-origin: 50px 250px;
+  .graphics-hero-title {
+    position: relative;
+    z-index: 10;
+    color: var(--bright-white); /* fallback color */
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+      135deg,
+      var(--bright-white) 0%,
+      var(--warm-white) 30%,
+      var(--bright-white) 60%,
+      rgba(255, 255, 255, 0.9) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: var(--space-md);
   }
 
-  /* Mobile floating animations removed to prevent drift */
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (-webkit-background-clip: text) {
+    .graphics-hero-title {
+      color: var(--bright-white);
+      background: none;
+    }
+  }
+
+  .graphics-hero-subtitle {
+    position: relative;
+    z-index: 10;
+    color: var(--warm-white);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Adjust hero flip card for mobile */
+  .hero-flip-card {
+    width: 240px;
+    height: 427px;
+  }
+
+  .hero-flip-card-container {
+    perspective: 600px;
+    margin-top: var(--space-lg);
+  }
+
+  /* Disable floating animation on mobile for better performance */
+  .hero-flip-card {
+    animation: none;
+  }
+
+  /* Simplify hover effects on mobile */
+  .hero-flip-card:hover {
+    transform: scale(1.02);
+  }
 
   .graphics-hero-stats {
+    position: relative;
+    z-index: 10;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     align-items: center;
+    justify-content: center;
+    margin-top: var(--space-xl);
   }
 
   .graphics-hero-stats .stat-item {
     width: 100%;
-    max-width: 200px;
+    max-width: 280px;
+    min-height: 120px;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .graphics-hero-stats .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .graphics-hero-stats .stat-number::after {
+    right: -12px;
+    font-size: 1.2rem;
+  }
+
+  /* Ensure hero background doesn't interfere */
+  .hero-background {
+    z-index: 0;
+  }
+
+  /* Make sure grid overlay doesn't cover content */
+  .grid-overlay {
+    z-index: 1;
   }
 
   .graphics-filter {
@@ -530,27 +692,6 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
     justify-content: center;
   }
 
-  .graphics-masonry {
-    column-count: 1;
-  }
-
-  .graphics-gallery {
-    padding: var(--space-lg) 0 var(--space-xxl) 0;
-  }
-
-  .graphics-item {
-    margin-bottom: var(--space-md);
-  }
-
-  /* Always show overlay on mobile */
-  .graphics-item-overlay {
-    opacity: 1;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  }
-
-  .graphics-item-content {
-    transform: translateY(0);
-  }
 }
 
 /* SMALL MOBILE */
@@ -565,13 +706,6 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
     font-size: 0.875rem;
   }
 
-  .graphics-item {
-    aspect-ratio: 1 / 1;
-  }
-
-  .graphics-item-title {
-    font-size: 1.125rem;
-  }
 
   .graphics-services .row {
     gap: var(--space-md);
@@ -579,21 +713,21 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
 }
 
 /* PERFORMANCE OPTIMIZATIONS */
-.spinning-graphics-circle {
-  will-change: transform;
+.hero-flip-card {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-}
-
-.graphics-card {
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.graphics-card img {
-  will-change: auto;
   transform: translateZ(0);
+}
+
+.hero-flip-card-inner {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-flip-card-front,
+.hero-flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ACCESSIBILITY ENHANCEMENTS */
@@ -613,19 +747,24 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
     animation: none;
   }
 
-  /* Disable spinning animations for reduced motion */
-  .spinning-graphics-circle {
+  /* Disable 3D animations for reduced motion */
+  .hero-flip-card {
+    transition: none !important;
     animation: none !important;
   }
 
-  .graphics-card:nth-child(odd),
-  .graphics-card:nth-child(even) {
-    animation: none !important;
+  .hero-flip-card-inner {
+    transition: none !important;
+    transform: none !important;
   }
 
-  /* Static positioning for reduced motion */
-  .spinning-graphics-circle {
-    opacity: 0.1;
+  .hero-flip-card-front,
+  .hero-flip-card-back {
+    transform: none !important;
+  }
+
+  .hero-flip-card-container {
+    animation: none !important;
   }
 }
 

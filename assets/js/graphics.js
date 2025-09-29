@@ -9,7 +9,7 @@ const graphicsData = {
   'social-media': [
     {
       id: 1,
-      title: 'Instagram Story - Match Announcement',
+      title: 'Instagram Story - Game Announcement',
       category: 'Social Media',
       type: 'Story',
       date: '2024-12-15',
@@ -27,7 +27,7 @@ const graphicsData = {
     },
     {
       id: 3,
-      title: 'Twitter Post - Player Stats',
+      title: 'Twitter Post - Athlete Stats',
       category: 'Social Media',
       type: 'Post',
       date: '2024-12-08',
@@ -44,11 +44,11 @@ const graphicsData = {
       ratio: 'square'
     }
   ],
-  'player-highlights': [
+  'athlete-highlights': [
     {
       id: 5,
-      title: 'Player Performance Analysis',
-      category: 'Player Highlights',
+      title: 'Athlete Performance Analysis',
+      category: 'Athlete Highlights',
       type: 'Infographic',
       date: '2024-12-12',
       image: '../assets/img/showcase/showcase-5.webp',
@@ -57,7 +57,7 @@ const graphicsData = {
     {
       id: 6,
       title: 'Season Goals Compilation',
-      category: 'Player Highlights',
+      category: 'Athlete Highlights',
       type: 'Stats',
       date: '2024-12-09',
       image: '../assets/img/showcase/showcase-6.webp',
@@ -65,8 +65,8 @@ const graphicsData = {
     },
     {
       id: 7,
-      title: 'Player Achievement Badge',
-      category: 'Player Highlights',
+      title: 'Athlete Achievement Badge',
+      category: 'Athlete Highlights',
       type: 'Badge',
       date: '2024-12-06',
       image: '../assets/img/showcase/showcase-7.webp',
@@ -75,18 +75,18 @@ const graphicsData = {
     {
       id: 8,
       title: 'Career Milestone Graphic',
-      category: 'Player Highlights',
+      category: 'Athlete Highlights',
       type: 'Milestone',
       date: '2024-12-03',
       image: '../assets/img/showcase/showcase-8.webp',
       ratio: 'portrait'
     }
   ],
-  'match-day': [
+  'game-day': [
     {
       id: 9,
-      title: 'Starting XI Lineup',
-      category: 'Match Day',
+      title: 'Starting Lineup',
+      category: 'Game Day',
       type: 'Lineup',
       date: '2024-12-14',
       image: '../assets/img/showcase/showcase-9.webp',
@@ -95,7 +95,7 @@ const graphicsData = {
     {
       id: 10,
       title: 'Live Score Update',
-      category: 'Match Day',
+      category: 'Game Day',
       type: 'Score',
       date: '2024-12-14',
       image: '../assets/img/showcase/showcase-10.webp',
@@ -103,8 +103,8 @@ const graphicsData = {
     },
     {
       id: 11,
-      title: 'Pre-Match Hype Graphic',
-      category: 'Match Day',
+      title: 'Pre-Game Hype Graphic',
+      category: 'Game Day',
       type: 'Promo',
       date: '2024-12-13',
       image: '../assets/img/showcase/showcase-1.webp',
@@ -112,8 +112,8 @@ const graphicsData = {
     },
     {
       id: 12,
-      title: 'Post-Match Results',
-      category: 'Match Day',
+      title: 'Post-Game Results',
+      category: 'Game Day',
       type: 'Results',
       date: '2024-12-14',
       image: '../assets/img/showcase/showcase-2.webp',
@@ -183,14 +183,15 @@ const graphicsData = {
 // Ensure DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all functionality
-  initializeGraphicsPage();
-  initializeGraphicsFilters();
   initializeGraphicsLightbox();
   initializeStatsCounters();
   initializeBackToTop();
   initializePerformanceOptimizations();
 
-  console.log('Graphics page initialized');
+  // Initialize hero 3D flip card
+  initializeHero3DFlipCard();
+
+  console.log('Graphics page initialized with lightbox and static gallery');
 });
 
 /*
@@ -667,6 +668,103 @@ function initializePerformanceOptimizations() {
 
 /*
 ==============================================
+HERO 3D FLIP CARD SYSTEM
+==============================================
+*/
+function initializeHero3DFlipCard() {
+  const heroCard = document.getElementById('heroFlipCard');
+
+  if (!heroCard) return;
+
+  // Array of all showcase images
+  const showcaseImages = [
+    '../assets/img/showcase/showcase-1.webp',
+    '../assets/img/showcase/showcase-2.webp',
+    '../assets/img/showcase/showcase-3.webp',
+    '../assets/img/showcase/showcase-4.webp',
+    '../assets/img/showcase/showcase-5.webp',
+    '../assets/img/showcase/showcase-6.webp',
+    '../assets/img/showcase/showcase-7.webp',
+    '../assets/img/showcase/showcase-8.webp',
+    '../assets/img/showcase/showcase-9.webp',
+    '../assets/img/showcase/showcase-10.webp'
+  ];
+
+  let currentImageIndex = 0;
+  let isFlipped = false;
+
+  // Start automatic image cycling
+  setInterval(() => {
+    cycleHeroCardImage(heroCard, showcaseImages, currentImageIndex);
+    currentImageIndex = (currentImageIndex + 1) % showcaseImages.length;
+  }, 3000); // Change image every 3 seconds
+
+  // Add subtle mouse parallax effect
+  addHeroCardParallaxEffect(heroCard);
+}
+
+function cycleHeroCardImage(card, images, nextIndex) {
+  const frontImg = card.querySelector('.hero-flip-card-front img');
+  const backImg = card.querySelector('.hero-flip-card-back img');
+
+  // Determine which side is currently visible
+  const isCurrentlyFlipped = card.classList.contains('flipped');
+
+  // Update the hidden side with the next image
+  if (isCurrentlyFlipped) {
+    // Back is visible, update front
+    frontImg.src = images[nextIndex];
+  } else {
+    // Front is visible, update back
+    backImg.src = images[nextIndex];
+  }
+
+  // Wait a moment for image to load, then flip
+  setTimeout(() => {
+    flipHeroCard(card);
+  }, 100);
+}
+
+function flipHeroCard(card) {
+  // Toggle the flipped class to trigger the 3D flip animation
+  card.classList.toggle('flipped');
+}
+
+// Add subtle mouse parallax effect for hero card
+function addHeroCardParallaxEffect(heroCard) {
+  const cardContainer = heroCard.closest('.hero-flip-card-container');
+
+  if (!cardContainer) return;
+
+  // Throttled mouse move handler for performance
+  const handleMouseMove = throttle((e) => {
+    const rect = cardContainer.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+
+    // Calculate parallax offset (very subtle effect)
+    const maxRotation = 8;
+    const rotateX = (mouseY / rect.height) * maxRotation;
+    const rotateY = -(mouseX / rect.width) * maxRotation;
+
+    // Apply subtle parallax transform
+    heroCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  }, 16); // ~60fps
+
+  // Add mouse move listener to the container
+  cardContainer.addEventListener('mousemove', handleMouseMove);
+
+  // Reset position when mouse leaves
+  cardContainer.addEventListener('mouseleave', () => {
+    heroCard.style.transform = '';
+  });
+}
+
+/*
+==============================================
 UTILITY FUNCTIONS
 ==============================================
 */
@@ -703,9 +801,7 @@ function debounce(func, wait, immediate) {
 
 // Export functions for external use
 window.GraphicsPortfolio = {
-  loadGraphics,
-  filterGraphics,
-  showLoadingState,
-  hideLoadingState,
-  animateCounter
+  animateCounter,
+  initializeHero3DFlipCard,
+  flipHeroCard
 };
