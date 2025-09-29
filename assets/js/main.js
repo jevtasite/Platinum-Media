@@ -548,23 +548,11 @@ function initializeWorkFilters() {
         );
         this.setAttribute("aria-selected", "true");
 
-        // Animate content change
-        workGrid.style.opacity = "0";
-        workGrid.style.transform = "translateY(20px)";
-
-        setTimeout(() => {
-          workGrid.innerHTML = contentData[filter] || contentData.graphics;
-          workGrid.style.opacity = "1";
-          workGrid.style.transform = "translateY(0)";
-
-          // Re-initialize lazy loading for new images
-          initializeLazyLoading();
-
-          // Re-initialize lightbox for new images
-          if (window.lightbox) {
-            window.lightbox.updateTriggers();
-          }
-        }, 300);
+        // Smooth filter transition with staggered card animations
+        animateFilterTransition(
+          workGrid,
+          contentData[filter] || contentData.graphics
+        );
       });
     });
 
@@ -580,6 +568,71 @@ function initializeWorkFilters() {
       }
     }, 100);
   }
+}
+
+/*
+==============================================
+FILTER ANIMATION SYSTEM
+==============================================
+*/
+function animateFilterTransition(workGrid, newContent) {
+  const existingItems = workGrid.querySelectorAll(".work-item-platinum");
+
+  // Phase 1: Animate out existing items with faster staggered timing
+  existingItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add("filter-exit");
+    }, index * 30); // Reduced from 60ms to 30ms
+  });
+
+  // Calculate total exit time - much shorter
+  const exitDuration = existingItems.length * 30 + 200; // Reduced animation duration
+
+  // Phase 2: Replace content and animate in new items
+  setTimeout(() => {
+    workGrid.innerHTML = newContent;
+
+    // Get new items and set initial state
+    const newItems = workGrid.querySelectorAll(".work-item-platinum");
+
+    // Set initial invisible state for all new items
+    newItems.forEach((item) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(20px) scale(0.95) translateZ(0)"; // Reduced movement
+    });
+
+    // Animate in new items with faster staggered timing
+    newItems.forEach((item, index) => {
+      setTimeout(() => {
+        // Use CSS class for smooth performance
+        item.classList.add("filter-enter");
+
+        // Also use direct style for immediate effect
+        requestAnimationFrame(() => {
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0) scale(1) translateZ(0)";
+          item.style.transition =
+            "all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)"; // Reduced from 0.6s to 0.3s
+        });
+      }, index * 40 + 50); // Reduced stagger to 40ms and delay to 50ms
+    });
+
+    // Clean up animation classes after completion - faster
+    setTimeout(() => {
+      newItems.forEach((item) => {
+        item.classList.remove("filter-enter");
+        item.style.transition = ""; // Reset to default
+      });
+    }, newItems.length * 40 + 50 + 300); // Shorter total time
+
+    // Re-initialize functionality for new content - faster
+    setTimeout(() => {
+      initializeLazyLoading();
+      if (window.lightbox) {
+        window.lightbox.updateTriggers();
+      }
+    }, 150); // Reduced from 300ms to 150ms
+  }, exitDuration);
 }
 
 /*
@@ -785,16 +838,20 @@ function initializeBackToTop() {
   if (!backToTopButton) return;
 
   // Show/hide button based on scroll position
-  window.addEventListener("scroll", function() {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.add("show");
-    } else {
-      backToTopButton.classList.remove("show");
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("show");
+      } else {
+        backToTopButton.classList.remove("show");
+      }
+    },
+    { passive: true }
+  );
 
   // Click event to scroll to top
-  backToTopButton.addEventListener("click", function() {
+  backToTopButton.addEventListener("click", function () {
     scrollToTop();
   });
 }
@@ -999,28 +1056,28 @@ STATS COUNTER ANIMATIONS
 ==============================================
 */
 function initializeStatsCounters() {
-  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+  const statNumbers = document.querySelectorAll(".stat-number[data-count]");
   const observerOptions = {
     threshold: 0.5,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-        entry.target.classList.add('counted');
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains("counted")) {
+        entry.target.classList.add("counted");
         animateCounter(entry.target);
       }
     });
   }, observerOptions);
 
-  statNumbers.forEach(stat => {
+  statNumbers.forEach((stat) => {
     counterObserver.observe(stat);
   });
 }
 
 function animateCounter(element) {
-  const target = parseInt(element.getAttribute('data-count'));
+  const target = parseInt(element.getAttribute("data-count"));
   const duration = 2000; // 2 seconds
   const increment = target / (duration / 16); // 60fps
   let current = 0;

@@ -151,46 +151,115 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     align-items: center;
   }
 
-  /* Mobile showcase */
+  /* Mobile showcase with deck-of-cards stacked effect */
   .hero-showcase {
     order: 2;
-    min-height: 200px;
-    padding: var(--space-xs) 0;
+    min-height: 280px;
+    padding: var(--space-sm) 0;
     flex: 0 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .showcase-container {
-    height: 100%;
-    max-width: 300px;
+    position: relative;
+    width: 180px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  /* All cards same size - 9:16 aspect ratio */
   .featured-graphic {
-    width: 250px;
-    max-height: 55vh;
+    position: relative;
+    width: 180px;
+    height: 320px;
+    z-index: 3;
+    transform: translateZ(0);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
 
+  /* Deck-of-cards stacked effect - only edges visible */
   .floating-graphic-1 {
-    top: 40px;
-    right: 20px;
-    width: 120px;
-    height: 214px;
+    position: absolute;
+    top: 0;
+    left: 0px !important;
+    width: 180px;
+    height: 320px;
+    z-index: 2;
+    transform: translateZ(0);
     aspect-ratio: 9 / 16;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .floating-graphic-2 {
-    bottom: 80px;
-    left: 30px;
-    width: 100px;
-    height: 178px;
+    position: absolute;
+    top: 0;
+    left: 220px !important; /* Position on right side by offsetting to the left of main card */
+    width: 180px;
+    height: 320px;
+    z-index: 1;
+    transform: translateZ(0);
     aspect-ratio: 9 / 16;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
+  /* Optional third card for more depth */
   .floating-graphic-3 {
-    bottom: 20px;
-    right: 15px;
-    width: 130px;
-    height: 231px;
+    position: absolute;
+    top: 0;
+    width: 180px;
+    height: 320px;
+    z-index: 0;
+    transform: translateZ(0);
     aspect-ratio: 9 / 16;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Cool hover/touch effect - cards fan out slightly */
+  .showcase-container:active .floating-graphic-1,
+  .showcase-container:hover .floating-graphic-1 {
+    left: 12px;
+    transform: translateZ(0) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .showcase-container:active .floating-graphic-2,
+  .showcase-container:hover .floating-graphic-2 {
+    left: -12px;
+    transform: translateZ(0) rotate(-4deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .showcase-container:active .floating-graphic-3,
+  .showcase-container:hover .floating-graphic-3 {
+    left: 36px;
+    transform: translateZ(0) rotate(6deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes subtleFloat {
+    0%,
+    100% {
+      transform: translateY(0) translateZ(0);
+    }
+    50% {
+      transform: translateY(-2px) translateZ(0);
+    }
   }
 
   .showcase-stats {
@@ -272,13 +341,15 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
   /* Mobile work grid */
   .filter-platinum {
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--space-sm);
     padding: var(--space-md);
+    justify-content: center;
   }
 
   .filter-btn-platinum {
-    width: 100%;
+    flex: 1;
+    max-width: 120px;
     justify-content: center;
   }
 
@@ -475,6 +546,10 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   .hero-subtitle {
     font-size: clamp(0.85rem, 3.5vw, 1rem);
     margin-bottom: var(--space-lg);
+  }
+
+  .floating-graphic-2 {
+    left: 190px !important;
   }
 
   /* Optimized sections */
@@ -1476,14 +1551,53 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 }
 
 @media (max-width: 768px) {
-  .featured-graphic {
-    width: 220px;
-    max-height: 45vh;
-    aspect-ratio: 9 / 16;
+  /* Adjust deck-of-cards for small mobile */
+  .hero-showcase {
+    min-height: 260px;
   }
 
-  .hero-showcase {
-    min-height: 180px;
+  .showcase-container {
+    width: 160px;
+    height: 260px;
+  }
+
+  .featured-graphic {
+    width: 160px;
+    height: 284px; /* Maintain 9:16 ratio */
+  }
+
+  .floating-graphic-1 {
+    width: 160px;
+    height: 284px;
+    left: 6px; /* Smaller edge visible */
+  }
+
+  .floating-graphic-2 {
+    width: 160px;
+    height: 284px;
+    left: -6px;
+  }
+
+  .floating-graphic-3 {
+    width: 160px;
+    height: 284px;
+    left: 18px;
+  }
+
+  /* Fan out effect for smaller screens */
+  .showcase-container:active .floating-graphic-1,
+  .showcase-container:hover .floating-graphic-1 {
+    left: 10px;
+  }
+
+  .showcase-container:active .floating-graphic-2,
+  .showcase-container:hover .floating-graphic-2 {
+    left: -10px;
+  }
+
+  .showcase-container:active .floating-graphic-3,
+  .showcase-container:hover .floating-graphic-3 {
+    left: 30px;
   }
 }
 

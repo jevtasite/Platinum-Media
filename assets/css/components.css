@@ -258,7 +258,8 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
   aspect-ratio: 9 / 16;
   background: var(--gradient-dark);
   transition: all var(--duration) var(--easing);
-  will-change: transform;
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
 .work-item-platinum:hover {
@@ -601,12 +602,14 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
   }
 
   .filter-platinum {
-    flex-direction: column;
-    gap: var(--space-xs);
+    flex-direction: row;
+    gap: var(--space-sm);
+    justify-content: center;
   }
 
   .filter-btn-platinum {
-    width: 100%;
+    flex: 1;
+    max-width: 120px;
   }
 
   .form-platinum {
@@ -627,4 +630,55 @@ PLATINUM MEDIA - COMPONENT ARCHITECTURE
   .work-item-content {
     transform: translateY(0);
   }
+}
+
+/* FILTER ANIMATION CLASSES */
+.work-item-platinum.filter-exit {
+  animation: filterExit 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.work-item-platinum.filter-enter {
+  animation: filterEnter 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes filterExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9) translateZ(0);
+  }
+}
+
+@keyframes filterEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) translateZ(0);
+  }
+}
+
+/* SMOOTH TRANSITIONS FOR WORK GRID */
+.work-grid {
+  position: relative;
+  min-height: 400px; /* Prevent layout shift during animations */
+}
+
+.work-grid .row {
+  transition: opacity 0.3s ease;
+}
+
+/* PERFORMANCE OPTIMIZATIONS FOR ANIMATIONS */
+.work-item-platinum,
+.work-item-image,
+.work-item-overlay {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
