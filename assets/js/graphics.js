@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeStatsCounters();
   initializeBackToTop();
   initializePerformanceOptimizations();
+  initializeShowMoreButton();
 
   // Initialize hero 3D flip card
   initializeHero3DFlipCard();
@@ -431,6 +432,74 @@ function showEmptyState(category) {
 
 /*
 ==============================================
+SHOW MORE GALLERY FUNCTIONALITY
+==============================================
+*/
+function initializeShowMoreButton() {
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  const hiddenItems = document.querySelectorAll('.gallery-item-hidden');
+
+  if (!showMoreBtn || hiddenItems.length === 0) return;
+
+  let isExpanded = false;
+
+  showMoreBtn.addEventListener('click', function() {
+    if (isExpanded) {
+      // Hide items in reverse order (bottom to top) with horizontal slide
+      const reversedItems = Array.from(hiddenItems).reverse();
+      reversedItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.remove('gallery-item-visible');
+          item.classList.add('gallery-item-hiding');
+        }, index * 80);
+      });
+
+      // After all animations complete, actually hide the items
+      setTimeout(() => {
+        hiddenItems.forEach(item => {
+          item.classList.remove('gallery-item-hiding');
+          item.classList.add('gallery-item-hidden');
+        });
+      }, reversedItems.length * 80 + 500);
+
+      showMoreBtn.innerHTML = `
+        Show More
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="ms-2">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      `;
+      showMoreBtn.classList.remove('expanded');
+      isExpanded = false;
+    } else {
+      // Show additional items
+      hiddenItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.remove('gallery-item-hidden');
+          item.classList.add('gallery-item-visible');
+        }, index * 100);
+      });
+
+      showMoreBtn.innerHTML = `
+        Show Less
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="ms-2">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      `;
+      showMoreBtn.classList.add('expanded');
+      isExpanded = true;
+
+      // Update lightbox triggers after showing new items
+      setTimeout(() => {
+        if (window.lightbox) {
+          window.lightbox.updateTriggers();
+        }
+      }, hiddenItems.length * 100 + 200);
+    }
+  });
+}
+
+/*
+==============================================
 LIGHTBOX FUNCTIONALITY
 ==============================================
 */
@@ -451,6 +520,7 @@ class GraphicsLightbox {
     this.nextBtn = document.getElementById("lightbox-next");
     this.triggers = [];
     this.currentIndex = 0;
+
 
     this.init();
   }

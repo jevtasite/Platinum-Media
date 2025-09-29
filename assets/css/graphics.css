@@ -347,6 +347,8 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   transition: all var(--duration) var(--easing);
   cursor: pointer;
   aspect-ratio: 9 / 16;
+  max-width: 320px;
+  margin: 0 auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -365,6 +367,75 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
 
 .gallery-item:hover .gallery-image {
   transform: scale(1.05);
+}
+
+/* Gallery Show More Functionality */
+.gallery-item-hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.gallery-item-visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.gallery-item-hiding {
+  display: block;
+  opacity: 0;
+  transform: scaleY(0);
+  animation: fadeOutSlide 0.5s ease-in forwards;
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+    height: auto;
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+    height: 0;
+  }
+}
+
+.show-more-btn {
+  position: relative;
+  padding: 0.875rem 2.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--bright-white);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--duration) var(--easing);
+}
+
+.show-more-btn:hover {
+  background: var(--bright-white);
+  border-color: var(--bright-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: #000;
+}
+
+.show-more-btn:active {
+  transform: translateY(0);
+}
+
+.show-more-btn svg {
+  transition: transform var(--duration) var(--easing);
+}
+
+.show-more-btn.expanded svg {
+  transform: rotate(180deg);
 }
 
 /* Gallery Responsive Design */
