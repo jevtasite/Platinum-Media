@@ -45,6 +45,12 @@
       crossorigin="anonymous"
     />
 
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/grid-system.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
@@ -138,11 +144,11 @@
                 </p>
                 <div class="graphics-hero-stats">
                   <div class="stat-item">
-                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-number" data-count="100">0</span>
                     <span class="stat-label">Projects</span>
                   </div>
                   <div class="stat-item">
-                    <span class="stat-number" data-count="25">0</span>
+                    <span class="stat-number" data-count="50">0</span>
                     <span class="stat-label">Athletes</span>
                   </div>
                   <div class="stat-item">
@@ -345,105 +351,115 @@
                 Trusted by professional athletes and sports brands worldwide
               </p>
             </div>
-            <div class="row g-4">
-              <!-- Testimonial 1 -->
-              <div class="col-12 col-lg-4">
-                <article class="testimonial-card">
-                  <div class="testimonial-content">
-                    <div class="testimonial-quote">
-                      <svg
-                        class="quote-icon"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                        />
-                      </svg>
-                      <blockquote class="testimonial-text">
-                        "Platinum Media transformed my social media presence.
-                        Their graphics perfectly capture the energy of my game
-                        and have significantly increased fan engagement."
-                      </blockquote>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-info">
-                        <h4 class="author-name">Marcus Rodriguez</h4>
-                        <p class="author-role">Professional Soccer Player</p>
-                        <p class="author-team">FC Barcelona Academy</p>
+            <!-- Swiper -->
+            <div class="swiper testimonials-swiper">
+              <div class="swiper-wrapper">
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                  <article class="testimonial-card">
+                    <div class="testimonial-content">
+                      <div class="testimonial-quote">
+                        <svg
+                          class="quote-icon"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
+                          />
+                        </svg>
+                        <blockquote class="testimonial-text">
+                          "Platinum Media transformed my social media presence.
+                          Their graphics perfectly capture the energy of my game
+                          and have significantly increased fan engagement."
+                        </blockquote>
+                      </div>
+                      <div class="testimonial-author">
+                        <div class="author-info">
+                          <h4 class="author-name">Marcus Rodriguez</h4>
+                          <p class="author-role">Professional Soccer Player</p>
+                          <p class="author-team">FC Barcelona Academy</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                  <article class="testimonial-card">
+                    <div class="testimonial-content">
+                      <div class="testimonial-quote">
+                        <svg
+                          class="quote-icon"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
+                          />
+                        </svg>
+                        <blockquote class="testimonial-text">
+                          "The team created stunning highlight reels and
+                          graphics for our championship season. Every design
+                          exceeded our expectations and helped build our brand."
+                        </blockquote>
+                      </div>
+                      <div class="testimonial-author">
+                        <div class="author-info">
+                          <h4 class="author-name">Sarah Mitchell</h4>
+                          <p class="author-role">Marketing Director</p>
+                          <p class="author-team">Phoenix Basketball Club</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="swiper-slide">
+                  <article class="testimonial-card">
+                    <div class="testimonial-content">
+                      <div class="testimonial-quote">
+                        <svg
+                          class="quote-icon"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
+                          />
+                        </svg>
+                        <blockquote class="testimonial-text">
+                          "Working with Platinum Media was a game-changer. Their
+                          creative vision and attention to detail helped elevate
+                          my personal brand to the next level."
+                        </blockquote>
+                      </div>
+                      <div class="testimonial-author">
+                        <div class="author-info">
+                          <h4 class="author-name">Alex Thompson</h4>
+                          <p class="author-role">Professional Tennis Player</p>
+                          <p class="author-team">ATP Tour</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
               </div>
 
-              <!-- Testimonial 2 -->
-              <div class="col-12 col-lg-4">
-                <article class="testimonial-card">
-                  <div class="testimonial-content">
-                    <div class="testimonial-quote">
-                      <svg
-                        class="quote-icon"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                        />
-                      </svg>
-                      <blockquote class="testimonial-text">
-                        "The team created stunning highlight reels and graphics
-                        for our championship season. Every design exceeded our
-                        expectations and helped build our brand."
-                      </blockquote>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-info">
-                        <h4 class="author-name">Sarah Mitchell</h4>
-                        <p class="author-role">Marketing Director</p>
-                        <p class="author-team">Phoenix Basketball Club</p>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
 
-              <!-- Testimonial 3 -->
-              <div class="col-12 col-lg-4">
-                <article class="testimonial-card">
-                  <div class="testimonial-content">
-                    <div class="testimonial-quote">
-                      <svg
-                        class="quote-icon"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                        />
-                      </svg>
-                      <blockquote class="testimonial-text">
-                        "Working with Platinum Media was a game-changer. Their
-                        creative vision and attention to detail helped elevate
-                        my personal brand to the next level."
-                      </blockquote>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-info">
-                        <h4 class="author-name">Alex Thompson</h4>
-                        <p class="author-role">Professional Tennis Player</p>
-                        <p class="author-team">ATP Tour</p>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
+              <!-- Add Navigation arrows -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
         </div>
@@ -763,6 +779,9 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="../assets/js/graphics.js"></script>

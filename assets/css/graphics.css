@@ -609,6 +609,135 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   margin-top: 0;
 }
 
+/* Testimonials Swiper */
+.testimonials-swiper {
+  padding: var(--space-lg) 0 var(--space-xxl) 0;
+  overflow: visible;
+}
+
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  transition: all 0.5s ease;
+  opacity: 0.4;
+  transform: scale(0.8);
+  filter: blur(2px);
+}
+
+.testimonials-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  z-index: 2;
+}
+
+.testimonials-swiper .swiper-slide-prev,
+.testimonials-swiper .swiper-slide-next {
+  opacity: 0.6;
+  transform: scale(0.85);
+  filter: blur(1px);
+}
+
+/* Swiper Navigation */
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: var(--bright-white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--duration) var(--easing);
+}
+
+.testimonials-swiper .swiper-button-next:after,
+.testimonials-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.testimonials-swiper .swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Swiper Pagination */
+.testimonials-swiper .swiper-pagination {
+  bottom: 0;
+  position: relative;
+  margin-top: var(--space-xl);
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px;
+  transition: all var(--duration) var(--easing);
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: var(--bright-white);
+  transform: scale(1.2);
+}
+
+/* Swiper responsive design */
+@media (max-width: 991px) {
+  .testimonials-swiper .swiper-button-next,
+  .testimonials-swiper .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonials-swiper {
+    padding: var(--space-md) 0 var(--space-xl) 0;
+    overflow: hidden;
+  }
+
+  .testimonials-swiper .swiper-slide {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    filter: blur(0) !important;
+  }
+
+  .testimonials-swiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  .testimonials-swiper .swiper-pagination {
+    margin-top: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-swiper {
+    padding: var(--space-sm) 0 var(--space-lg) 0;
+  }
+
+  .testimonials-swiper .swiper-slide {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    filter: blur(0) !important;
+  }
+}
+
 .testimonial-card {
   height: 100%;
   background: rgba(255, 255, 255, 0.05);
@@ -713,6 +842,45 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   .testimonial-card {
     padding: var(--space-md);
     margin-bottom: var(--space-lg);
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .author-name {
+    font-size: 1.1rem;
+  }
+
+  .author-role {
+    font-size: 0.9rem;
+  }
+
+  .author-team {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+
+  .author-name {
+    font-size: 1rem;
+  }
+
+  .quote-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 

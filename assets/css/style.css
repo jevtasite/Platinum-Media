@@ -1819,12 +1819,7 @@ section {
 }
 
 .lightbox-title {
-  color: var(--bright-white);
-  font-size: var(--h4-size);
-  font-weight: 600;
-  text-align: center;
-  margin-top: var(--space-md);
-  margin-bottom: 0;
+  display: none;
 }
 
 .lightbox-close {

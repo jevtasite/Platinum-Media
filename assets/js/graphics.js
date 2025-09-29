@@ -188,6 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initializePerformanceOptimizations();
   initializeShowMoreButton();
   initializeContactToggle();
+  initializeTestimonialsSwiper();
+  initializeContactForm();
 
   // Initialize hero 3D flip card
   initializeHero3DFlipCard();
@@ -471,6 +473,240 @@ function initializeContactToggle() {
       }, 300);
     }
   });
+}
+
+/*
+==============================================
+TESTIMONIALS SWIPER FUNCTIONALITY
+==============================================
+*/
+function initializeTestimonialsSwiper() {
+  const testimonialsSwiper = document.querySelector('.testimonials-swiper');
+
+  if (!testimonialsSwiper || typeof Swiper === 'undefined') return;
+
+  let swiper;
+  let currentDirection = 1; // 1 for forward, -1 for reverse
+  let autoplayInterval;
+
+  swiper = new Swiper('.testimonials-swiper', {
+    // Basic settings
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: false,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: false,
+    },
+
+    // Effects
+    effect: 'slide',
+    speed: 600,
+
+    // Responsive breakpoints
+    breakpoints: {
+      // Mobile devices
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        centeredSlides: true,
+      },
+      // Mobile landscape and small tablets
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        centeredSlides: true,
+      },
+      // Tablets
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25,
+        centeredSlides: false,
+      },
+      // Large tablets and small desktops
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        centeredSlides: true,
+      },
+      // Large desktops
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        centeredSlides: true,
+      }
+    },
+
+    // Accessibility
+    a11y: {
+      enabled: true,
+      prevSlideMessage: 'Previous testimonial',
+      nextSlideMessage: 'Next testimonial',
+    },
+
+    // Keyboard control
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
+    // Events
+    on: {
+      init: function() {
+        console.log('Testimonials swiper initialized with center focus');
+        startCustomAutoplay();
+      }
+    }
+  });
+
+  function startCustomAutoplay() {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+    }
+
+    autoplayInterval = setInterval(() => {
+      const currentIndex = swiper.activeIndex;
+      const totalSlides = swiper.slides.length;
+      const maxIndex = totalSlides - 1;
+
+      if (currentDirection === 1) {
+        // Moving forward
+        if (currentIndex < maxIndex) {
+          swiper.slideNext();
+        } else {
+          // Reached the end, reverse direction
+          currentDirection = -1;
+          swiper.slidePrev();
+        }
+      } else {
+        // Moving backward
+        if (currentIndex > 0) {
+          swiper.slidePrev();
+        } else {
+          // Reached the beginning, go forward again
+          currentDirection = 1;
+          swiper.slideNext();
+        }
+      }
+    }, 4000);
+  }
+
+  function stopCustomAutoplay() {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+    }
+  }
+
+  // Pause on hover
+  testimonialsSwiper.addEventListener('mouseenter', stopCustomAutoplay);
+  testimonialsSwiper.addEventListener('mouseleave', startCustomAutoplay);
+
+  // Pause on user interaction
+  swiper.on('slideChange', function() {
+    if (this.touches && this.touches.diff) {
+      // User is interacting, pause for a moment
+      stopCustomAutoplay();
+      setTimeout(startCustomAutoplay, 6000);
+    }
+  });
+}
+
+/*
+==============================================
+CONTACT FORM FUNCTIONALITY
+==============================================
+*/
+function initializeContactForm() {
+  const contactForm = document.querySelector(".contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get form elements
+      const nameField = this.querySelector("#name");
+      const emailField = this.querySelector("#email");
+      const messageField = this.querySelector("#message");
+      const submitButton = this.querySelector('button[type="submit"]');
+
+      // Basic validation
+      let isValid = true;
+
+      // Reset previous validation states
+      this.querySelectorAll(".form-control").forEach((field) => {
+        field.classList.remove("is-invalid", "is-valid");
+      });
+
+      // Validate name
+      if (!nameField.value.trim()) {
+        nameField.classList.add("is-invalid");
+        isValid = false;
+      } else {
+        nameField.classList.add("is-valid");
+      }
+
+      // Validate email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailField.value.trim() || !emailRegex.test(emailField.value)) {
+        emailField.classList.add("is-invalid");
+        isValid = false;
+      } else {
+        emailField.classList.add("is-valid");
+      }
+
+      // Validate message
+      if (!messageField.value.trim()) {
+        messageField.classList.add("is-invalid");
+        isValid = false;
+      } else {
+        messageField.classList.add("is-valid");
+      }
+
+      if (isValid) {
+        // Simulate form submission
+        const originalText = submitButton.querySelector('.btn-text').textContent;
+        submitButton.querySelector('.btn-text').textContent = "Sending...";
+        submitButton.disabled = true;
+
+        setTimeout(() => {
+          submitButton.querySelector('.btn-text').textContent = "Message Sent!";
+          submitButton.style.background = "#10b981";
+
+          // Reset form after success
+          setTimeout(() => {
+            this.reset();
+            submitButton.querySelector('.btn-text').textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.style.background = "";
+            this.querySelectorAll(".form-control").forEach((field) => {
+              field.classList.remove("is-invalid", "is-valid");
+            });
+          }, 2000);
+        }, 1500);
+      }
+    });
+
+    // Real-time validation
+    const formFields = contactForm.querySelectorAll(".form-control");
+    formFields.forEach((field) => {
+      field.addEventListener("blur", function () {
+        if (this.value.trim()) {
+          this.classList.remove("is-invalid");
+          this.classList.add("is-valid");
+        }
+      });
+    });
+  }
 }
 
 /*
