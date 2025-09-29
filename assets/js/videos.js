@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeContactToggle();
   initializeVideoModal();
   initializeHeroVideoPreview();
+  initializeVideoCarousel();
+  initializeProductionProcess();
+  initializeClientShowcase();
 
   console.log("Videos page initialized");
 });
@@ -312,7 +315,8 @@ function initializeVideoModal() {
     }
   });
 
-  function openVideoModal(videoSrc, title) {
+  // Make openVideoModal globally accessible
+  window.openVideoModal = function(videoSrc, title) {
     modalVideo.src = videoSrc;
     modalTitle.textContent = title || '';
     videoModal.classList.add('active');
@@ -322,7 +326,7 @@ function initializeVideoModal() {
     modalVideo.play().catch(e => {
       console.log('Video autoplay prevented:', e);
     });
-  }
+  };
 
   function closeVideoModal() {
     modalVideo.pause();
@@ -369,6 +373,329 @@ function initializeHeroVideoPreview() {
   previewVideo.addEventListener('pause', function() {
     playBtn.style.opacity = '1';
   });
+}
+
+/*
+==============================================
+VIDEO CAROUSEL FUNCTIONALITY
+==============================================
+*/
+function initializeVideoCarousel() {
+  const carouselItems = document.querySelectorAll('.video-carousel-item');
+
+  if (!carouselItems.length) return;
+
+  // Video data for carousel items
+  const carouselVideos = [
+    {
+      video: '../assets/video/highlight-reel-preview.mp4',
+      title: 'Highlight Reels Collection'
+    },
+    {
+      video: '../assets/video/training-montage-preview.mp4',
+      title: 'Training Sessions'
+    },
+    {
+      video: '../assets/video/behind-scenes-preview.mp4',
+      title: 'Behind the Scenes'
+    },
+    {
+      video: '../assets/video/gameday-coverage-preview.mp4',
+      title: 'Game Day Coverage'
+    }
+  ];
+
+  carouselItems.forEach((item, index) => {
+    const miniPreview = item.querySelector('.mini-video-preview');
+    const playBtn = item.querySelector('.mini-play-btn');
+
+    if (!miniPreview || !playBtn) return;
+
+    // Add click handler to open video modal
+    miniPreview.addEventListener('click', function() {
+      const videoData = carouselVideos[index];
+      if (videoData && typeof openVideoModal === 'function') {
+        openVideoModal(videoData.video, videoData.title);
+      } else {
+        // Fallback: scroll to main gallery
+        const gallerySection = document.querySelector('.featured-videos');
+        if (gallerySection) {
+          gallerySection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+
+    // Add hover animation effects
+    miniPreview.addEventListener('mouseenter', function() {
+      // Add subtle animation or effect
+      this.style.transform = 'translateY(-4px) scale(1.05)';
+    });
+
+    miniPreview.addEventListener('mouseleave', function() {
+      this.style.transform = '';
+    });
+
+    // Add keyboard accessibility
+    miniPreview.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+
+    // Make it focusable
+    miniPreview.setAttribute('tabindex', '0');
+    miniPreview.setAttribute('role', 'button');
+    miniPreview.setAttribute('aria-label', `Play ${carouselVideos[index]?.title || 'video'}`);
+  });
+
+  // Add sequential fade-in animation
+  carouselItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      item.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+      item.style.opacity = '1';
+      item.style.transform = 'translateY(0)';
+    }, index * 150 + 800); // Start after hero content loads
+  });
+}
+
+/*
+==============================================
+PRODUCTION PROCESS ANIMATIONS
+==============================================
+*/
+function initializeProductionProcess() {
+  const processSteps = document.querySelectorAll('.process-step');
+
+  if (!processSteps.length) return;
+
+  // Add sequential fade-in animation for process steps
+  processSteps.forEach((step, index) => {
+    // Set initial state
+    step.style.opacity = '0';
+    step.style.transform = 'translateX(-30px)';
+
+    // Animate in sequence with delay
+    setTimeout(() => {
+      step.style.transition = 'all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+      step.style.opacity = '1';
+      step.style.transform = 'translateX(0)';
+    }, index * 200 + 1200); // Start after hero content and carousel
+  });
+
+  // Add hover animations
+  processSteps.forEach((step, index) => {
+    const stepIcon = step.querySelector('.step-icon');
+    const stepNumber = step.querySelector('.step-number');
+
+    if (!stepIcon || !stepNumber) return;
+
+    // Enhanced hover effects
+    step.addEventListener('mouseenter', function() {
+      // Icon pulse animation
+      stepIcon.style.transform = 'scale(1.1)';
+      stepIcon.style.boxShadow = '0 6px 20px rgba(255, 255, 255, 0.2)';
+
+      // Number glow effect
+      stepNumber.style.color = 'rgba(255, 255, 255, 0.8)';
+      stepNumber.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.3)';
+    });
+
+    step.addEventListener('mouseleave', function() {
+      // Reset animations
+      stepIcon.style.transform = '';
+      stepIcon.style.boxShadow = '';
+      stepNumber.style.color = '';
+      stepNumber.style.textShadow = '';
+    });
+
+    // Add click animation
+    step.addEventListener('click', function() {
+      // Brief scale animation on click
+      this.style.transform = 'translateX(4px) scale(0.98)';
+
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+
+    // Add keyboard accessibility
+    step.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+
+    // Make steps focusable for accessibility
+    step.setAttribute('tabindex', '0');
+    step.setAttribute('role', 'button');
+    step.setAttribute('aria-label', `Production step ${index + 1}: ${step.querySelector('.step-title')?.textContent || ''}`);
+  });
+
+  // Intersection Observer for scroll-triggered animations
+  const processObserverOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -20px 0px'
+  };
+
+  const processObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('animated');
+
+        // Add progressive highlight effect
+        const steps = Array.from(processSteps);
+        const currentIndex = steps.indexOf(entry.target);
+
+        steps.forEach((step, index) => {
+          if (index <= currentIndex) {
+            setTimeout(() => {
+              step.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+              step.style.background = 'rgba(255, 255, 255, 0.05)';
+
+              // Reset after animation
+              setTimeout(() => {
+                step.style.borderColor = '';
+                step.style.background = '';
+              }, 800);
+            }, index * 100);
+          }
+        });
+      }
+    });
+  }, processObserverOptions);
+
+  // Observe each process step
+  processSteps.forEach((step) => {
+    processObserver.observe(step);
+  });
+}
+
+/*
+==============================================
+CLIENT SHOWCASE MARQUEE
+==============================================
+*/
+function initializeClientShowcase() {
+  const marqueeContainer = document.querySelector('.client-marquee');
+  const marqueeContent = document.querySelector('.marquee-content');
+  const clientItems = document.querySelectorAll('.client-item');
+
+  if (!marqueeContainer || !marqueeContent || !clientItems.length) return;
+
+  // Initialize marquee with fade-in effect
+  marqueeContainer.style.opacity = '0';
+
+  setTimeout(() => {
+    marqueeContainer.style.transition = 'opacity 1s ease-out';
+    marqueeContainer.style.opacity = '1';
+  }, 1800); // Start after other sections load
+
+  // Add enhanced interactions for each client item
+  clientItems.forEach((item, index) => {
+    const clientName = item.querySelector('.client-name');
+
+    if (clientName) {
+      // Make items focusable for accessibility
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', `Client: ${clientName.textContent || ''}`);
+    }
+
+    // Add hover pause functionality
+    item.addEventListener('mouseenter', function() {
+      marqueeContent.style.animationPlayState = 'paused';
+    });
+
+    item.addEventListener('mouseleave', function() {
+      marqueeContent.style.animationPlayState = 'running';
+    });
+
+    // Add focus pause for keyboard navigation
+    item.addEventListener('focus', function() {
+      marqueeContent.style.animationPlayState = 'paused';
+    });
+
+    item.addEventListener('blur', function() {
+      marqueeContent.style.animationPlayState = 'running';
+    });
+
+    // Add keyboard accessibility
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        // Brief highlight effect on interaction
+        this.style.transform = 'translateY(-3px)';
+        this.style.zIndex = '200';
+
+        setTimeout(() => {
+          this.style.transform = '';
+          this.style.zIndex = '';
+        }, 200);
+      }
+    });
+  });
+
+  // Intersection Observer for performance optimization
+  const marqueeObserverOptions = {
+    threshold: 0.1,
+    rootMargin: '100px 0px'
+  };
+
+  const marqueeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Resume animation when in view
+        marqueeContent.style.animationPlayState = 'running';
+      } else {
+        // Pause animation when out of view for performance
+        marqueeContent.style.animationPlayState = 'paused';
+      }
+    });
+  }, marqueeObserverOptions);
+
+  // Observe the marquee container
+  marqueeObserver.observe(marqueeContainer);
+
+  // Handle reduced motion preference
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    marqueeContent.style.animationPlayState = 'paused';
+
+    // Convert to centered grid for reduced motion users
+    const clientStrips = marqueeContainer.querySelectorAll('.client-strip');
+    clientStrips.forEach(strip => {
+      strip.style.justifyContent = 'center';
+      strip.style.flexWrap = 'wrap';
+      strip.style.gap = 'var(--space-md)';
+    });
+  }
+
+  // Add touch/drag support for mobile
+  let isDragging = false;
+  let startX = 0;
+
+  marqueeContent.addEventListener('touchstart', function(e) {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    this.style.animationPlayState = 'paused';
+  }, { passive: true });
+
+  marqueeContent.addEventListener('touchmove', function(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+  }, { passive: false });
+
+  marqueeContent.addEventListener('touchend', function(e) {
+    isDragging = false;
+    this.style.animationPlayState = 'running';
+  }, { passive: true });
 }
 
 /*
