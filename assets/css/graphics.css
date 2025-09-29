@@ -439,16 +439,44 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
 }
 
 /* Gallery Responsive Design */
-@media (max-width: 991px) {
-  .graphics-gallery-grid .row {
-    gap: var(--space-md);
+
+/* iPad Pro and large tablets (1024px and down) */
+@media (max-width: 1024px) {
+  .gallery-item {
+    max-width: 280px;
+    margin: 0 auto;
   }
 
-  .gallery-item {
-    margin-bottom: var(--space-md);
+  .graphics-gallery-grid .row {
+    gap: var(--space-md);
+    justify-content: center;
   }
 }
 
+/* iPad Air, iPad Mini and medium tablets (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .graphics-gallery-grid {
+    padding: 0 var(--space-lg);
+  }
+
+  .graphics-gallery-grid .row {
+    gap: var(--space-lg);
+    justify-content: center;
+  }
+
+  .gallery-item {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  /* Show more button centering */
+  .show-more-btn {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Small tablets and large phones (576px to 767px) */
 @media (max-width: 767px) {
   .featured-work {
     padding: var(--space-xxl) 0;
@@ -456,33 +484,159 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
 
   .graphics-gallery-grid {
     margin-top: var(--space-lg);
+    padding: 0 var(--space-md);
   }
 
   .graphics-gallery-grid .row {
-    gap: var(--space-sm);
+    gap: var(--space-md);
+    justify-content: center;
   }
 
   .gallery-item {
     margin-bottom: var(--space-sm);
+    max-width: 180px;
+    margin: 0 auto;
   }
 
   .gallery-item:hover {
     transform: scale(1.02);
   }
+
+  /* Show more button responsive */
+  .show-more-btn {
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
-/* GRAPHICS SERVICES SECTION */
-.graphics-services {
+/* Very small phones (480px and down) */
+@media (max-width: 480px) {
+  .graphics-gallery-grid {
+    padding: 0 var(--space-sm);
+  }
+
+  .gallery-item {
+    max-width: 160px;
+  }
+
+  .show-more-btn {
+    font-size: 0.9rem;
+    padding: 0.625rem 1.5rem;
+  }
+}
+
+/* TESTIMONIALS SECTION */
+.testimonials-section {
   margin-top: var(--space-4xl);
 }
 
-.graphics-services .card-platinum {
+.testimonial-card {
   height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
   transition: all var(--duration) var(--easing);
+  position: relative;
+  overflow: hidden;
 }
 
-.graphics-services .card-platinum:hover {
-  transform: translateY(-8px) scale(1.02);
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--duration) var(--easing);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonial-quote {
+  flex-grow: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.quote-icon {
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--warm-white);
+  font-style: italic;
+  margin: 0;
+  position: relative;
+}
+
+.testimonial-author {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-md);
+}
+
+.author-name {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bright-white);
+  margin-bottom: 0.25rem;
+}
+
+.author-role {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.125rem;
+}
+
+.author-team {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Testimonials Responsive Design */
+@media (max-width: 991px) {
+  .testimonial-card {
+    padding: var(--space-lg);
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonials-section {
+    padding: var(--space-xxl) 0;
+  }
+
+  .testimonial-card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
 }
 
 /* GRAPHICS CTA SECTION */
@@ -490,6 +644,28 @@ PLATINUM MEDIA - GRAPHICS PAGE STYLES
   padding: var(--space-4xl) 0;
   background: var(--gradient-dark);
   text-align: center;
+}
+
+/* CONTACT SECTION */
+.contact {
+  padding: var(--space-4xl) 0;
+  background: var(--gradient-dark);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  transform: translateY(-30px);
+}
+
+.contact-visible {
+  max-height: 2000px;
+  opacity: 1;
+  padding: var(--space-4xl) 0;
+  transform: translateY(0);
 }
 
 .graphics-cta .section-title {

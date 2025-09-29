@@ -183,14 +183,19 @@ const graphicsData = {
 // Ensure DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functionality
-  initializeGraphicsLightbox();
   initializeStatsCounters();
   initializeBackToTop();
   initializePerformanceOptimizations();
   initializeShowMoreButton();
+  initializeContactToggle();
 
   // Initialize hero 3D flip card
   initializeHero3DFlipCard();
+
+  // Initialize lightbox after a short delay to ensure DOM is ready
+  setTimeout(() => {
+    initializeGraphicsLightbox();
+  }, 100);
 
   console.log("Graphics page initialized with lightbox and static gallery");
 });
@@ -432,6 +437,44 @@ function showEmptyState(category) {
 
 /*
 ==============================================
+CONTACT TOGGLE FUNCTIONALITY
+==============================================
+*/
+function initializeContactToggle() {
+  const startProjectBtn = document.getElementById('startProjectBtn');
+  const contactSection = document.getElementById('contact');
+
+  if (!startProjectBtn || !contactSection) return;
+
+  let isContactVisible = false;
+
+  startProjectBtn.addEventListener('click', function() {
+    if (isContactVisible) {
+      // Hide contact section
+      contactSection.classList.remove('contact-visible');
+      contactSection.classList.add('contact-hidden');
+      startProjectBtn.querySelector('.btn-text').textContent = 'Start Your Project';
+      isContactVisible = false;
+    } else {
+      // Show contact section
+      contactSection.classList.remove('contact-hidden');
+      contactSection.classList.add('contact-visible');
+      startProjectBtn.querySelector('.btn-text').textContent = 'Close Contact';
+      isContactVisible = true;
+
+      // Smooth scroll to contact section
+      setTimeout(() => {
+        contactSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 300);
+    }
+  });
+}
+
+/*
+==============================================
 SHOW MORE GALLERY FUNCTIONALITY
 ==============================================
 */
@@ -504,10 +547,8 @@ LIGHTBOX FUNCTIONALITY
 ==============================================
 */
 function initializeGraphicsLightbox() {
-  // Create lightbox instance if not exists
-  if (!window.lightbox) {
-    window.lightbox = new GraphicsLightbox();
-  }
+  // Always create a new lightbox instance for graphics page
+  window.lightbox = new GraphicsLightbox();
 }
 
 class GraphicsLightbox {
@@ -521,12 +562,15 @@ class GraphicsLightbox {
     this.triggers = [];
     this.currentIndex = 0;
 
-
     this.init();
   }
 
   init() {
     this.updateTriggers();
+
+    if (!this.closeBtn || !this.prevBtn || !this.nextBtn || !this.overlay) {
+      return;
+    }
 
     // Event listeners
     this.closeBtn.addEventListener("click", () => this.close());
