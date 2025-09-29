@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Platinum Media Graphics Portfolio - Premium visual content for athletes and sports brands. Social media graphics, infographics, and brand identity designs from Belgrade, Serbia."
+      content="Platinum Media Videos Portfolio - Professional video highlights and content for athletes and sports brands. Dynamic visual storytelling from Belgrade, Serbia."
     />
     <meta
       name="keywords"
-      content="sports graphics, social media design, athlete graphics, sports highlights, sports day graphics, Belgrade, Serbia, brand identity, sports marketing"
+      content="sports videos, video production, athlete highlights, sports highlights, video editing, Belgrade, Serbia, brand videos, sports marketing"
     />
     <meta name="author" content="Platinum Media" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Graphics Portfolio - Platinum Media" />
+    <meta property="og:title" content="Videos Portfolio - Platinum Media" />
     <meta
       property="og:description"
-      content="Premium graphics and visual content for athletes and sports brands. Explore our portfolio of social media graphics, infographics, and brand designs."
+      content="Professional video highlights and dynamic content for athletes and sports brands. Explore our portfolio of video production and storytelling."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://platinum-media.com/graphics" />
+    <meta property="og:url" content="https://platinum-media.com/videos" />
     <meta property="og:image" content="../assets/img/og-image.webp" />
 
     <title>
-      Graphics Portfolio - Platinum Media | Premium Sports Design for Athletes
+      Videos Portfolio - Platinum Media | Professional Sports Video Production
     </title>
 
     <!-- Preconnect for performance -->
@@ -45,12 +45,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/grid-system.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
@@ -58,7 +52,7 @@
     <link rel="stylesheet" href="../assets/css/placeholders.css" />
     <link rel="stylesheet" href="../assets/css/mobile-enhancements.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/graphics.css" />
+    <link rel="stylesheet" href="../assets/css/videos.css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
@@ -104,12 +98,12 @@
                 <a class="nav-link" href="../">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="index.html" aria-current="page"
-                  >Graphics</a
-                >
+                <a class="nav-link" href="../graphics/">Graphics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../videos/">Videos</a>
+                <a class="nav-link active" href="index.html" aria-current="page"
+                  >Videos</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../#about">About</a>
@@ -125,59 +119,60 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
-      <!-- Graphics Hero Section -->
-      <section class="graphics-hero" aria-labelledby="graphics-hero-heading">
-        <div class="hero-background" aria-hidden="true">
+      <!-- Videos Hero Section -->
+      <section class="videos-hero" aria-labelledby="videos-hero-heading">
+        <div class="hero-video-background" aria-hidden="true">
+          <video autoplay muted loop playsinline class="hero-video">
+            <source src="../assets/video/hero-video.mp4" type="video/mp4" />
+            <!-- Fallback for browsers that don't support video -->
+          </video>
+          <div class="hero-video-overlay"></div>
           <div class="grid-overlay"></div>
         </div>
         <div class="container-xxl">
           <div class="row align-items-center min-vh-100">
             <!-- Left Column - Text and Stats -->
             <div class="col-lg-6">
-              <div class="graphics-hero-content">
-                <h1 id="graphics-hero-heading" class="graphics-hero-title">
-                  Graphics Portfolio
+              <div class="videos-hero-content">
+                <h1 id="videos-hero-heading" class="videos-hero-title">
+                  Videos Portfolio
                 </h1>
-                <p class="graphics-hero-subtitle">
-                  Premium visual content that elevates athletes and sports
-                  brands to the next level
+                <p class="videos-hero-subtitle">
+                  Dynamic video content that brings athletic stories to life and captures every moment of excellence
                 </p>
-                <div class="graphics-hero-stats">
+                <div class="videos-hero-stats">
                   <div class="stat-item">
-                    <span class="stat-number" data-count="100">0</span>
-                    <span class="stat-label">Projects</span>
+                    <span class="stat-number" data-count="200">0</span>
+                    <span class="stat-label">Videos</span>
                   </div>
                   <div class="stat-item">
                     <span class="stat-number" data-count="50">0</span>
                     <span class="stat-label">Athletes</span>
                   </div>
                   <div class="stat-item">
-                    <span class="stat-number" data-count="10">0</span>
+                    <span class="stat-number" data-count="15">0</span>
                     <span class="stat-label">Brands</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Right Column - Large 3D Flip Card -->
+            <!-- Right Column - Featured Video Preview -->
             <div class="col-lg-6">
-              <div class="hero-flip-card-container">
-                <div class="hero-flip-card" id="heroFlipCard">
-                  <div class="hero-flip-card-inner">
-                    <div class="hero-flip-card-front">
-                      <img
-                        src="../assets/img/showcase/showcase-1.webp"
-                        alt="Graphics showcase"
-                        loading="lazy"
-                      />
+              <div class="hero-video-preview">
+                <div class="video-preview-container">
+                  <div class="video-preview-frame">
+                    <video class="preview-video" poster="../assets/img/video-poster.webp">
+                      <source src="../assets/video/preview-video.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn" aria-label="Play preview video">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
                     </div>
-                    <div class="hero-flip-card-back">
-                      <img
-                        src="../assets/img/showcase/showcase-2.webp"
-                        alt="Graphics showcase"
-                        loading="lazy"
-                      />
-                    </div>
+                    <div class="video-badge">Featured Video</div>
                   </div>
                 </div>
               </div>
@@ -186,130 +181,154 @@
         </div>
       </section>
 
-      <!-- Featured Work Section -->
-      <section class="featured-work" aria-labelledby="work-heading">
+      <!-- Featured Videos Section -->
+      <section class="featured-videos" aria-labelledby="videos-heading">
         <div class="container-xxl">
           <div class="row">
             <div class="col-12 text-center mb-3">
-              <h2 id="work-heading" class="section-title">Explore Our Work</h2>
+              <h2 id="videos-heading" class="section-title">Video Highlights</h2>
               <p class="section-subtitle">
-                Showcasing our latest graphics projects and creative excellence
+                Showcasing athletic excellence through dynamic video storytelling
               </p>
             </div>
           </div>
 
-          <!-- Graphics Gallery Grid -->
-          <div class="graphics-gallery-grid">
+          <!-- Videos Gallery Grid -->
+          <div class="videos-gallery-grid">
             <div class="row g-4">
               <!-- First Row (Always Visible) -->
               <div class="col-6 col-md-4 col-lg-4">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-5.webp"
-                    alt="Athlete highlight graphic design"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Athlete Highlight - Social Media Graphics"
-                  />
+                <div class="video-item">
+                  <div class="video-thumbnail">
+                    <img
+                      src="../assets/img/video-thumbs/video-thumb-1.webp"
+                      alt="Athlete highlight video"
+                      loading="lazy"
+                      class="video-image"
+                    />
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn video-trigger"
+                              data-video="../assets/video/highlight-1.mp4"
+                              data-title="Athlete Highlight Reel">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="video-duration">1:24</div>
+                  </div>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-4">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-6.webp"
-                    alt="Game day graphics design"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Game Day Graphics - Event Promotion"
-                  />
+                <div class="video-item">
+                  <div class="video-thumbnail">
+                    <img
+                      src="../assets/img/video-thumbs/video-thumb-2.webp"
+                      alt="Training montage video"
+                      loading="lazy"
+                      class="video-image"
+                    />
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn video-trigger"
+                              data-video="../assets/video/training-2.mp4"
+                              data-title="Training Montage">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="video-duration">2:15</div>
+                  </div>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-lg-4">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-9.webp"
-                    alt="Team branding design"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Team Branding - Brand Identity"
-                  />
+                <div class="video-item">
+                  <div class="video-thumbnail">
+                    <img
+                      src="../assets/img/video-thumbs/video-thumb-3.webp"
+                      alt="Game day highlights"
+                      loading="lazy"
+                      class="video-image"
+                    />
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn video-trigger"
+                              data-video="../assets/video/gameday-3.mp4"
+                              data-title="Game Day Highlights">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="video-duration">1:45</div>
+                  </div>
                 </div>
               </div>
 
               <!-- Additional Rows (Hidden Initially) -->
-              <div class="col-6 col-md-4 col-lg-4 gallery-item-hidden">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-1.webp"
-                    alt="Athlete stats infographic"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Athlete Stats - Infographic Design"
-                  />
+              <div class="col-6 col-md-4 col-lg-4 video-item-hidden">
+                <div class="video-item">
+                  <div class="video-thumbnail">
+                    <img
+                      src="../assets/img/video-thumbs/video-thumb-4.webp"
+                      alt="Season recap video"
+                      loading="lazy"
+                      class="video-image"
+                    />
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn video-trigger"
+                              data-video="../assets/video/season-4.mp4"
+                              data-title="Season Recap">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="video-duration">3:20</div>
+                  </div>
                 </div>
               </div>
-              <div class="col-6 col-md-4 col-lg-4 gallery-item-hidden">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-3.webp"
-                    alt="Social media campaign graphics"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Social Campaign - Multi-platform Graphics"
-                  />
+              <div class="col-6 col-md-4 col-lg-4 video-item-hidden">
+                <div class="video-item">
+                  <div class="video-thumbnail">
+                    <img
+                      src="../assets/img/video-thumbs/video-thumb-5.webp"
+                      alt="Skills showcase video"
+                      loading="lazy"
+                      class="video-image"
+                    />
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn video-trigger"
+                              data-video="../assets/video/skills-5.mp4"
+                              data-title="Skills Showcase">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="video-duration">1:58</div>
+                  </div>
                 </div>
               </div>
-              <div class="col-6 col-md-4 col-lg-4 gallery-item-hidden">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-2.webp"
-                    alt="Sports poster design"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Sports Poster - Print Design"
-                  />
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-lg-4 gallery-item-hidden">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-4.webp"
-                    alt="Sports branding package"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Sports Branding Package - Complete Identity"
-                  />
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-lg-4 gallery-item-hidden">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-7.webp"
-                    alt="Tournament graphics"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Tournament Graphics - Event Materials"
-                  />
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-lg-4 gallery-item-hidden">
-                <div class="gallery-item">
-                  <img
-                    src="../assets/img/showcase/showcase-10.webp"
-                    alt="Athlete portfolio design"
-                    loading="lazy"
-                    class="gallery-image lightbox-trigger"
-                    data-lightbox="graphics-gallery"
-                    data-title="Athlete Portfolio - Personal Branding"
-                  />
+              <div class="col-6 col-md-4 col-lg-4 video-item-hidden">
+                <div class="video-item">
+                  <div class="video-thumbnail">
+                    <img
+                      src="../assets/img/video-thumbs/video-thumb-6.webp"
+                      alt="Behind the scenes video"
+                      loading="lazy"
+                      class="video-image"
+                    />
+                    <div class="video-play-overlay">
+                      <button class="video-play-btn video-trigger"
+                              data-video="../assets/video/behind-6.mp4"
+                              data-title="Behind the Scenes">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="video-duration">2:42</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -336,137 +355,8 @@
         </div>
       </section>
 
-      <!-- Testimonials Section -->
-      <section
-        class="testimonials-section section-platinum section-platinum-dark"
-        aria-labelledby="testimonials-heading"
-      >
-        <div class="section-platinum-content">
-          <div class="container-xxl">
-            <div class="section-header">
-              <h2 id="testimonials-heading" class="section-title-platinum">
-                What Athletes Say
-              </h2>
-              <p class="section-subtitle-platinum">
-                Trusted by professional athletes and sports brands worldwide
-              </p>
-            </div>
-            <!-- Swiper -->
-            <div class="swiper testimonials-swiper">
-              <div class="swiper-wrapper">
-                <!-- Testimonial 1 -->
-                <div class="swiper-slide">
-                  <article class="testimonial-card">
-                    <div class="testimonial-content">
-                      <div class="testimonial-quote">
-                        <svg
-                          class="quote-icon"
-                          width="32"
-                          height="32"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                          />
-                        </svg>
-                        <blockquote class="testimonial-text">
-                          "Platinum Media transformed my social media presence.
-                          Their graphics perfectly capture the energy of my game
-                          and have significantly increased fan engagement."
-                        </blockquote>
-                      </div>
-                      <div class="testimonial-author">
-                        <div class="author-info">
-                          <h4 class="author-name">Marcus Rodriguez</h4>
-                          <p class="author-role">Professional Soccer Player</p>
-                          <p class="author-team">FC Barcelona Academy</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="swiper-slide">
-                  <article class="testimonial-card">
-                    <div class="testimonial-content">
-                      <div class="testimonial-quote">
-                        <svg
-                          class="quote-icon"
-                          width="32"
-                          height="32"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                          />
-                        </svg>
-                        <blockquote class="testimonial-text">
-                          "The team created stunning highlight reels and
-                          graphics for our championship season. Every design
-                          exceeded our expectations and helped build our brand."
-                        </blockquote>
-                      </div>
-                      <div class="testimonial-author">
-                        <div class="author-info">
-                          <h4 class="author-name">Sarah Mitchell</h4>
-                          <p class="author-role">Marketing Director</p>
-                          <p class="author-team">Phoenix Basketball Club</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="swiper-slide">
-                  <article class="testimonial-card">
-                    <div class="testimonial-content">
-                      <div class="testimonial-quote">
-                        <svg
-                          class="quote-icon"
-                          width="32"
-                          height="32"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                          />
-                        </svg>
-                        <blockquote class="testimonial-text">
-                          "Working with Platinum Media was a game-changer. Their
-                          creative vision and attention to detail helped elevate
-                          my personal brand to the next level."
-                        </blockquote>
-                      </div>
-                      <div class="testimonial-author">
-                        <div class="author-info">
-                          <h4 class="author-name">Alex Thompson</h4>
-                          <p class="author-role">Professional Tennis Player</p>
-                          <p class="author-team">ATP Tour</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              <!-- Add Pagination -->
-              <div class="swiper-pagination"></div>
-
-              <!-- Add Navigation arrows -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Call to Action Section -->
-      <section class="graphics-cta" aria-labelledby="cta-heading">
+      <section class="videos-cta" aria-labelledby="cta-heading">
         <div class="container-xxl">
           <div class="row justify-content-center">
             <div class="col-12 col-lg-8 text-center">
@@ -474,7 +364,7 @@
                 Ready to Elevate Your Visual Presence?
               </h2>
               <p class="section-subtitle">
-                Let's create stunning graphics that capture attention and drive
+                Let's create stunning videos that capture attention and drive
                 engagement for your sports brand.
               </p>
               <div class="cta-buttons">
@@ -486,11 +376,11 @@
                   <span class="btn-text">Start Your Project</span>
                 </button>
                 <a
-                  href="../videos/"
+                  href="../graphics/"
                   class="btn-platinum btn-platinum-ghost btn-platinum-large"
                   role="button"
                 >
-                  <span class="btn-text">View Videos</span>
+                  <span class="btn-text">View Graphics</span>
                 </a>
               </div>
             </div>
@@ -505,15 +395,6 @@
         id="contact"
       >
         <div class="container-xxl">
-          <div class="row">
-            <!--   <div class="col-12 text-center mb-5">
-    <h2 id="contact-heading" class="section-title">Get In Touch</h2>
-              <p class="section-subtitle">
-                Ready to elevate your digital presence? Let's create something
-                amazing together.
-              </p>
-            </div>-->
-          </div>
           <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
               <form class="contact-form" action="#" method="POST" novalidate>
@@ -556,8 +437,8 @@
                       name="project-type"
                     >
                       <option value="">Select a service...</option>
-                      <option value="graphics">Graphics Design</option>
                       <option value="videos">Video Production</option>
+                      <option value="graphics">Graphics Design</option>
                       <option value="branding">Brand Identity</option>
                       <option value="social-media">
                         Social Media Management
@@ -704,13 +585,16 @@
           <a href="../#about" class="footer-link" title="About Platinum Media"
             >About</a
           >
-          <a href="index.html" class="footer-link" title="Graphics Portfolio"
+          <a href="../graphics/" class="footer-link" title="Graphics Portfolio"
             >Graphics</a
           >
-          <a href="../videos/" class="footer-link" title="Video Portfolio"
+          <a href="index.html" class="footer-link" title="Video Portfolio"
             >Videos</a
           >
-          <a href="#contact" class="footer-link" title="Contact Platinum Media"
+          <a
+            href="#contact"
+            class="footer-link"
+            title="Contact Platinum Media"
             >Contact</a
           >
         </div>
@@ -741,32 +625,23 @@
       </svg>
     </button>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox-overlay" id="lightbox">
-      <div class="lightbox-content">
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal-content">
         <button
-          class="lightbox-close"
-          id="lightbox-close"
-          aria-label="Close lightbox"
+          class="video-modal-close"
+          id="videoModalClose"
+          aria-label="Close video"
         >
           &times;
         </button>
-        <button
-          class="lightbox-nav lightbox-prev"
-          id="lightbox-prev"
-          aria-label="Previous image"
-        >
-          &#8249;
-        </button>
-        <button
-          class="lightbox-nav lightbox-next"
-          id="lightbox-next"
-          aria-label="Next image"
-        >
-          &#8250;
-        </button>
-        <img class="lightbox-image" id="lightbox-image" alt="Lightbox image" />
-        <h3 class="lightbox-title" id="lightbox-title"></h3>
+        <div class="video-container">
+          <video class="modal-video" id="modalVideo" controls>
+            <source src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 class="video-modal-title" id="videoModalTitle"></h3>
       </div>
     </div>
 
@@ -777,10 +652,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Swiper JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <!-- Custom JavaScript -->
-    <script src="../assets/js/graphics.js"></script>
+    <script src="../assets/js/videos.js"></script>
   </body>
 </html>
