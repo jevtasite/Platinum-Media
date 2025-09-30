@@ -313,9 +313,17 @@ function initializeVideoModal() {
   });
 
   // Make openVideoModal globally accessible
-  window.openVideoModal = function(videoSrc, title) {
+  window.openVideoModal = function(videoSrc, title, hideTitle) {
     modalVideo.src = videoSrc;
-    modalTitle.textContent = title || '';
+
+    // Hide title if specified (for hero carousel videos)
+    if (hideTitle) {
+      modalTitle.style.display = 'none';
+    } else {
+      modalTitle.textContent = title || '';
+      modalTitle.style.display = '';
+    }
+
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
 
@@ -378,22 +386,72 @@ VIDEO CAROUSEL FUNCTIONALITY
 ==============================================
 */
 function initializeVideoCarousel() {
+  const carousel = document.getElementById('heroVideoCarousel');
+
+  if (!carousel) return;
+
+  // All available videos
+  const allVideos = [
+    { src: '../assets/vid/vid-showcase-1.mp4', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-2.mp4', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-3.mp4', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-4.mp4', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-5.mp4', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-6.mp4', label: 'Highlight Reels' }
+  ];
+
+  // Shuffle array
+  function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  }
+
+  // Get 4 random videos
+  const randomVideos = shuffleArray(allVideos).slice(0, 4);
+
+  // Generate carousel items
+  randomVideos.forEach((videoData, index) => {
+    const item = document.createElement('div');
+    item.className = 'video-carousel-item';
+    item.innerHTML = `
+      <div class="mini-video-preview">
+        <video class="mini-video-thumb" preload="metadata" muted playsinline>
+          <source src="${videoData.src}" type="video/mp4">
+        </video>
+        <div class="mini-video-overlay">
+          <div class="mini-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <div class="video-category-badge">${videoData.label}</div>
+      </div>
+    `;
+    carousel.appendChild(item);
+  });
+
+  // Old carousel item functionality
   const carouselItems = document.querySelectorAll('.video-carousel-item');
 
   if (!carouselItems.length) return;
 
-  // Video data for carousel items
+  // Video data for carousel items (keeping old structure for compatibility)
   const carouselVideos = [
     {
-      video: '../assets/video/highlight-reel-preview.mp4',
+      video: randomVideos[0]?.src || '../assets/video/highlight-reel-preview.mp4',
       title: 'Highlight Reels Collection'
     },
     {
-      video: '../assets/video/training-montage-preview.mp4',
+      video: randomVideos[1]?.src || '../assets/video/training-montage-preview.mp4',
       title: 'Training Sessions'
     },
     {
-      video: '../assets/video/behind-scenes-preview.mp4',
+      video: randomVideos[2]?.src || '../assets/video/behind-scenes-preview.mp4',
       title: 'Behind the Scenes'
     },
     {
@@ -405,14 +463,17 @@ function initializeVideoCarousel() {
   carouselItems.forEach((item, index) => {
     const miniPreview = item.querySelector('.mini-video-preview');
     const playBtn = item.querySelector('.mini-play-btn');
+    const videoElement = item.querySelector('.mini-video-thumb');
 
     if (!miniPreview || !playBtn) return;
 
-    // Add click handler to open video modal
+    // Add click handler to open video modal with actual video
     miniPreview.addEventListener('click', function() {
-      const videoData = carouselVideos[index];
-      if (videoData && typeof openVideoModal === 'function') {
-        openVideoModal(videoData.video, videoData.title);
+      const videoSrc = randomVideos[index]?.src;
+
+      if (videoSrc && typeof openVideoModal === 'function') {
+        // Pass true as third parameter to hide the title
+        openVideoModal(videoSrc, '', true);
       } else {
         // Fallback: scroll to main gallery
         const gallerySection = document.querySelector('.featured-videos');
@@ -699,6 +760,41 @@ function initializeClientShowcase() {
     isDragging = false;
     this.style.animationPlayState = 'running';
   }, { passive: true });
+}
+
+/*
+==============================================
+VIDEO PLAYER FUNCTIONALITY
+==============================================
+*/
+function initializeVideoPlayers() {
+  const videoItems = document.querySelectorAll('.video-item');
+
+  videoItems.forEach(item => {
+    const video = item.querySelector('.video-player');
+
+    // Toggle play/pause on click
+    video.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.paused) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    });
+
+    // Handle touch events for mobile
+    video.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.paused) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    });
+  });
 }
 
 /*
