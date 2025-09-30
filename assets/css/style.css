@@ -1776,6 +1776,7 @@ section {
   object-fit: cover;
   display: block;
   cursor: pointer;
+  aspect-ratio: 9 / 16;
 }
 
 /* CUSTOM VIDEOS GRID - 4 PER ROW */
@@ -1788,7 +1789,18 @@ section {
 
 .videos-grid-custom .work-item-platinum {
   width: 100%;
-  height: auto;
+  height: 0;
+  padding-bottom: 177.78% !important; /* 9:16 aspect ratio = 16/9 * 100% */
+  position: relative;
+  overflow: hidden;
+}
+
+.videos-grid-custom .work-item-image {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Tablet - 2 per row */

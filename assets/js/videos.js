@@ -815,6 +815,8 @@ VIDEO PLAYER FUNCTIONALITY
 */
 function initializeVideoPlayers() {
   const videoItems = document.querySelectorAll('.video-item');
+  let touchStartY = 0;
+  let touchEndY = 0;
 
   videoItems.forEach(item => {
     const video = item.querySelector('.video-player');
@@ -830,14 +832,25 @@ function initializeVideoPlayers() {
       }
     });
 
-    // Handle touch events for mobile
+    // Track touch start position
+    video.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    // Handle touch events for mobile - only if not scrolling
     video.addEventListener('touchend', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (this.paused) {
-        this.play();
-      } else {
-        this.pause();
+      touchEndY = e.changedTouches[0].clientY;
+      const scrollDistance = Math.abs(touchEndY - touchStartY);
+
+      // Only play/pause if user didn't scroll (moved less than 10px)
+      if (scrollDistance < 10) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (this.paused) {
+          this.play();
+        } else {
+          this.pause();
+        }
       }
     });
   });

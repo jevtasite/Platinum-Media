@@ -974,6 +974,9 @@ MAIN PAGE VIDEO PLAYERS
 ==============================================
 */
 function initializeMainVideoPlayers() {
+  let touchStartY = 0;
+  let touchEndY = 0;
+
   // Use event delegation to handle dynamically loaded videos
   document.addEventListener('click', function(e) {
     const video = e.target.closest('.work-video-player');
@@ -989,17 +992,31 @@ function initializeMainVideoPlayers() {
     }
   });
 
-  // Handle touch events for mobile
+  // Track touch start position
+  document.addEventListener('touchstart', function(e) {
+    const video = e.target.closest('.work-video-player');
+    if (video) {
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  // Handle touch events for mobile - only if not scrolling
   document.addEventListener('touchend', function(e) {
     const video = e.target.closest('.work-video-player');
     if (video) {
-      e.preventDefault();
-      e.stopPropagation();
+      touchEndY = e.changedTouches[0].clientY;
+      const scrollDistance = Math.abs(touchEndY - touchStartY);
 
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
+      // Only play/pause if user didn't scroll (moved less than 10px)
+      if (scrollDistance < 10) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
       }
     }
   });
