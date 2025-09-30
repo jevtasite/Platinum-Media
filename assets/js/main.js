@@ -1111,6 +1111,7 @@ function animateCounter(element) {
   requestAnimationFrame(animateSmooth);
 }
 
+
 // Export functions for external use if needed
 window.PlatinumMedia = {
   scrollToTop,
