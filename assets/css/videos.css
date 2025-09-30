@@ -563,14 +563,15 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
 .video-item-hidden {
   display: none;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .video-item-visible {
   display: block;
   opacity: 1;
-  transform: translateY(0);
-  animation: fadeInUp 0.6s ease-out forwards;
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .video-item-hiding {

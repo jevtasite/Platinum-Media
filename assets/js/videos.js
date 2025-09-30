@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeProductionProcess();
   initializeClientShowcase();
   initializeVideoPlayers();
+  initializeVideoToggle();
 
   console.log("Videos page initialized");
 });
@@ -760,6 +761,51 @@ function initializeClientShowcase() {
     isDragging = false;
     this.style.animationPlayState = 'running';
   }, { passive: true });
+}
+
+/*
+==============================================
+VIDEO TOGGLE (SHOW MORE/LESS) FUNCTIONALITY
+==============================================
+*/
+function initializeVideoToggle() {
+  const toggleBtn = document.getElementById('videoToggleBtn');
+  const hiddenVideos = document.querySelectorAll('.video-item-hidden');
+
+  if (!toggleBtn || !hiddenVideos.length) return;
+
+  let isExpanded = false;
+
+  toggleBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+
+    hiddenVideos.forEach((video, index) => {
+      if (isExpanded) {
+        // Show videos with staggered animation
+        setTimeout(() => {
+          video.style.display = 'block';
+          requestAnimationFrame(() => {
+            video.style.opacity = '1';
+            video.style.transform = 'translateY(0) scale(1)';
+          });
+        }, index * 100);
+      } else {
+        // Hide videos with staggered animation
+        setTimeout(() => {
+          video.style.opacity = '0';
+          video.style.transform = 'translateY(20px) scale(0.95)';
+
+          setTimeout(() => {
+            video.style.display = 'none';
+          }, 300);
+        }, index * 50);
+      }
+    });
+
+    // Update button text
+    const btnText = this.querySelector('.btn-text');
+    btnText.textContent = isExpanded ? 'Show Less' : 'Show More';
+  });
 }
 
 /*

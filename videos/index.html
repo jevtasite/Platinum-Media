@@ -307,7 +307,7 @@
                       playsinline
                     >
                       <source
-                        src="../assets/vid/vid-showcase-2.mp4"
+                        src="../assets/vid/vid-showcase-2.mp4#t=0.1"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
@@ -325,7 +325,7 @@
                       playsinline
                     >
                       <source
-                        src="../assets/vid/vid-showcase-8.mp4"
+                        src="../assets/vid/vid-showcase-3.mp4"
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
@@ -333,7 +333,9 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 col-md-4 col-lg-4">
+
+              <!-- Hidden videos - show on "Show More" -->
+              <div class="col-6 col-md-4 col-lg-4 video-item-hidden">
                 <div class="video-item">
                   <div class="video-thumbnail">
                     <video
@@ -351,7 +353,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 col-md-4 col-lg-4">
+              <div class="col-6 col-md-4 col-lg-4 video-item-hidden">
                 <div class="video-item">
                   <div class="video-thumbnail">
                     <video
@@ -369,7 +371,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 col-md-4 col-lg-4">
+              <div class="col-6 col-md-4 col-lg-4 video-item-hidden">
                 <div class="video-item">
                   <div class="video-thumbnail">
                     <video
@@ -387,6 +389,13 @@
                   </div>
                 </div>
               </div>
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="text-center mt-5">
+              <button class="btn-platinum btn-platinum-ghost btn-platinum-medium" id="videoToggleBtn">
+                <span class="btn-text">Show More</span>
+              </button>
             </div>
           </div>
         </div>
