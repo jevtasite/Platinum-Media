@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="../assets/css/videos.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
   </head>
   <body>
     <!-- Header Navigation -->
@@ -787,7 +787,13 @@
         <div class="container-xxl">
           <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
-              <form class="contact-form" action="#" method="POST" novalidate>
+              <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                <!-- Web3Forms Configuration -->
+                <input type="hidden" name="access_key" value="bb3442a9-2a54-4e0f-b897-58a4a0573ec1">
+                <input type="hidden" name="subject" value="New Contact from Platinum Media Website - Videos Page">
+                <input type="hidden" name="from_name" value="Platinum Media Contact Form (Videos)">
+                <input type="hidden" name="redirect" value="false">
+
                 <div class="row g-3">
                   <div class="col-12 col-md-6">
                     <label for="name" class="form-label">Name *</label>
@@ -824,16 +830,16 @@
                     <select
                       class="form-select"
                       id="project-type"
-                      name="project-type"
+                      name="project_type"
                     >
                       <option value="">Select a service...</option>
-                      <option value="videos">Video Production</option>
-                      <option value="graphics">Graphics Design</option>
-                      <option value="branding">Brand Identity</option>
-                      <option value="social-media">
+                      <option value="Video Production">Video Production</option>
+                      <option value="Graphics Design">Graphics Design</option>
+                      <option value="Brand Identity">Brand Identity</option>
+                      <option value="Social Media Management">
                         Social Media Management
                       </option>
-                      <option value="other">Other</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   <div class="col-12">

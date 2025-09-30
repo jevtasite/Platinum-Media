@@ -630,7 +630,7 @@ function initializeContactForm() {
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       // Get form elements
@@ -673,26 +673,54 @@ function initializeContactForm() {
       }
 
       if (isValid) {
-        // Simulate form submission
+        // Submit to Web3Forms
         const originalText = submitButton.querySelector('.btn-text').textContent;
         submitButton.querySelector('.btn-text').textContent = "Sending...";
         submitButton.disabled = true;
 
-        setTimeout(() => {
-          submitButton.querySelector('.btn-text').textContent = "Message Sent!";
-          submitButton.style.background = "#10b981";
+        try {
+          // Prepare form data
+          const formData = new FormData(this);
 
-          // Reset form after success
+          // Submit to Web3Forms API
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            // Success
+            submitButton.querySelector('.btn-text').textContent = "Message Sent!";
+            submitButton.style.background = "#10b981";
+
+            // Reset form after success
+            setTimeout(() => {
+              this.reset();
+              submitButton.querySelector('.btn-text').textContent = originalText;
+              submitButton.disabled = false;
+              submitButton.style.background = "";
+              this.querySelectorAll(".form-control").forEach((field) => {
+                field.classList.remove("is-invalid", "is-valid");
+              });
+            }, 2000);
+          } else {
+            // Error from Web3Forms
+            throw new Error(data.message || "Submission failed");
+          }
+        } catch (error) {
+          // Handle errors
+          console.error("Form submission error:", error);
+          submitButton.querySelector('.btn-text').textContent = "Error - Try Again";
+          submitButton.style.background = "#ef4444";
+
           setTimeout(() => {
-            this.reset();
             submitButton.querySelector('.btn-text').textContent = originalText;
             submitButton.disabled = false;
             submitButton.style.background = "";
-            this.querySelectorAll(".form-control").forEach((field) => {
-              field.classList.remove("is-invalid", "is-valid");
-            });
-          }, 2000);
-        }, 1500);
+          }, 3000);
+        }
       }
     });
 
