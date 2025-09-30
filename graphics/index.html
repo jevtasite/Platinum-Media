@@ -504,198 +504,75 @@
         aria-labelledby="contact-heading"
         id="contact"
       >
-        <div class="container-xxl">
-          <div class="row">
-            <!--   <div class="col-12 text-center mb-5">
-    <h2 id="contact-heading" class="section-title">Get In Touch</h2>
-              <p class="section-subtitle">
-                Ready to elevate your digital presence? Let's create something
-                amazing together.
-              </p>
-            </div>-->
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-              <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-                <!-- Web3Forms Configuration -->
-                <input type="hidden" name="access_key" value="bb3442a9-2a54-4e0f-b897-58a4a0573ec1">
-                <input type="hidden" name="subject" value="New Contact from Platinum Media Website - Graphics Page">
-                <input type="hidden" name="from_name" value="Platinum Media Contact Form (Graphics)">
-                <input type="hidden" name="redirect" value="false">
+        <div class="container-xxl text-center">
+          <h2 id="contact-heading" class="section-title mb-4">Contact Us</h2>
 
-                <div class="row g-3">
-                  <div class="col-12 col-md-6">
-                    <label for="name" class="form-label">Name *</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      name="name"
-                      required
-                      aria-describedby="name-error"
-                    />
-                    <div class="invalid-feedback" id="name-error">
-                      Please provide your name.
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <label for="email" class="form-label">Email *</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      name="email"
-                      required
-                      aria-describedby="email-error"
-                    />
-                    <div class="invalid-feedback" id="email-error">
-                      Please provide a valid email.
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <label for="project-type" class="form-label"
-                      >Project Type</label
-                    >
-                    <select
-                      class="form-select"
-                      id="project-type"
-                      name="project_type"
-                    >
-                      <option value="">Select a service...</option>
-                      <option value="Graphics Design">Graphics Design</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Brand Identity">Brand Identity</option>
-                      <option value="Social Media Management">
-                        Social Media Management
-                      </option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <label for="message" class="form-label">Message *</label>
-                    <textarea
-                      class="form-control"
-                      id="message"
-                      name="message"
-                      rows="4"
-                      required
-                      aria-describedby="message-error"
-                    ></textarea>
-                    <div class="invalid-feedback" id="message-error">
-                      Please tell us about your project.
-                    </div>
-                  </div>
-                  <div class="col-12 text-center">
-                    <button
-                      type="submit"
-                      class="btn-platinum btn-platinum-primary btn-platinum-large"
-                    >
-                      <span class="btn-text">Send Message</span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+          <p class="section-subtitle mb-5">
+            Reach out via email or follow us on social media
+          </p>
 
-          <!-- Contact Info Cards -->
-          <div class="row mt-5 g-4">
-            <!-- Location Card -->
-            <div class="col-12 col-md-4">
-              <div class="contact-card">
-                <div class="contact-card-inner">
-                  <div class="contact-card-icon">
-                    <div class="icon-wrapper location-icon">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="contact-card-content">
-                    <h4 class="contact-card-title">Our Location</h4>
-                    <p class="contact-card-text">Belgrade, Serbia</p>
-                  </div>
-                  <div class="contact-card-overlay"></div>
-                </div>
-              </div>
-            </div>
+          <!-- Email -->
+          <p class="mb-4">
+            <a
+              href="mailto:platinum.media0@gmail.com"
+              class="contact-email-link"
+              title="Email Platinum Media"
+            >
+              platinum.media0@gmail.com
+            </a>
+          </p>
 
-            <!-- Email Card -->
-            <div class="col-12 col-md-4">
-              <div class="contact-card">
-                <div class="contact-card-inner">
-                  <div class="contact-card-icon">
-                    <div class="icon-wrapper email-icon">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="contact-card-content">
-                    <h4 class="contact-card-title">Email Us</h4>
-                    <p class="contact-card-text">
-                      <a
-                        href="mailto:info@platinum-media.com"
-                        class="contact-card-link"
-                      >
-                        info@platinum-media.com
-                      </a>
-                    </p>
-                  </div>
-                  <div class="contact-card-overlay"></div>
-                </div>
-              </div>
-            </div>
+          <!-- Phone -->
+          <p class="mb-5">
+            <a
+              href="tel:+381219113437"
+              class="contact-email-link"
+              title="Call Platinum Media"
+            >
+              +381 21 9113437
+            </a>
+          </p>
 
-            <!-- Social Media Card -->
-            <div class="col-12 col-md-4">
-              <div class="contact-card">
-                <div class="contact-card-inner">
-                  <div class="contact-card-icon">
-                    <div class="icon-wrapper social-icon">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M9 13.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5zM4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25H4.34zM9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm7.04 6.81c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44zM15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="contact-card-content">
-                    <h4 class="contact-card-title">Follow Us</h4>
-                    <p class="contact-card-text">
-                      <a
-                        href="https://www.instagram.com/platinum.media_/"
-                        target="_blank"
-                        rel="noopener"
-                        class="contact-card-link"
-                      >
-                        @platinum.media_
-                      </a>
-                    </p>
-                  </div>
-                  <div class="contact-card-overlay"></div>
-                </div>
-              </div>
-            </div>
+          <!-- Social Media Links -->
+          <div class="contact-socials">
+            <a
+              href="https://www.instagram.com/platinum.media_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              title="Follow Platinum Media on Instagram"
+              aria-label="Platinum Media Instagram"
+            >
+              <svg
+                class="social-icon"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.behance.net/platinummedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              title="View Platinum Media portfolio on Behance"
+              aria-label="Platinum Media Behance"
+            >
+              <svg
+                class="social-icon"
+                width="32"
+                height="32"
+                viewBox="0 0 448 512"
+                fill="currentColor"
+              >
+                <path d="M186.5 293c0 19.3-14 25.4-31.2 25.4h-45.1v-52.9h46c18.6.1 30.3 7.8 30.3 27.5zm-7.7-82.3c0-17.7-13.7-21.9-28.9-21.9h-39.6v44.8H153c15.1 0 25.8-6.6 25.8-22.9zm132.3 23.2c-18.3 0-30.5 11.4-31.7 29.7h62.2c-1.7-18.5-11.3-29.7-30.5-29.7zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zM271.7 185h77.8v-18.9h-77.8V185zm-43 110.3c0-24.1-11.4-44.9-35-51.6 17.2-8.2 26.2-17.7 26.2-37 0-38.2-28.5-47.5-61.4-47.5H68v192h93.1c34.9-.2 67.6-16.9 67.6-55.9zM380 280.5c0-41.1-24.1-75.4-67.6-75.4-42.4 0-71.1 31.8-71.1 73.6 0 43.3 27.3 73 71.1 73 33.2 0 54.7-14.9 65.1-46.8h-33.7c-3.7 11.9-18.6 18.1-30.2 18.1-22.4 0-34.1-13.1-34.1-35.3h100.2c.1-2.3.3-4.8.3-7.2z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </section>

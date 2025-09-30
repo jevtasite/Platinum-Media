@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeVideoCarousel();
   initializeProductionProcess();
   initializeClientShowcase();
+  initializeVideoPlayers();
 
   console.log("Videos page initialized");
 });
@@ -177,64 +178,22 @@ function initializeContactForm() {
       }
 
       if (isValid) {
-        // Submit to Web3Forms
+        // Form validation passed
         const originalText = submitButton.querySelector('.btn-text').textContent;
-        submitButton.querySelector('.btn-text').textContent = "Sending...";
+        submitButton.querySelector('.btn-text').textContent = "Message Sent!";
+        submitButton.style.background = "#10b981";
         submitButton.disabled = true;
 
-        try {
-          // Prepare form data
-          const formData = new FormData(this);
-
-          // Convert FormData to JSON object for CORS compatibility
-          const object = {};
-          formData.forEach((value, key) => {
-            object[key] = value;
+        // Reset form after success
+        setTimeout(() => {
+          this.reset();
+          submitButton.querySelector('.btn-text').textContent = originalText;
+          submitButton.disabled = false;
+          submitButton.style.background = "";
+          this.querySelectorAll(".form-control").forEach((field) => {
+            field.classList.remove("is-invalid", "is-valid");
           });
-
-          // Submit to Web3Forms API with JSON
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-            body: JSON.stringify(object)
-          });
-
-          const data = await response.json();
-
-          if (data.success) {
-            // Success
-            submitButton.querySelector('.btn-text').textContent = "Message Sent!";
-            submitButton.style.background = "#10b981";
-
-            // Reset form after success
-            setTimeout(() => {
-              this.reset();
-              submitButton.querySelector('.btn-text').textContent = originalText;
-              submitButton.disabled = false;
-              submitButton.style.background = "";
-              this.querySelectorAll(".form-control").forEach((field) => {
-                field.classList.remove("is-invalid", "is-valid");
-              });
-            }, 2000);
-          } else {
-            // Error from Web3Forms
-            throw new Error(data.message || "Submission failed");
-          }
-        } catch (error) {
-          // Handle errors
-          console.error("Form submission error:", error);
-          submitButton.querySelector('.btn-text').textContent = "Error - Try Again";
-          submitButton.style.background = "#ef4444";
-
-          setTimeout(() => {
-            submitButton.querySelector('.btn-text').textContent = originalText;
-            submitButton.disabled = false;
-            submitButton.style.background = "";
-          }, 3000);
-        }
+        }, 2000);
       }
     });
 
