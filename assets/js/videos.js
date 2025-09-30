@@ -472,21 +472,27 @@ PRODUCTION PROCESS ANIMATIONS
 */
 function initializeProductionProcess() {
   const processSteps = document.querySelectorAll('.process-step');
+  const processTitle = document.querySelector('.process-title');
 
   if (!processSteps.length) return;
 
+  // Animate the title first
+  if (processTitle) {
+    setTimeout(() => {
+      processTitle.style.transition = 'all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+      processTitle.style.opacity = '1';
+      processTitle.style.transform = 'translateY(0)';
+    }, 1000); // Start after hero content
+  }
+
   // Add sequential fade-in animation for process steps
   processSteps.forEach((step, index) => {
-    // Set initial state
-    step.style.opacity = '0';
-    step.style.transform = 'translateX(-30px)';
-
     // Animate in sequence with delay
     setTimeout(() => {
       step.style.transition = 'all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
       step.style.opacity = '1';
       step.style.transform = 'translateX(0)';
-    }, index * 200 + 1200); // Start after hero content and carousel
+    }, index * 200 + 1400); // Start after title animation
   });
 
   // Add hover animations
@@ -521,7 +527,7 @@ function initializeProductionProcess() {
       this.style.transform = 'translateX(4px) scale(0.98)';
 
       setTimeout(() => {
-        this.style.transform = '';
+        this.style.transform = 'translateX(0)';
       }, 150);
     });
 

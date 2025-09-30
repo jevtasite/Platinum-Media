@@ -242,6 +242,9 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
   margin-bottom: var(--space-xl);
   text-align: center;
   letter-spacing: 0.02em;
+  /* Initially hidden to prevent flash before JS animation */
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 @media (max-width: 991px) {
@@ -271,6 +274,9 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
   backdrop-filter: blur(10px);
   transition: all var(--duration) var(--easing);
   cursor: pointer;
+  /* Initially hidden to prevent flash before JS animation */
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
 .process-step:hover {
@@ -293,6 +299,7 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
   font-size: 1.25rem;
   font-weight: 600;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  transition: all var(--duration) var(--easing);
 }
 
 .step-content {
@@ -324,6 +331,7 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
   color: rgba(255, 255, 255, 0.4);
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
+  transition: all var(--duration) var(--easing);
 }
 
 /* HERO VIDEO PREVIEW */
@@ -426,15 +434,22 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
 }
 
 .featured-videos::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.015) 0%, transparent 60%);
+  background: radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(255, 255, 255, 0.015) 0%,
+      transparent 60%
+    );
   z-index: 1;
 }
 
@@ -706,8 +721,7 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
 
 .marquee-content {
   display: flex;
-  width: calc(200%);
-  animation: marquee 60s linear infinite;
+  animation: marquee 20s linear infinite;
   will-change: transform;
 }
 
@@ -717,10 +731,10 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
 
 .client-strip {
   display: flex;
-  width: 50%;
   gap: calc(var(--space-xl) * 1.5);
   align-items: center;
   padding: 0 calc(var(--space-xl) * 1.5);
+  flex-shrink: 0;
 }
 
 .client-item {
@@ -746,7 +760,7 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  z-index: 100;
+  z-index: 10;
 }
 
 .client-logo {
