@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializePerformanceOptimizations();
   initializeBackToTop();
   initializeStatsCounters();
+  initializeMainVideoPlayers();
 
   console.log("Platinum Media website initialized");
 });
@@ -328,207 +329,63 @@ function initializeWorkFilters() {
             </div>
         `,
     videos: `
-            <div class="row g-4">
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="assets/img/showcase/highlight-reel.webp"
-                                alt="Player Highlight Reel Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Highlight Reel - Player Showcase"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Highlight Reel</h4>
-                                    <p class="work-item-category">Player Showcase</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="assets/img/showcase/training-montage.webp"
-                                alt="Training Montage Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Training Montage - Behind the Scenes"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Training Montage</h4>
-                                    <p class="work-item-category">Behind the Scenes</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="assets/img/showcase/match-recap.webp"
-                                alt="Match Recap Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Match Recap - Game Analysis"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Match Recap</h4>
-                                    <p class="work-item-category">Game Analysis</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/player-interview.webp"
-                                alt="Player Interview Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Player Interview - Documentary"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Player Interview</h4>
-                                    <p class="work-item-category">Documentary</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/team-announcement.webp"
-                                alt="Team Announcement Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Team Announcement - Promotional"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Team Announcement</h4>
-                                    <p class="work-item-category">Promotional</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/highlight-reel.webp"
-                                alt="Player Highlight Reel Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Highlight Reel - Player Showcase"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Highlight Reel</h4>
-                                    <p class="work-item-category">Player Showcase</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/training-montage.webp"
-                                alt="Training Montage Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Training Montage - Behind the Scenes"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Training Montage</h4>
-                                    <p class="work-item-category">Behind the Scenes</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/match-recap.webp"
-                                alt="Match Recap Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Match Recap - Game Analysis"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Match Recap</h4>
-                                    <p class="work-item-category">Game Analysis</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/player-interview.webp"
-                                alt="Player Interview Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Player Interview - Documentary"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Player Interview</h4>
-                                    <p class="work-item-category">Documentary</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md col-lg">
-                    <article class="work-item-platinum">
-                        <div class="work-item-image">
-                            <img
-                                src="/assets/img/showcase/team-announcement.webp"
-                                alt="Team Announcement Video"
-                                class="lightbox-trigger work-image"
-                                data-lightbox="gallery"
-                                data-title="Team Announcement - Promotional"
-                                loading="lazy"
-                            />
-                            <div class="work-item-overlay">
-                                <div class="work-item-content">
-                                    <h4 class="work-item-title">Team Announcement</h4>
-                                    <p class="work-item-category">Promotional</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="videos-grid-custom">
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-1.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-2.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-3.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-4.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-5.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-6.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-7.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
+                <article class="work-item-platinum">
+                    <div class="work-item-image">
+                        <video class="work-video-player" preload="metadata" controls playsinline>
+                            <source src="assets/vid/vid-showcase-8.mp4#t=0.1" type="video/mp4" />
+                        </video>
+                    </div>
+                </article>
             </div>
         `,
   };
@@ -1111,6 +968,42 @@ function animateCounter(element) {
   requestAnimationFrame(animateSmooth);
 }
 
+/*
+==============================================
+MAIN PAGE VIDEO PLAYERS
+==============================================
+*/
+function initializeMainVideoPlayers() {
+  // Use event delegation to handle dynamically loaded videos
+  document.addEventListener('click', function(e) {
+    const video = e.target.closest('.work-video-player');
+    if (video) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  });
+
+  // Handle touch events for mobile
+  document.addEventListener('touchend', function(e) {
+    const video = e.target.closest('.work-video-player');
+    if (video) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  });
+}
 
 // Export functions for external use if needed
 window.PlatinumMedia = {
