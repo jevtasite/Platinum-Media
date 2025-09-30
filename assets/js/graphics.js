@@ -682,10 +682,20 @@ function initializeContactForm() {
           // Prepare form data
           const formData = new FormData(this);
 
-          // Submit to Web3Forms API
+          // Convert FormData to JSON object for CORS compatibility
+          const object = {};
+          formData.forEach((value, key) => {
+            object[key] = value;
+          });
+
+          // Submit to Web3Forms API with JSON
           const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            body: formData
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(object)
           });
 
           const data = await response.json();
