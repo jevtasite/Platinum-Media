@@ -173,43 +173,123 @@ PLATINUM MEDIA - PLACEHOLDER IMAGES & CONTENT
   border-bottom: 12px solid transparent;
 }
 
-/* ABOUT IMAGE PLACEHOLDER */
+/* ABOUT IMAGE PLACEHOLDER - ANIMATED FOOTBALL PITCH */
 .sample-about {
   background: linear-gradient(135deg,
-    var(--interface-black) 0%,
-    var(--pitch-green) 20%,
-    var(--deep-black) 40%,
-    var(--charcoal) 70%,
-    var(--interface-black) 100%);
+    var(--deep-black) 0%,
+    var(--interface-black) 50%,
+    var(--deep-black) 100%);
   position: relative;
+  overflow: hidden;
 }
 
+/* Football pitch grid lines */
 .sample-about::before {
-  content: 'BELGRADE';
+  content: '';
   position: absolute;
-  top: 30%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    /* Center circle */
+    radial-gradient(circle at center, transparent 45px, rgba(255, 255, 255, 0.15) 45px, rgba(255, 255, 255, 0.15) 47px, transparent 47px),
+    /* Halfway line */
+    linear-gradient(to bottom, transparent 49%, rgba(255, 255, 255, 0.2) 49%, rgba(255, 255, 255, 0.2) 51%, transparent 51%),
+    /* Penalty box top */
+    linear-gradient(to bottom, transparent 20%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 21%, transparent 21%),
+    /* Penalty box bottom */
+    linear-gradient(to bottom, transparent 79%, rgba(255, 255, 255, 0.15) 79%, rgba(255, 255, 255, 0.15) 80%, transparent 80%),
+    /* Vertical lines left */
+    linear-gradient(to right, transparent 25%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 25.5%, transparent 25.5%),
+    /* Vertical lines right */
+    linear-gradient(to right, transparent 74.5%, rgba(255, 255, 255, 0.1) 74.5%, rgba(255, 255, 255, 0.1) 75%, transparent 75%),
+    /* Outer border */
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 2%, transparent 2%, transparent 98%, rgba(255, 255, 255, 0.2) 98%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 2%, transparent 2%, transparent 98%, rgba(255, 255, 255, 0.2) 98%);
+  animation: pitchGlow 3s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+/* Center circle glow effect */
+.sample-about::after {
+  content: '';
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: centerGlow 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Animations for football pitch */
+@keyframes pitchGlow {
+  0% {
+    opacity: 0.6;
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes centerGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Location text overlay */
+.sample-about .location-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+}
+
+.sample-about .location-city {
   font-family: var(--header-font);
   font-weight: 900;
-  font-size: 1.2rem;
-  color: var(--bright-white);
-  opacity: 0.4;
-  letter-spacing: 0.1em;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--bright-white) 0%, var(--warm-white) 50%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+  animation: textGlow 3s ease-in-out infinite alternate;
 }
 
-.sample-about::after {
-  content: 'SERBIA 🇷🇸';
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
+.sample-about .location-country {
   font-family: var(--subheader-font);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--warm-white);
-  opacity: 0.5;
-  letter-spacing: 0.05em;
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
 }
 
 /* FAVICON PLACEHOLDER */
@@ -239,14 +319,13 @@ PLATINUM MEDIA - PLACEHOLDER IMAGES & CONTENT
     letter-spacing: 0.1em;
   }
 
-  .sample-about::before {
-    font-size: 1rem;
-    top: 35%;
+  .sample-about .location-city {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
   }
 
-  .sample-about::after {
-    font-size: 0.8rem;
-    top: 55%;
+  .sample-about .location-country {
+    font-size: 0.875rem;
   }
 
   .placeholder-image::after {
@@ -313,10 +392,18 @@ PLATINUM MEDIA - PLACEHOLDER IMAGES & CONTENT
   }
 
   .sample-graphics::before,
-  .sample-video::before,
-  .sample-about::before,
-  .sample-about::after {
+  .sample-video::before {
     opacity: 0.9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .sample-about .location-city,
+  .sample-about .location-country {
+    opacity: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .sample-about::before {
+    opacity: 0.9;
   }
 }
