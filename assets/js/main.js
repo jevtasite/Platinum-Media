@@ -1020,6 +1020,35 @@ function initializeMainVideoPlayers() {
       }
     }
   });
+
+  // Handle fullscreen changes to maintain aspect ratio
+  document.addEventListener('fullscreenchange', handleFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+  document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+  document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+}
+
+function handleFullscreenChange() {
+  const fullscreenElement =
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.mozFullScreenElement ||
+    document.msFullscreenElement;
+
+  if (fullscreenElement && fullscreenElement.classList.contains('work-video-player')) {
+    // Force aspect ratio styles
+    fullscreenElement.style.width = 'auto';
+    fullscreenElement.style.height = '100vh';
+    fullscreenElement.style.maxWidth = 'calc(100vh * 9 / 16)';
+    fullscreenElement.style.maxHeight = '100vh';
+    fullscreenElement.style.objectFit = 'contain';
+    fullscreenElement.style.margin = '0 auto';
+    fullscreenElement.style.position = 'absolute';
+    fullscreenElement.style.left = '50%';
+    fullscreenElement.style.top = '50%';
+    fullscreenElement.style.transform = 'translate(-50%, -50%)';
+    fullscreenElement.style.background = '#000';
+  }
 }
 
 // Export functions for external use if needed

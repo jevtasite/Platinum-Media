@@ -1779,6 +1779,29 @@ section {
   aspect-ratio: 9 / 16;
 }
 
+/* FULLSCREEN VIDEO HANDLING - MAINTAIN 9:16 ASPECT RATIO */
+.work-video-player:fullscreen,
+.work-video-player:-webkit-full-screen,
+.work-video-player:-moz-full-screen,
+.work-video-player:-ms-fullscreen {
+  width: auto !important;
+  height: 100vh !important;
+  max-width: calc(100vh * 9 / 16) !important;
+  max-height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  margin: 0 auto !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.work-video-player::backdrop,
+.work-video-player:-webkit-full-screen::backdrop {
+  background: #000;
+}
+
 /* CUSTOM VIDEOS GRID - 4 PER ROW */
 .videos-grid-custom {
   display: grid;

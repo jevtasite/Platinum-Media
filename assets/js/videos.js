@@ -854,6 +854,36 @@ function initializeVideoPlayers() {
       }
     });
   });
+
+  // Handle fullscreen changes to maintain aspect ratio
+  document.addEventListener('fullscreenchange', handleVideoFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleVideoFullscreenChange);
+  document.addEventListener('mozfullscreenchange', handleVideoFullscreenChange);
+  document.addEventListener('MSFullscreenChange', handleVideoFullscreenChange);
+}
+
+function handleVideoFullscreenChange() {
+  const fullscreenElement =
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.mozFullScreenElement ||
+    document.msFullscreenElement;
+
+  if (fullscreenElement && fullscreenElement.classList.contains('video-player')) {
+    // Force aspect ratio styles
+    fullscreenElement.style.width = 'auto';
+    fullscreenElement.style.height = '100vh';
+    fullscreenElement.style.maxWidth = 'calc(100vh * 9 / 16)';
+    fullscreenElement.style.maxHeight = '100vh';
+    fullscreenElement.style.objectFit = 'contain';
+    fullscreenElement.style.margin = '0 auto';
+    fullscreenElement.style.position = 'absolute';
+    fullscreenElement.style.left = '50%';
+    fullscreenElement.style.top = '50%';
+    fullscreenElement.style.transform = 'translate(-50%, -50%)';
+    fullscreenElement.style.background = '#000';
+    fullscreenElement.style.borderRadius = '0';
+  }
 }
 
 /*

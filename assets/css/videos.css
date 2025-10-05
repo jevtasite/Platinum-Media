@@ -508,6 +508,31 @@ PLATINUM MEDIA - VIDEOS PAGE STYLES
   object-fit: cover;
   border-radius: var(--border-radius-lg);
   display: block;
+  cursor: pointer;
+}
+
+/* FULLSCREEN VIDEO HANDLING - MAINTAIN 9:16 ASPECT RATIO */
+.video-player:fullscreen,
+.video-player:-webkit-full-screen,
+.video-player:-moz-full-screen,
+.video-player:-ms-fullscreen {
+  width: auto !important;
+  height: 100vh !important;
+  max-width: calc(100vh * 9 / 16) !important;
+  max-height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  margin: 0 auto !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 0 !important;
+}
+
+.video-player::backdrop,
+.video-player:-webkit-full-screen::backdrop {
+  background: #000;
 }
 
 .video-item .video-play-overlay {
