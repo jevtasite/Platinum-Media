@@ -771,6 +771,7 @@ VIDEO TOGGLE (SHOW MORE/LESS) FUNCTIONALITY
 function initializeVideoToggle() {
   const toggleBtn = document.getElementById('videoToggleBtn');
   const hiddenVideos = document.querySelectorAll('.video-item-hidden');
+  const featuredVideosSection = document.querySelector('.featured-videos');
 
   if (!toggleBtn || !hiddenVideos.length) return;
 
@@ -799,6 +800,20 @@ function initializeVideoToggle() {
             video.style.display = 'none';
           }, 300);
         }, index * 50);
+
+        // Scroll to top of the section when hiding videos
+        if (featuredVideosSection) {
+          setTimeout(() => {
+            const navbar = document.querySelector('.navbar');
+            const headerHeight = navbar ? navbar.offsetHeight : 80;
+            const targetPosition = featuredVideosSection.offsetTop - headerHeight - 20;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 150);
+        }
       }
     });
 

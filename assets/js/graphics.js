@@ -713,6 +713,7 @@ SHOW MORE GALLERY FUNCTIONALITY
 function initializeShowMoreButton() {
   const showMoreBtn = document.getElementById('showMoreBtn');
   const hiddenItems = document.querySelectorAll('.gallery-item-hidden');
+  const featuredWorkSection = document.querySelector('.featured-work');
 
   if (!showMoreBtn || hiddenItems.length === 0) return;
 
@@ -745,6 +746,20 @@ function initializeShowMoreButton() {
       `;
       showMoreBtn.classList.remove('expanded');
       isExpanded = false;
+
+      // Scroll to top of the section when hiding items
+      if (featuredWorkSection) {
+        setTimeout(() => {
+          const navbar = document.querySelector('.navbar');
+          const headerHeight = navbar ? navbar.offsetHeight : 80;
+          const targetPosition = featuredWorkSection.offsetTop - headerHeight - 20;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }, 150);
+      }
     } else {
       // Show additional items
       hiddenItems.forEach((item, index) => {
