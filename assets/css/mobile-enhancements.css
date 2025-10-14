@@ -166,7 +166,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   .showcase-container {
     position: relative;
     width: 180px;
-    height: 280px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +176,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   .featured-graphic {
     position: relative;
     width: 180px;
-    height: 320px;
+    aspect-ratio: 9 / 16;
     z-index: 3;
     transform: translateZ(0);
     border-radius: var(--border-radius-lg);
@@ -190,10 +190,9 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     top: 0;
     left: 0px !important;
     width: 180px;
-    height: 320px;
+    aspect-ratio: 9 / 16;
     z-index: 2;
     transform: translateZ(0);
-    aspect-ratio: 9 / 16;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
@@ -205,10 +204,9 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     top: 0;
     left: 220px !important; /* Position on right side by offsetting to the left of main card */
     width: 180px;
-    height: 320px;
+    aspect-ratio: 9 / 16;
     z-index: 1;
     transform: translateZ(0);
-    aspect-ratio: 9 / 16;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -220,10 +218,9 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     position: absolute;
     top: 0;
     width: 180px;
-    height: 320px;
+    aspect-ratio: 9 / 16;
     z-index: 0;
     transform: translateZ(0);
-    aspect-ratio: 9 / 16;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
@@ -1558,29 +1555,29 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
   .showcase-container {
     width: 160px;
-    height: 260px;
+    height: auto;
   }
 
   .featured-graphic {
     width: 160px;
-    height: 284px; /* Maintain 9:16 ratio */
+    aspect-ratio: 9 / 16;
   }
 
   .floating-graphic-1 {
     width: 160px;
-    height: 284px;
+    aspect-ratio: 9 / 16;
     left: 6px; /* Smaller edge visible */
   }
 
   .floating-graphic-2 {
     width: 160px;
-    height: 284px;
+    aspect-ratio: 9 / 16;
     left: -6px;
   }
 
   .floating-graphic-3 {
     width: 160px;
-    height: 284px;
+    aspect-ratio: 9 / 16;
     left: 18px;
   }
 
