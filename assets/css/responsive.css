@@ -146,7 +146,20 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     font-size: 0.75rem;
   }
 
-  /* Hero section now handled by style.css */
+  /* Hero section */
+  .hero {
+    min-height: 80vh;
+    padding-top: 80px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
 
   /* Buttons */
   .btn {
@@ -200,7 +213,14 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     padding-right: calc(var(--grid-gutters) * var(--space-scale-sm));
   }
 
-  /* Hero section now handled by style.css */
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+  }
 
   .btn {
     min-width: 160px;
@@ -227,7 +247,9 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     font-size: calc(16px * var(--text-scale-md));
   }
 
-  /* Hero section now handled by style.css */
+  .hero {
+    min-height: 100vh;
+  }
 
   /* Navigation improvements */
   .navbar {
@@ -304,7 +326,14 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     padding-right: var(--grid-gutters);
   }
 
-  /* Hero section now handled by style.css */
+  /* Typography scale up */
+  .hero-title {
+    font-size: var(--h1-size);
+  }
+
+  .hero-subtitle {
+    font-size: var(--h3-size);
+  }
 
   /* Section spacing */
   section {
@@ -318,7 +347,10 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     font-size: calc(16px * var(--text-scale-xl));
   }
 
-  /* Hero section now handled by style.css */
+  /* Enhanced layouts */
+  .hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
 
   /* Grid system optimizations */
   .container-xxl {
@@ -356,7 +388,11 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     background-size: 100px 100px;
   }
 
-  /* Hero section now handled by style.css */
+  /* Typography perfection */
+  .hero-title {
+    font-size: clamp(3.5rem, 5vw, 4.5rem);
+    letter-spacing: -0.02em;
+  }
 
   .section-title {
     letter-spacing: -0.01em;
@@ -442,6 +478,7 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
   /* Print optimizations */
   .header,
   .footer,
+  .hero-cta,
   .contact-form {
     display: none !important;
   }
@@ -451,7 +488,8 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     color: black !important;
   }
 
-  .section-title {
+  .section-title,
+  .hero-title {
     color: black !important;
   }
 

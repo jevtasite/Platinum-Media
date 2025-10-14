@@ -94,7 +94,177 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* MOBILE-SPECIFIC LAYOUTS */
 @media (max-width: 767px) {
-  /* Hero section now handled by style.css - removed from here for clean separation */
+  /* Mobile hero optimizations */
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh; /* Modern dynamic viewport */
+    padding-top: 120px;
+    padding-bottom: var(--space-sm);
+  }
+
+  .hero .row {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: var(--space-md) 0 var(--space-sm) 0;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: var(--space-sm);
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 7vw, 2.75rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+    margin-top: var(--space-md);
+    text-align: center;
+    padding-top: var(--space-sm);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-socials {
+    flex-direction: row;
+    gap: var(--space-md);
+    justify-content: center !important;
+    align-items: center;
+  }
+
+  /* Mobile showcase with deck-of-cards stacked effect */
+  .hero-showcase {
+    order: 2;
+    min-height: 280px;
+    padding: var(--space-sm) 0;
+    flex: 0 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .showcase-container {
+    position: relative;
+    width: 180px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* All cards same size - 9:16 aspect ratio */
+  .featured-graphic {
+    position: relative;
+    width: 180px;
+    height: 320px;
+    z-index: 3;
+    transform: translateZ(0);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Deck-of-cards stacked effect - only edges visible */
+  .floating-graphic-1 {
+    position: absolute;
+    top: 0;
+    left: 0px !important;
+    width: 180px;
+    height: 320px;
+    z-index: 2;
+    transform: translateZ(0);
+    aspect-ratio: 9 / 16;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .floating-graphic-2 {
+    position: absolute;
+    top: 0;
+    left: 220px !important; /* Position on right side by offsetting to the left of main card */
+    width: 180px;
+    height: 320px;
+    z-index: 1;
+    transform: translateZ(0);
+    aspect-ratio: 9 / 16;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Optional third card for more depth */
+  .floating-graphic-3 {
+    position: absolute;
+    top: 0;
+    width: 180px;
+    height: 320px;
+    z-index: 0;
+    transform: translateZ(0);
+    aspect-ratio: 9 / 16;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Cool hover/touch effect - cards fan out slightly */
+  .showcase-container:active .floating-graphic-1,
+  .showcase-container:hover .floating-graphic-1 {
+    left: 12px;
+    transform: translateZ(0) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .showcase-container:active .floating-graphic-2,
+  .showcase-container:hover .floating-graphic-2 {
+    left: -12px;
+    transform: translateZ(0) rotate(-4deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .showcase-container:active .floating-graphic-3,
+  .showcase-container:hover .floating-graphic-3 {
+    left: 36px;
+    transform: translateZ(0) rotate(6deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes subtleFloat {
+    0%,
+    100% {
+      transform: translateY(0) translateZ(0);
+    }
+    50% {
+      transform: translateY(-2px) translateZ(0);
+    }
+  }
+
+  .showcase-stats {
+    display: none;
+  }
 
   .social-link {
     width: 40px;
@@ -360,7 +530,27 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     padding-right: var(--space-md);
   }
 
-  /* Hero section now handled by style.css */
+  /* Enhanced hero for small screens */
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height */
+    padding-top: 110px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 9vw, 2.25rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .floating-graphic-2 {
+    left: 190px !important;
+  }
 
   /* Optimized sections */
   .section-platinum {
@@ -446,11 +636,22 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* CRITICAL 320px FIXES */
 @media (max-width: 320px) {
-  /* Hero section now handled by style.css */
+  .hero {
+    padding-top: 105px;
+  }
 
   .container-xxl {
     padding-left: var(--space-sm);
     padding-right: var(--space-sm);
+  }
+
+  .hero-title {
+    font-size: clamp(1.25rem, 10vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.8rem, 4vw, 0.95rem);
   }
 
   .btn-platinum {
@@ -588,7 +789,9 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     overscroll-behavior-y: none;
   }
 
-  /* Hero section now handled by style.css */
+  .hero {
+    overscroll-behavior: contain;
+  }
 
   /* Enhanced focus states for keyboard navigation */
   .btn-platinum:focus,
@@ -628,6 +831,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 
   /* Performance optimizations */
+  .hero-background,
   .grid-overlay {
     transform: translateZ(0);
     will-change: transform;
@@ -646,12 +850,14 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 
   /* Reduce layout thrashing */
-  .section-platinum {
+  .section-platinum,
+  .hero {
     contain: layout style;
   }
 
   /* Simplify gradients on low-end devices */
   @media (max-resolution: 150dpi) {
+    .hero::before,
     .section-platinum::before {
       display: none;
     }
@@ -667,9 +873,60 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 }
 
+/* SHOWCASE PORTRAIT TABLET OPTIMIZATIONS */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-showcase {
+    min-height: 450px;
+  }
+
+  .showcase-container {
+    max-width: 450px;
+  }
+
+  .featured-graphic {
+    width: 320px;
+    max-height: 60vh;
+    aspect-ratio: 9 / 16;
+  }
+}
+
 /* TABLET PORTRAIT OPTIMIZATIONS (768px-1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Hero section now handled by style.css */
+  .hero {
+    min-height: 100vh;
+    padding-top: 90px;
+  }
+
+  .hero .row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-content {
+    text-align: left;
+    padding: var(--space-xl) 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 4.5vw, 3.25rem);
+    line-height: 1.1;
+    text-align: left;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 2.2vw, 1.4rem);
+    text-align: left;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    gap: var(--space-lg);
+    justify-content: flex-start;
+  }
+
+  .hero-socials {
+    justify-content: flex-start;
+  }
 
   /* Tablet grid layouts */
   .services .row {
@@ -768,7 +1025,18 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* TABLET LANDSCAPE OPTIMIZATIONS (1024px-1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  /* Hero section now handled by style.css */
+  .hero {
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 4vw, 3.75rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+  }
 
   /* Three-column layouts for larger tablets */
   .services .row {
@@ -929,7 +1197,25 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* LANDSCAPE MOBILE OPTIMIZATIONS */
 @media (max-height: 500px) and (orientation: landscape) {
-  /* Hero section now handled by style.css */
+  .hero {
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
 
   .btn-platinum {
     width: auto;
@@ -943,7 +1229,11 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* iOS SAFARI SPECIFIC FIXES */
 @supports (-webkit-touch-callout: none) {
-  /* Hero section now handled by style.css */
+  /* iOS Safari viewport units fix */
+  .hero {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
 
   /* iOS Safari input zoom prevention */
   .form-control-platinum,
@@ -973,6 +1263,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 
   /* Android performance improvements */
+  .hero-background,
   .grid-overlay {
     will-change: transform;
   }
@@ -996,7 +1287,11 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* REDUCED MOTION MOBILE */
 @media (prefers-reduced-motion: reduce) and (max-width: 767px) {
-  /* Hero section now handled by style.css */
+  .hero-title,
+  .hero-subtitle,
+  .hero-cta {
+    animation: none !important;
+  }
 
   .grid-overlay {
     animation: none !important;
@@ -1029,7 +1324,19 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
 
 /* LARGE DESKTOP DISPLAYS (1200px-1399px) */
 @media (min-width: 1200px) and (max-width: 1399px) {
-  /* Hero section now handled by style.css */
+  .hero {
+    min-height: 100vh;
+    padding-top: 120px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 4.5vw, 4.25rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.375rem, 1.8vw, 1.6rem);
+  }
 
   /* Enhanced grid layouts for desktop */
   .services .row {
@@ -1053,9 +1360,56 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 }
 
+/* TABLET LANDSCAPE SHOWCASE ENHANCEMENTS */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-showcase {
+    min-height: 500px;
+  }
+
+  .showcase-container {
+    max-width: 500px;
+  }
+
+  .featured-graphic {
+    width: 350px;
+    max-height: 65vh;
+    aspect-ratio: 9 / 16;
+  }
+}
+
 /* ULTRA-WIDE & 4K DISPLAYS (1400px+) */
 @media (min-width: 1400px) {
-  /* Hero section now handled by style.css */
+  .hero-showcase {
+    min-height: 550px;
+  }
+
+  .showcase-container {
+    max-width: 650px;
+  }
+
+  .featured-graphic {
+    width: 400px;
+    max-height: 75vh;
+    aspect-ratio: 9 / 16;
+  }
+
+  .hero-showcase .graphic-frame {
+    max-height: 75vh;
+    max-width: 400px;
+  }
+  .hero {
+    min-height: 100vh;
+    padding-top: 140px;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 4vw, 5rem);
+    line-height: 1.05;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 1.5vw, 1.875rem);
+  }
 
   /* 4K grid layouts */
   .services .row {
@@ -1182,4 +1536,83 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 }
 
-/* Hero showcase specific optimizations now handled by style.css */
+/* Hero showcase specific optimizations for vertical content */
+.hero-showcase .graphic-frame,
+.hero-showcase .sample-graphics {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Featured graphic container adjustments */
+.featured-graphic {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  /* Adjust deck-of-cards for small mobile */
+  .hero-showcase {
+    min-height: 260px;
+  }
+
+  .showcase-container {
+    width: 160px;
+    height: 260px;
+  }
+
+  .featured-graphic {
+    width: 160px;
+    height: 284px; /* Maintain 9:16 ratio */
+  }
+
+  .floating-graphic-1 {
+    width: 160px;
+    height: 284px;
+    left: 6px; /* Smaller edge visible */
+  }
+
+  .floating-graphic-2 {
+    width: 160px;
+    height: 284px;
+    left: -6px;
+  }
+
+  .floating-graphic-3 {
+    width: 160px;
+    height: 284px;
+    left: 18px;
+  }
+
+  /* Fan out effect for smaller screens */
+  .showcase-container:active .floating-graphic-1,
+  .showcase-container:hover .floating-graphic-1 {
+    left: 10px;
+  }
+
+  .showcase-container:active .floating-graphic-2,
+  .showcase-container:hover .floating-graphic-2 {
+    left: -10px;
+  }
+
+  .showcase-container:active .floating-graphic-3,
+  .showcase-container:hover .floating-graphic-3 {
+    left: 30px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .featured-graphic {
+    width: 320px;
+    max-height: 60vh;
+    aspect-ratio: 9 / 16;
+  }
+}
+
+@media (min-width: 1200px) {
+  .featured-graphic {
+    width: 380px;
+    max-height: 70vh;
+    aspect-ratio: 9 / 16;
+  }
+}
