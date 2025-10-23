@@ -9,19 +9,36 @@
     />
     <meta
       name="keywords"
-      content="sports graphics, social media design, athlete graphics, sports highlights, sports day graphics, Belgrade, Serbia, brand identity, sports marketing"
+      content="football graphics designer, sports social media graphics, athlete Instagram graphics, match day graphics design, football player branding, Premier League graphics design, sports infographics, athlete highlight graphics, Belgrade sports designer, Serbia graphics agency"
     />
     <meta name="author" content="Platinum Media" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://platinumedia.site/graphics/" />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Graphics Portfolio - Platinum Media" />
+    <meta property="og:title" content="Graphics Portfolio - Platinum Media | Premium Sports Design" />
     <meta
       property="og:description"
       content="Premium graphics and visual content for athletes and sports brands. Explore our portfolio of social media graphics, infographics, and brand designs."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://platinum-media.com/graphics" />
-    <meta property="og:image" content="../assets/img/og-image.webp" />
+    <meta property="og:url" content="https://platinumedia.site/graphics/" />
+    <meta property="og:image" content="https://platinumedia.site/assets/img/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Platinum Media" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Graphics Portfolio - Platinum Media | Premium Sports Design" />
+    <meta
+      name="twitter:description"
+      content="Premium graphics and visual content for athletes and sports brands. Explore our portfolio of social media graphics, infographics, and brand designs."
+    />
+    <meta name="twitter:image" content="https://platinumedia.site/assets/img/og-image.webp" />
+    <meta name="twitter:image:alt" content="Platinum Media Graphics Portfolio" />
 
     <title>
       Graphics Portfolio - Platinum Media | Premium Sports Design for Athletes
@@ -30,6 +47,11 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../assets/css/style.css" as="style" />
+    <link rel="preload" href="../assets/css/graphics.css" as="style" />
 
     <!-- Font imports -->
     <link
@@ -66,6 +88,91 @@
       type="image/x-icon"
       href="../assets/img/favicon/favicon.ico"
     />
+
+    <!-- Schema.org Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://platinumedia.site/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Graphics Portfolio",
+        "item": "https://platinumedia.site/graphics/"
+      }]
+    }
+    </script>
+
+    <!-- Schema.org Structured Data - Creative Work Portfolio -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Graphics Portfolio - Platinum Media",
+      "description": "Premium visual content for athletes and sports brands including social media graphics, infographics, and brand identity designs",
+      "creator": {
+        "@type": "Organization",
+        "name": "Platinum Media",
+        "url": "https://platinumedia.site/"
+      },
+      "url": "https://platinumedia.site/graphics/",
+      "image": "https://platinumedia.site/assets/img/og-image.webp",
+      "genre": "Sports Graphics Design",
+      "keywords": "football graphics, sports design, athlete branding, social media graphics",
+      "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Schema.org Structured Data - Collection Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Graphics Portfolio",
+      "description": "Explore our collection of premium sports graphics and visual content for athletes",
+      "url": "https://platinumedia.site/graphics/",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://platinumedia.site/"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Graphics",
+          "item": "https://platinumedia.site/graphics/"
+        }]
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": "10",
+        "itemListElement": [
+          {
+            "@type": "ImageObject",
+            "name": "Athlete Highlight Graphics",
+            "description": "Social media graphics for professional athletes"
+          },
+          {
+            "@type": "ImageObject",
+            "name": "Match Day Graphics",
+            "description": "Event promotion graphics for game days"
+          },
+          {
+            "@type": "ImageObject",
+            "name": "Team Branding",
+            "description": "Complete brand identity packages for sports teams"
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <!-- Header Navigation -->

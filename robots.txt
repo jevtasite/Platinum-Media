@@ -2,8 +2,5 @@
 User-agent: *
 Allow: /
 
-# Disallow admin or private directories if any
-Disallow: /assets/
-
 # Sitemap location
-Sitemap: https://platinum-media.com/sitemap.xml
+Sitemap: https://platinumedia.site/sitemap.xml
