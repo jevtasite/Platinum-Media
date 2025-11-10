@@ -4,38 +4,170 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
 ==============================================
 */
 
-/* SMOOTH NAVBAR COLLAPSE ANIMATION */
+/* REDESIGNED MOBILE NAVBAR */
 @media (max-width: 991px) {
-  /* Remove Bootstrap's default collapse animation */
+  /* Enhanced navbar collapse with modern design */
   .navbar-collapse {
-    transition: opacity 0.25s ease, transform 0.25s ease !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0d0d0d;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    margin-top: 0;
+    padding: 0;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   /* Hidden state */
   .navbar-collapse:not(.show):not(.collapsing) {
     display: none;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
   }
 
-  /* Opening state */
+  /* Opening animation */
   .navbar-collapse.collapsing {
-    display: block;
+    display: block !important;
     height: auto !important;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-20px) scale(0.95);
   }
 
   /* Fully opened state */
   .navbar-collapse.show {
-    display: block;
+    display: block !important;
+    height: auto !important;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 
-  /* Closing state */
-  .navbar-collapse.collapsing:not(.show) {
+  /* Modern nav items styling */
+  .navbar-collapse .navbar-nav {
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .navbar-collapse .nav-item {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateX(-20px);
+    animation: slideInNav 0.4s ease-out forwards;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .navbar-collapse.show .nav-item:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .navbar-collapse.show .nav-item:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .navbar-collapse.show .nav-item:nth-child(4) {
+    animation-delay: 0.25s;
+  }
+
+  @keyframes slideInNav {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .navbar-collapse .nav-link {
+    padding: 1rem 1.5rem !important;
+    margin: 0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--warm-white) !important;
+    background: #0d0d0d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .navbar-collapse .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(180deg, var(--bright-white), transparent);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-collapse .nav-link:hover,
+  .navbar-collapse .nav-link.active {
+    background: #0d0d0d;
+    color: var(--bright-white) !important;
+    transform: translateX(5px);
+  }
+
+  .navbar-collapse .nav-link:hover::before,
+  .navbar-collapse .nav-link.active::before {
+    transform: scaleY(1);
+  }
+
+  .navbar-collapse .nav-link::after {
+    display: none !important;
+  }
+
+  /* Enhanced hamburger icon */
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 28px;
+    height: 2px;
+    background: var(--bright-white);
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: var(--bright-white);
+    transition: all 0.3s ease;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -8px;
+  }
+
+  .navbar-toggler-icon::after {
+    bottom: -8px;
+  }
+
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+  }
+
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
   }
 }
 

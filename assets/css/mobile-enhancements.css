@@ -279,17 +279,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
   }
 
   /* Mobile navigation improvements */
-  .navbar-collapse {
-    background: var(--glass-dark);
-    backdrop-filter: var(--glass-blur);
-    border-radius: var(--border-radius-lg);
-    padding: var(--space-lg);
-    margin-top: var(--space-md);
-    border: var(--glass-border);
-    overflow: hidden;
-  }
-
-  /* Mobile navbar smooth animation - handled in responsive.css */
+  /* Mobile navbar styling and animation - fully handled in responsive.css */
 
   .navbar-nav {
     gap: var(--space-md);

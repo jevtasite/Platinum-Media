@@ -536,11 +536,7 @@ a:hover {
   top: 0;
 }
 
-/* Smooth Navbar collapse animation - Work with Bootstrap */
-.navbar-collapse.collapsing {
-  transition: height 0.3s ease-in-out;
-  overflow: hidden;
-}
+/* Smooth Navbar collapse animation - handled in responsive.css */
 
 /* HERO SECTION */
 .hero {
