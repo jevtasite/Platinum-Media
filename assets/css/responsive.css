@@ -4,6 +4,41 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
 ==============================================
 */
 
+/* SMOOTH NAVBAR COLLAPSE ANIMATION */
+@media (max-width: 991px) {
+  /* Remove Bootstrap's default collapse animation */
+  .navbar-collapse {
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
+    overflow: hidden;
+  }
+
+  /* Hidden state */
+  .navbar-collapse:not(.show):not(.collapsing) {
+    display: none;
+  }
+
+  /* Opening state */
+  .navbar-collapse.collapsing {
+    display: block;
+    height: auto !important;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  /* Fully opened state */
+  .navbar-collapse.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Closing state */
+  .navbar-collapse.collapsing:not(.show) {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
 /* RESPONSIVE BREAKPOINTS */
 :root {
   /* Breakpoint values */

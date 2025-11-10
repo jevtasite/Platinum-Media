@@ -289,10 +289,7 @@ PLATINUM MEDIA - MOBILE ENHANCEMENTS
     overflow: hidden;
   }
 
-  /* Mobile navbar smooth animation */
-  .navbar-collapse.collapsing {
-    transition: height 0.3s ease-in-out;
-  }
+  /* Mobile navbar smooth animation - handled in responsive.css */
 
   .navbar-nav {
     gap: var(--space-md);
