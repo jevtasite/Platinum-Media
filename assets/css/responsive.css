@@ -18,14 +18,14 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     margin-top: 0;
     padding: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Hidden state */
   .navbar-collapse:not(.show):not(.collapsing) {
     display: none;
     opacity: 0;
-    transform: translateY(-20px) scale(0.95);
+    transform: translateY(-10px);
   }
 
   /* Opening animation */
@@ -33,7 +33,7 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     display: block !important;
     height: auto !important;
     opacity: 0;
-    transform: translateY(-20px) scale(0.95);
+    transform: translateY(-10px);
   }
 
   /* Fully opened state */
@@ -41,7 +41,7 @@ PLATINUM MEDIA - RESPONSIVE FRAMEWORK
     display: block !important;
     height: auto !important;
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 
   /* Modern nav items styling */
