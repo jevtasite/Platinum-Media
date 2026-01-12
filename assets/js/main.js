@@ -154,18 +154,6 @@ function setActiveNavLink() {
       }
     }
   });
-
-  // If we're on home page, activate the first anchor link (hero section)
-  if (homeActivated && window.pageYOffset < 100) {
-    const heroSection = document.querySelector('section[id]');
-    if (heroSection) {
-      const heroId = heroSection.getAttribute('id');
-      const heroLink = document.querySelector(`.nav-link[href="#${heroId}"]`);
-      if (heroLink) {
-        heroLink.classList.add('active');
-      }
-    }
-  }
 }
 
 /**
