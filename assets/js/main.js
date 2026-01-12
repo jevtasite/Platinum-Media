@@ -108,9 +108,109 @@ function initializeNavigation() {
     { passive: true }
   );
 
-  // Remove any existing active classes from nav links
+  // Set active nav link based on current page
+  setActiveNavLink();
+
+  // Update active nav link on scroll for anchor links
+  window.addEventListener('scroll', updateActiveNavOnScroll, { passive: true });
+}
+
+/**
+ * Set active navigation link based on current page
+ */
+function setActiveNavLink() {
   const allNavLinks = document.querySelectorAll(".nav-link");
-  allNavLinks.forEach((link) => link.classList.remove("active"));
+  const currentPath = window.location.pathname;
+
+  let homeActivated = false;
+
+  allNavLinks.forEach((link) => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href");
+
+    // Skip anchor links - they'll be handled by scroll
+    if (href && href.startsWith("#")) {
+      return;
+    }
+
+    // Check for exact page match
+    if (href === "/" || href === "/index.html" || href === "./index.html" || href === "../index.html" || href === "../") {
+      // Home page: check if we're at root or index.html
+      if (currentPath === "/" ||
+          currentPath === "/index.html" ||
+          currentPath.endsWith("/Platinum-Media/") ||
+          currentPath.endsWith("/Platinum-Media/index.html") ||
+          (!currentPath.includes("/graphics") && !currentPath.includes("/videos"))) {
+        link.classList.add("active");
+        homeActivated = true;
+      }
+    } else if (href && !href.startsWith("#")) {
+      // Other pages (Graphics, Videos)
+      const normalizedHref = href.replace(/\/$/, ''); // Remove trailing slash
+      const normalizedPath = currentPath.replace(/\/$/, ''); // Remove trailing slash
+
+      if (normalizedPath.includes(normalizedHref)) {
+        link.classList.add("active");
+      }
+    }
+  });
+
+  // If we're on home page, activate the first anchor link (hero section)
+  if (homeActivated && window.pageYOffset < 100) {
+    const heroSection = document.querySelector('section[id]');
+    if (heroSection) {
+      const heroId = heroSection.getAttribute('id');
+      const heroLink = document.querySelector(`.nav-link[href="#${heroId}"]`);
+      if (heroLink) {
+        heroLink.classList.add('active');
+      }
+    }
+  }
+}
+
+/**
+ * Update active state for anchor links based on scroll position
+ */
+function updateActiveNavOnScroll() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  const homeLinks = document.querySelectorAll('.nav-link[href="/"], .nav-link[href="../"], .nav-link[href="./"], .nav-link[href="index.html"]');
+
+  if (sections.length === 0) return;
+
+  let currentSection = '';
+  const scrollPosition = window.pageYOffset + 200; // Offset for better UX
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  // If at the very top of the page, keep home link active
+  if (window.pageYOffset < 100) {
+    homeLinks.forEach(link => link.classList.add('active'));
+    navLinks.forEach(link => link.classList.remove('active'));
+    return;
+  }
+
+  // Update anchor nav links based on section
+  navLinks.forEach((link) => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+
+    if (currentSection && href === `#${currentSection}`) {
+      link.classList.add('active');
+    }
+  });
+
+  // Remove active from home link when scrolling to sections
+  if (currentSection) {
+    homeLinks.forEach(link => link.classList.remove('active'));
+  }
 }
 
 /*
