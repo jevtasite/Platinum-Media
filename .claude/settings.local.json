@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Bash(start index.html)"
+      "Bash(start index.html)",
+      "Bash(dir \"D:\\\\WEBDEVELOPMENT\\\\Platinum-Media\\\\assets\\\\vid\"\")",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

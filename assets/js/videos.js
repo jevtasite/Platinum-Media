@@ -393,12 +393,12 @@ function initializeVideoCarousel() {
 
   // All available videos
   const allVideos = [
-    { src: '../assets/vid/vid-showcase-1.mp4', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-2.mp4', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-3.mp4', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-4.mp4', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-5.mp4', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-6.mp4', label: 'Highlight Reels' }
+    { src: '../assets/vid/highlight-1.mp4#t=0.5', label: 'Highlight Reels' },
+    { src: '../assets/vid/highlight-2.mp4#t=0.5', label: 'Highlight Reels' },
+    { src: '../assets/vid/highlight-3.mp4#t=0.5', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-4.mp4#t=0.5', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-5.mp4#t=0.5', label: 'Highlight Reels' },
+    { src: '../assets/vid/vid-showcase-6.mp4#t=0.5', label: 'Highlight Reels' }
   ];
 
   // Shuffle array
