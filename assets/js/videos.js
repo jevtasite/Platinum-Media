@@ -391,31 +391,16 @@ function initializeVideoCarousel() {
 
   if (!carousel) return;
 
-  // All available videos
-  const allVideos = [
+  // Featured videos (first 4 only, no shuffling)
+  const featuredVideos = [
     { src: '../assets/vid/highlight-1.mp4#t=0.5', label: 'Highlight Reels' },
     { src: '../assets/vid/highlight-2.mp4#t=0.5', label: 'Highlight Reels' },
     { src: '../assets/vid/highlight-3.mp4#t=0.5', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-4.mp4#t=0.5', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-5.mp4#t=0.5', label: 'Highlight Reels' },
-    { src: '../assets/vid/vid-showcase-6.mp4#t=0.5', label: 'Highlight Reels' }
+    { src: '../assets/vid/vid-showcase-4.mp4#t=0.5', label: 'Highlight Reels' }
   ];
 
-  // Shuffle array
-  function shuffleArray(array) {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-    }
-    return newArray;
-  }
-
-  // Get 4 random videos
-  const randomVideos = shuffleArray(allVideos).slice(0, 4);
-
   // Generate carousel items
-  randomVideos.forEach((videoData, index) => {
+  featuredVideos.forEach((videoData, index) => {
     const item = document.createElement('div');
     item.className = 'video-carousel-item';
     item.innerHTML = `
@@ -444,19 +429,19 @@ function initializeVideoCarousel() {
   // Video data for carousel items (keeping old structure for compatibility)
   const carouselVideos = [
     {
-      video: randomVideos[0]?.src || '../assets/video/highlight-reel-preview.mp4',
+      video: featuredVideos[0]?.src || '../assets/video/highlight-reel-preview.mp4',
       title: 'Highlight Reels Collection'
     },
     {
-      video: randomVideos[1]?.src || '../assets/video/training-montage-preview.mp4',
+      video: featuredVideos[1]?.src || '../assets/video/training-montage-preview.mp4',
       title: 'Training Sessions'
     },
     {
-      video: randomVideos[2]?.src || '../assets/video/behind-scenes-preview.mp4',
+      video: featuredVideos[2]?.src || '../assets/video/behind-scenes-preview.mp4',
       title: 'Behind the Scenes'
     },
     {
-      video: '../assets/video/gameday-coverage-preview.mp4',
+      video: featuredVideos[3]?.src || '../assets/video/gameday-coverage-preview.mp4',
       title: 'Game Day Coverage'
     }
   ];
@@ -470,7 +455,7 @@ function initializeVideoCarousel() {
 
     // Add click handler to open video modal with actual video
     miniPreview.addEventListener('click', function() {
-      const videoSrc = randomVideos[index]?.src;
+      const videoSrc = featuredVideos[index]?.src;
 
       if (videoSrc && typeof openVideoModal === 'function') {
         // Pass true as third parameter to hide the title
